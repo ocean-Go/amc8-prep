@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #3b82f6;
+  --secondary: #10b981;
+  --accent: #f59e0b;
+}
+
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+.card {
+  @apply bg-white rounded-xl shadow-lg p-6;
+}
+
+.btn-primary {
+  @apply bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition;
+}
+
+.btn-secondary {
+  @apply bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition;
+}
