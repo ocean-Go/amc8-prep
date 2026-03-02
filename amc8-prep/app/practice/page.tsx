@@ -1,43 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-
-const sampleQuestions = [
-  {
-    id: "2025-amc8-1",
-    year: 2025,
-    question: "What is the value of 2 + 4 + 6 + ... + 20?",
-    options: ["A) 90", "B) 100", "C) 110", "D) 120", "E) 130"],
-    answer: "C",
-    explanation: "这是等差数列求和。(2+20)×10÷2=110",
-  },
-  {
-    id: "2025-amc8-2",
-    year: 2025,
-    question: "If x + 5 = 12, what is x?",
-    options: ["A) 5", "B) 6", "C) 7", "D) 8", "E) 9"],
-    answer: "C",
-    explanation: "x = 12 - 5 = 7",
-  },
-  {
-    id: "2025-amc8-3",
-    year: 2025,
-    question: "What is the area of a rectangle with length 8 and width 5?",
-    options: ["A) 13", "B) 26", "C) 40", "D) 80", "E) 120"],
-    answer: "C",
-    explanation: "面积 = 长 × 宽 =5 = 40 8 × ",
-  },
-];
+import { amc8Questions } from "@/data/amc8-questions";
 
 export default function PracticePage() {
   const [current, setCurrent] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(40 * 60); // 40 minutes
+  const [shuffledQuestions, setShuffledQuestions] = useState(amc8Questions);
 
-  const question = sampleQuestions[current];
+  useEffect(() => {
+    // 随机打乱题目顺序
+    const shuffled = [...amc8Questions].sort(() => Math.random() - 0.5);
+    setShuffledQuestions(shuffled.slice(0, 10)); // 每次随机10道
+  }, []);
+
+  const question = shuffledQuestions[current];
 
   const handleAnswer = (answer: string) => {
     if (showResult) return;
@@ -49,7 +29,7 @@ export default function PracticePage() {
   };
 
   const nextQuestion = () => {
-    if (current < sampleQuestions.length - 1) {
+    if (current < shuffledQuestions.length - 1) {
       setCurrent(current + 1);
       setSelected(null);
       setShowResult(false);
@@ -57,26 +37,18 @@ export default function PracticePage() {
   };
 
   return (
-    <main className="min-h-screen p-8">
+    <main className="min-h-screen p-4 sm:p-8">
       <div className="max-w-4xl mx-auto">
-        <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold text-white">✏️ 真题练习</h1>
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-2xl sm:text-3xl font-bold text-white">✏️ 真题练习</h1>
           <Link href="/dashboard" className="text-white hover:underline">
-            ← 返回面板
+            ← 返回
           </Link>
-        </div>
-
-        {/* Timer */}
-        <div className="card mb-6 text-center">
-          <div className="text-4xl font-bold text-blue-600">
-            {Math.floor(timeLeft / 60)}:{String(timeLeft % 60).padStart(2, "0")}
-          </div>
-          <p className="text-gray-500">剩余时间</p>
         </div>
 
         {/* Progress */}
         <div className="flex justify-between items-center mb-4 text-white">
-          <span>题目 {current + 1}/{sampleQuestions.length}</span>
+          <span>题目 {current + 1}/{shuffledQuestions.length}</span>
           <span>得分: {score}/{current + (showResult ? 1 : 0)}</span>
         </div>
 
@@ -86,6 +58,7 @@ export default function PracticePage() {
             <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
               AMC8 {question.year}
             </span>
+            <span className="text-gray-500 text-sm">{question.topic}</span>
           </div>
 
           <h2 className="text-xl font-semibold text-gray-800 mb-6">
@@ -133,11 +106,8 @@ export default function PracticePage() {
               </p>
               <p className="text-gray-600">{question.explanation}</p>
 
-              <button
-                onClick={nextQuestion}
-                className="mt-4 btn-primary"
-              >
-                下一题 →
+              <button onClick={nextQuestion} className="mt-4 btn-primary">
+                {current < shuffledQuestions.length - 1 ? "下一题 →" : "完成练习"}
               </button>
             </div>
           )}
