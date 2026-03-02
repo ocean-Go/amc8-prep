@@ -6,7 +6,12 @@
 # 备考周期：约 10 个月
 
 ## 核心原则 🎯
-**最小化使用 Token (P0 优先级)**
+**1. 优先使用 MiniMax M2.5（已付费）**
+- 所有 AI 调用优先使用 MiniMax M2.5
+- 仅当 MiniMax 不可用时使用 OpenAI
+- Token 消耗优先级：MiniMax > OpenAI
+
+**2. 最小化使用 Token (P0 优先级)**
 - 所有静态内容不调用 API
 - 题目展示、答题逻辑纯前端实现
 - 仅在以下场景使用 AI：
