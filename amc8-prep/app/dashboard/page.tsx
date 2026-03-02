@@ -5,7 +5,7 @@ export default function Dashboard() {
     <main className="min-h-screen p-8">
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold text-white">学习面板</h1>
+          <h1 className="text-3xl font-bold text-white">📊 学习面板</h1>
           <Link href="/" className="text-white hover:underline">
             ← 返回首页
           </Link>
@@ -25,7 +25,7 @@ export default function Dashboard() {
           </div>
           <div className="card">
             <h3 className="text-lg font-semibold text-gray-700 mb-2">📝 错题数</h3>
-            <p className="text-4xl font-bold text-red-600">23</p>
+            <p className="text-4xl font-bold text-red-600">2</p>
             <p className="text-gray-500 text-sm">需要复习</p>
           </div>
         </div>
@@ -68,7 +68,7 @@ export default function Dashboard() {
               <span className="text-gray-500 text-sm">昨天 15:20</span>
             </div>
             <div className="flex justify-between items-center py-2">
-              <span>新增错题 3 道</span>
+              <span>新增错题 2 道</span>
               <span className="text-gray-500 text-sm">昨天 15:15</span>
             </div>
           </div>
