@@ -23,3 +23,6 @@
 ---
 
 *产品经理：Jason | 日期：2026-03-02*
+
+## 延伸方案
+- [家庭 AMC8 备考系统全栈设计方案（含 NotebookLM）](./family-amc8-fullstack-notebooklm-plan.md)
