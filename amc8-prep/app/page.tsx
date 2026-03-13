@@ -45,6 +45,12 @@ export default function Home() {
         {/* Countdown */}
         <Countdown />
 
+        <div className="mt-6 text-center">
+          <Link href="/architecture" className="inline-block rounded-xl border border-white/40 bg-white/10 px-5 py-3 text-white hover:bg-white/20 transition">
+            查看家庭 AMC8 全栈设计方案
+          </Link>
+        </div>
+
         {/* User Cards */}
         <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mt-8">
           {/* Matt's Card */}
