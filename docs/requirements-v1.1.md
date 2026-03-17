@@ -26,3 +26,4 @@
 
 ## 延伸方案
 - [家庭 AMC8 备考系统全栈设计方案（含 NotebookLM）](./family-amc8-fullstack-notebooklm-plan.md)
+- [架构展示页优化记录（保持现有架构不变）](./architecture-optimization-log.md)

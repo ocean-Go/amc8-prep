@@ -5,10 +5,10 @@ import Link from "next/link";
 import Countdown from "@/components/Countdown";
 
 export default function Home() {
-  const [users, setUsers] = useState([
+  const users = [
     { id: "1", name: "matt", displayName: "Matt", age: 11, totalScore: 0 },
     { id: "2", name: "chris", displayName: "Chris", age: 9, totalScore: 0 },
-  ]);
+  ];
   const [currentUser, setCurrentUserState] = useState("matt");
 
   useEffect(() => {
