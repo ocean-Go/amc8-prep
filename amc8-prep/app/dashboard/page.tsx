@@ -15,6 +15,22 @@ function getErrorMessage(payload: DashboardApiResponse | { error?: string }): st
   return null;
 }
 
+function ActivitySkeleton() {
+  return (
+    <div className="space-y-3">
+      {Array.from({ length: 4 }).map((_, index) => (
+        <div key={index} className="flex justify-between items-center py-2">
+          <div className="space-y-2 w-full max-w-md">
+            <div className="h-4 w-3/5 bg-gray-200 rounded animate-pulse" />
+            <div className="h-3 w-2/5 bg-gray-200 rounded animate-pulse" />
+          </div>
+          <div className="h-3 w-16 bg-gray-200 rounded animate-pulse" />
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function Dashboard() {
   const [dashboard, setDashboard] = useState<DashboardApiResponse | null>(null);
   const [loading, setLoading] = useState(true);
@@ -47,7 +63,7 @@ export default function Dashboard() {
   const wrongCountValue = dashboard ? `${dashboard.metrics.wrong_book_count}` : "--";
   const latestMockValue = dashboard
     ? dashboard.metrics.latest_mock_score === null
-      ? "暂无"
+      ? "暂无数据"
       : `${dashboard.metrics.latest_mock_score}${
           dashboard.metrics.latest_mock_total_questions
             ? ` / ${dashboard.metrics.latest_mock_total_questions}`
@@ -75,27 +91,31 @@ export default function Dashboard() {
         <div className="grid md:grid-cols-4 gap-6 mb-8">
           <MetricCard
             title="✅ 练习正确率"
-            value={loading ? "加载中..." : accuracyValue}
+            value={accuracyValue}
             hint="基于所有练习作答"
             accentClass="text-green-600"
+            loading={loading}
           />
           <MetricCard
             title="🧮 作答总次数"
-            value={loading ? "加载中..." : attemptCountValue}
+            value={attemptCountValue}
             hint="累计练习提交次数"
             accentClass="text-blue-600"
+            loading={loading}
           />
           <MetricCard
             title="📝 错题数量"
-            value={loading ? "加载中..." : wrongCountValue}
+            value={wrongCountValue}
             hint="当前错题本条目"
             accentClass="text-red-600"
+            loading={loading}
           />
           <MetricCard
             title="🏁 最近模考成绩"
-            value={loading ? "加载中..." : latestMockValue}
-            hint="没有模考时显示暂无"
+            value={latestMockValue}
+            hint="没有模考时显示暂无数据"
             accentClass="text-purple-600"
+            loading={loading}
           />
         </div>
 
@@ -125,11 +145,7 @@ export default function Dashboard() {
 
         <div className="card">
           <h3 className="text-lg font-semibold text-gray-700 mb-4">📋 最近学习记录</h3>
-          {loading ? (
-            <p className="text-gray-500 text-sm">正在加载最近学习记录...</p>
-          ) : (
-            <RecentActivity activity={dashboard?.metrics.recent_activity ?? []} />
-          )}
+          {loading ? <ActivitySkeleton /> : <RecentActivity activity={dashboard?.metrics.recent_activity ?? []} />}
         </div>
       </div>
     </main>
