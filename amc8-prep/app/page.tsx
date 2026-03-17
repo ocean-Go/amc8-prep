@@ -5,10 +5,10 @@ import Link from "next/link";
 import Countdown from "@/components/Countdown";
 
 export default function Home() {
-  const [users, setUsers] = useState([
+  const users = [
     { id: "1", name: "matt", displayName: "Matt", age: 11, totalScore: 0 },
     { id: "2", name: "chris", displayName: "Chris", age: 9, totalScore: 0 },
-  ]);
+  ];
   const [currentUser, setCurrentUserState] = useState("matt");
 
   useEffect(() => {
@@ -44,6 +44,12 @@ export default function Home() {
 
         {/* Countdown */}
         <Countdown />
+
+        <div className="mt-6 text-center">
+          <Link href="/architecture" className="inline-block rounded-xl border border-white/40 bg-white/10 px-5 py-3 text-white hover:bg-white/20 transition">
+            查看家庭 AMC8 全栈设计方案
+          </Link>
+        </div>
 
         {/* User Cards */}
         <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mt-8">
