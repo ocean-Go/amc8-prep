@@ -11,6 +11,13 @@ const anonKey =
   process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ??
   "";
 const defaultUserId = process.env.DEFAULT_TEST_USER_ID ?? "00000000-0000-0000-0000-000000000001";
+const UUID_PATTERN =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+const MOCK_PROBLEM_CORRECT_ANSWERS: Record<string, string> = {
+  "mock-2023-1": "C",
+  "mock-2022-5": "C",
+  "mock-2021-9": "C",
+};
 
 function isLikelyRealSupabaseKey(key: string): boolean {
   const normalized = key.trim();
@@ -35,18 +42,30 @@ async function findProblemAndInsertAttempt(
 ) {
   const supabase = createClient(supabaseUrl, preferredKey);
 
-  const { data: problem, error: problemError } = await supabase
-    .from("problems")
-    .select("answer")
-    .eq("id", problemId)
-    .single();
+  const mockCorrectAnswer = MOCK_PROBLEM_CORRECT_ANSWERS[problemId];
 
-  if (problemError || !problem) {
-    return { problemError: problemError?.message ?? "Problem not found." };
+  let correctAnswer: string | null = mockCorrectAnswer ?? null;
+
+  if (!correctAnswer) {
+    if (!UUID_PATTERN.test(problemId)) {
+      return { problemError: "Problem not found." };
+    }
+
+    const { data: problem, error: problemError } = await supabase
+      .from("problems")
+      .select("answer")
+      .eq("id", problemId)
+      .single();
+
+    if (problemError || !problem) {
+      return { problemError: problemError?.message ?? "Problem not found." };
+    }
+
+    correctAnswer = String(problem.answer);
   }
 
   const normalizedSelection = selectedAnswer.trim().toUpperCase();
-  const normalizedCorrectAnswer = String(problem.answer).trim().toUpperCase();
+  const normalizedCorrectAnswer = correctAnswer.trim().toUpperCase();
   const isCorrect = normalizedSelection === normalizedCorrectAnswer;
   const roundedTimeSpent = Math.max(0, Math.round(timeSpentSec));
 
