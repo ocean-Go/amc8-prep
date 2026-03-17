@@ -1,6 +1,52 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
+
+import { MetricCard } from "@/components/dashboard/metric-card";
+import { RecentActivity } from "@/components/dashboard/recent-activity";
+import type { DashboardApiResponse } from "@/lib/types/dashboard";
 
 export default function Dashboard() {
+  const [dashboard, setDashboard] = useState<DashboardApiResponse | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function loadDashboardData() {
+      try {
+        const response = await fetch("/api/dashboard", { cache: "no-store" });
+        const data = (await response.json()) as DashboardApiResponse | { error?: string };
+
+        if (!response.ok) {
+          throw new Error(data.error ?? "加载学习面板失败");
+        }
+
+        setDashboard(data as DashboardApiResponse);
+      } catch (requestError) {
+        const message = requestError instanceof Error ? requestError.message : "加载学习面板失败";
+        setError(message);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    void loadDashboardData();
+  }, []);
+
+  const accuracyValue = dashboard ? `${dashboard.metrics.accuracy_percent}%` : "--";
+  const attemptCountValue = dashboard ? `${dashboard.metrics.attempts_count}` : "--";
+  const wrongCountValue = dashboard ? `${dashboard.metrics.wrong_book_count}` : "--";
+  const latestMockValue = dashboard
+    ? dashboard.metrics.latest_mock_score === null
+      ? "暂无"
+      : `${dashboard.metrics.latest_mock_score}${
+          dashboard.metrics.latest_mock_total_questions
+            ? ` / ${dashboard.metrics.latest_mock_total_questions}`
+            : ""
+        }`
+    : "--";
+
   return (
     <main className="min-h-screen p-8">
       <div className="max-w-6xl mx-auto">
@@ -11,26 +57,40 @@ export default function Dashboard() {
           </Link>
         </div>
 
-        {/* Progress Overview */}
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
-          <div className="card">
-            <h3 className="text-lg font-semibold text-gray-700 mb-2">📚 学习进度</h3>
-            <p className="text-4xl font-bold text-blue-600">12/40</p>
-            <p className="text-gray-500 text-sm">已完成知识点</p>
+        {error ? (
+          <div className="card mb-8">
+            <h3 className="text-lg font-semibold text-red-600 mb-2">加载失败</h3>
+            <p className="text-gray-600 text-sm">{error}</p>
           </div>
-          <div className="card">
-            <h3 className="text-lg font-semibold text-gray-700 mb-2">✅ 正确率</h3>
-            <p className="text-4xl font-bold text-green-600">75%</p>
-            <p className="text-gray-500 text-sm">本周练习</p>
-          </div>
-          <div className="card">
-            <h3 className="text-lg font-semibold text-gray-700 mb-2">📝 错题数</h3>
-            <p className="text-4xl font-bold text-red-600">2</p>
-            <p className="text-gray-500 text-sm">需要复习</p>
-          </div>
+        ) : null}
+
+        <div className="grid md:grid-cols-4 gap-6 mb-8">
+          <MetricCard
+            title="✅ 练习正确率"
+            value={loading ? "加载中..." : accuracyValue}
+            hint="基于所有练习作答"
+            accentClass="text-green-600"
+          />
+          <MetricCard
+            title="🧮 作答总次数"
+            value={loading ? "加载中..." : attemptCountValue}
+            hint="累计练习提交次数"
+            accentClass="text-blue-600"
+          />
+          <MetricCard
+            title="📝 错题数量"
+            value={loading ? "加载中..." : wrongCountValue}
+            hint="当前错题本条目"
+            accentClass="text-red-600"
+          />
+          <MetricCard
+            title="🏁 最近模考成绩"
+            value={loading ? "加载中..." : latestMockValue}
+            hint="没有模考时显示暂无"
+            accentClass="text-purple-600"
+          />
         </div>
 
-        {/* Action Buttons */}
         <div className="grid md:grid-cols-3 gap-6 mb-8">
           <Link href="/topics" className="block">
             <div className="card text-center hover:bg-blue-50 transition cursor-pointer">
@@ -55,23 +115,13 @@ export default function Dashboard() {
           </Link>
         </div>
 
-        {/* Recent Activity */}
         <div className="card">
           <h3 className="text-lg font-semibold text-gray-700 mb-4">📋 最近学习记录</h3>
-          <div className="space-y-3">
-            <div className="flex justify-between items-center py-2 border-b">
-              <span>完成「代数基础」</span>
-              <span className="text-gray-500 text-sm">今天 10:30</span>
-            </div>
-            <div className="flex justify-between items-center py-2 border-b">
-              <span>练习题「几何」- 正确率 80%</span>
-              <span className="text-gray-500 text-sm">昨天 15:20</span>
-            </div>
-            <div className="flex justify-between items-center py-2">
-              <span>新增错题 2 道</span>
-              <span className="text-gray-500 text-sm">昨天 15:15</span>
-            </div>
-          </div>
+          {loading ? (
+            <p className="text-gray-500 text-sm">正在加载最近学习记录...</p>
+          ) : (
+            <RecentActivity activity={dashboard?.metrics.recent_activity ?? []} />
+          )}
         </div>
       </div>
     </main>
