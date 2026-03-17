@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 
-import type { PracticeProblem } from "@/lib/types/practice";
+import type { CreateAttemptResponse, PracticeProblem } from "@/lib/types/practice";
 
 const ANSWER_CHOICES = ["A", "B", "C", "D", "E"];
 
@@ -14,6 +14,10 @@ export default function PracticePage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [topicFilter, setTopicFilter] = useState("all");
+  const [questionStartMs, setQuestionStartMs] = useState<number>(Date.now());
+  const [submitting, setSubmitting] = useState(false);
+  const [hasSubmittedCurrent, setHasSubmittedCurrent] = useState(false);
+  const [submitResult, setSubmitResult] = useState<CreateAttemptResponse | null>(null);
 
   useEffect(() => {
     async function loadProblems() {
@@ -32,6 +36,9 @@ export default function PracticePage() {
         setProblems(payload.problems ?? []);
         setCurrentIndex(0);
         setSelectedOption(null);
+        setSubmitResult(null);
+        setHasSubmittedCurrent(false);
+        setQuestionStartMs(Date.now());
       } catch (fetchError) {
         setProblems([]);
         setError(fetchError instanceof Error ? fetchError.message : "Unknown error");
@@ -59,6 +66,47 @@ export default function PracticePage() {
     if (currentIndex < problems.length - 1) {
       setCurrentIndex((prev) => prev + 1);
       setSelectedOption(null);
+      setSubmitResult(null);
+      setHasSubmittedCurrent(false);
+      setQuestionStartMs(Date.now());
+    }
+  };
+
+  const submitAttempt = async () => {
+    if (!currentProblem || !selectedOption || hasSubmittedCurrent) {
+      return;
+    }
+
+    setSubmitting(true);
+    setError(null);
+
+    const timeSpentSec = Math.max(1, Math.round((Date.now() - questionStartMs) / 1000));
+
+    try {
+      const response = await fetch("/api/attempts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          problem_id: currentProblem.id,
+          selected_answer: selectedOption,
+          time_spent_sec: timeSpentSec,
+        }),
+      });
+
+      if (!response.ok) {
+        const payload = (await response.json()) as { error?: string };
+        throw new Error(payload.error ?? "Failed to submit attempt");
+      }
+
+      const payload = (await response.json()) as CreateAttemptResponse;
+      setSubmitResult(payload);
+      setHasSubmittedCurrent(true);
+    } catch (submitError) {
+      setError(submitError instanceof Error ? submitError.message : "Unknown submission error");
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -126,11 +174,12 @@ export default function PracticePage() {
                   <button
                     key={letter}
                     onClick={() => setSelectedOption(letter)}
+                    disabled={hasSubmittedCurrent}
                     className={`w-full rounded-lg border-2 p-4 text-left transition ${
                       selectedOption === letter
                         ? "border-blue-500 bg-blue-50"
                         : "border-gray-200 hover:border-gray-300"
-                    }`}
+                    } ${hasSubmittedCurrent ? "cursor-not-allowed opacity-80" : ""}`}
                   >
                     {optionValue}
                   </button>
@@ -138,17 +187,40 @@ export default function PracticePage() {
               })}
             </div>
 
-            <div className="mt-6 flex items-center justify-between">
+            {submitResult && (
+              <div
+                className={`mt-4 rounded-md px-3 py-2 text-sm ${
+                  submitResult.is_correct
+                    ? "bg-green-100 text-green-700"
+                    : "bg-amber-100 text-amber-700"
+                }`}
+              >
+                {submitResult.is_correct ? "Correct!" : "Not correct this time."} Time spent: {" "}
+                {submitResult.time_spent_sec}s
+              </div>
+            )}
+
+            <div className="mt-6 flex items-center justify-between gap-3">
               <span className="text-sm text-gray-600">
                 {selectedOption ? `Selected: ${selectedOption}` : "Select one option (A-E)"}
               </span>
-              <button
-                onClick={goToNext}
-                disabled={currentIndex >= problems.length - 1}
-                className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                Next →
-              </button>
+
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={submitAttempt}
+                  disabled={!selectedOption || hasSubmittedCurrent || submitting}
+                  className="rounded-md bg-indigo-600 px-4 py-2 text-white disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  {submitting ? "Submitting..." : hasSubmittedCurrent ? "Submitted" : "Submit"}
+                </button>
+                <button
+                  onClick={goToNext}
+                  disabled={currentIndex >= problems.length - 1 || !hasSubmittedCurrent}
+                  className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Next →
+                </button>
+              </div>
             </div>
           </div>
         )}
