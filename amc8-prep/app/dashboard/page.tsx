@@ -7,6 +7,14 @@ import { MetricCard } from "@/components/dashboard/metric-card";
 import { RecentActivity } from "@/components/dashboard/recent-activity";
 import type { DashboardApiResponse } from "@/lib/types/dashboard";
 
+function getErrorMessage(payload: DashboardApiResponse | { error?: string }): string | null {
+  if ("error" in payload && typeof payload.error === "string") {
+    return payload.error;
+  }
+
+  return null;
+}
+
 export default function Dashboard() {
   const [dashboard, setDashboard] = useState<DashboardApiResponse | null>(null);
   const [loading, setLoading] = useState(true);
@@ -19,7 +27,7 @@ export default function Dashboard() {
         const data = (await response.json()) as DashboardApiResponse | { error?: string };
 
         if (!response.ok) {
-          throw new Error(data.error ?? "加载学习面板失败");
+          throw new Error(getErrorMessage(data) ?? "加载学习面板失败");
         }
 
         setDashboard(data as DashboardApiResponse);
