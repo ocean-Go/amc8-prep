@@ -16,7 +16,7 @@ function formatActivityTime(isoTime: string) {
 
 export function RecentActivity({ activity }: { activity: DashboardActivity[] }) {
   if (activity.length === 0) {
-    return <p className="text-gray-500 text-sm">还没有学习记录，快去完成第一题吧！</p>;
+    return <p className="text-gray-500 text-sm">暂无数据</p>;
   }
 
   return (
