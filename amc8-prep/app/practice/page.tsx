@@ -1,38 +1,64 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { amc8Questions } from "@/data/amc8-questions";
+
+import type { PracticeProblem } from "@/lib/types/practice";
+
+const ANSWER_CHOICES = ["A", "B", "C", "D", "E"];
 
 export default function PracticePage() {
-  const [current, setCurrent] = useState(0);
-  const [selected, setSelected] = useState<string | null>(null);
-  const [showResult, setShowResult] = useState(false);
-  const [score, setScore] = useState(0);
-  const [shuffledQuestions, setShuffledQuestions] = useState(amc8Questions);
+  const [problems, setProblems] = useState<PracticeProblem[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [topicFilter, setTopicFilter] = useState("all");
 
   useEffect(() => {
-    // 随机打乱题目顺序
-    const shuffled = [...amc8Questions].sort(() => Math.random() - 0.5);
-    setShuffledQuestions(shuffled.slice(0, 10)); // 每次随机10道
-  }, []);
+    async function loadProblems() {
+      setLoading(true);
+      setError(null);
 
-  const question = shuffledQuestions[current];
+      try {
+        const query = topicFilter === "all" ? "" : `?topic=${encodeURIComponent(topicFilter)}`;
+        const response = await fetch(`/api/problems${query}`, { cache: "no-store" });
 
-  const handleAnswer = (answer: string) => {
-    if (showResult) return;
-    setSelected(answer);
-    setShowResult(true);
-    if (answer === question.answer) {
-      setScore(score + 1);
+        if (!response.ok) {
+          throw new Error("Failed to fetch problems");
+        }
+
+        const payload = (await response.json()) as { problems: PracticeProblem[] };
+        setProblems(payload.problems ?? []);
+        setCurrentIndex(0);
+        setSelectedOption(null);
+      } catch (fetchError) {
+        setProblems([]);
+        setError(fetchError instanceof Error ? fetchError.message : "Unknown error");
+      } finally {
+        setLoading(false);
+      }
     }
-  };
 
-  const nextQuestion = () => {
-    if (current < shuffledQuestions.length - 1) {
-      setCurrent(current + 1);
-      setSelected(null);
-      setShowResult(false);
+    void loadProblems();
+  }, [topicFilter]);
+
+  const currentProblem = problems[currentIndex];
+
+  const availableTopics = useMemo(() => {
+    const uniqueTopics = new Set<string>();
+    for (const problem of problems) {
+      if (problem.topic) {
+        uniqueTopics.add(problem.topic);
+      }
+    }
+    return ["all", ...Array.from(uniqueTopics).sort()];
+  }, [problems]);
+
+  const goToNext = () => {
+    if (currentIndex < problems.length - 1) {
+      setCurrentIndex((prev) => prev + 1);
+      setSelectedOption(null);
     }
   };
 
@@ -46,72 +72,86 @@ export default function PracticePage() {
           </Link>
         </div>
 
-        {/* Progress */}
-        <div className="flex justify-between items-center mb-4 text-white">
-          <span>题目 {current + 1}/{shuffledQuestions.length}</span>
-          <span>得分: {score}/{current + (showResult ? 1 : 0)}</span>
-        </div>
+        <div className="mb-4 flex items-center justify-between gap-4 text-white">
+          <label className="flex items-center gap-2">
+            <span className="text-sm">Topic:</span>
+            <select
+              value={topicFilter}
+              onChange={(event) => setTopicFilter(event.target.value)}
+              className="rounded-md border border-gray-300 px-2 py-1 text-gray-900"
+            >
+              {availableTopics.map((topic) => (
+                <option key={topic} value={topic}>
+                  {topic === "all" ? "All topics" : topic}
+                </option>
+              ))}
+            </select>
+          </label>
 
-        {/* Question */}
-        <div className="card">
-          <div className="flex justify-between items-center mb-4">
-            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-              AMC8 {question.year}
+          {!loading && problems.length > 0 && (
+            <span>
+              题目 {currentIndex + 1}/{problems.length}
             </span>
-            <span className="text-gray-500 text-sm">{question.topic}</span>
-          </div>
-
-          <h2 className="text-xl font-semibold text-gray-800 mb-6">
-            {question.question}
-          </h2>
-
-          <div className="space-y-3">
-            {question.options.map((option) => {
-              const letter = option.charAt(0);
-              let buttonClass = "w-full p-4 text-left rounded-lg border-2 transition ";
-
-              if (!showResult) {
-                buttonClass +=
-                  selected === letter
-                    ? "border-blue-500 bg-blue-50"
-                    : "border-gray-200 hover:border-gray-300";
-              } else {
-                if (letter === question.answer) {
-                  buttonClass += "border-green-500 bg-green-50";
-                } else if (selected === letter) {
-                  buttonClass += "border-red-500 bg-red-50";
-                } else {
-                  buttonClass += "border-gray-200";
-                }
-              }
-
-              return (
-                <button
-                  key={letter}
-                  onClick={() => handleAnswer(letter)}
-                  disabled={showResult}
-                  className={buttonClass}
-                >
-                  {option}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Result */}
-          {showResult && (
-            <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-              <p className="font-semibold text-gray-800 mb-2">
-                {selected === question.answer ? "✅ 回答正确！" : "❌ 回答错误"}
-              </p>
-              <p className="text-gray-600">{question.explanation}</p>
-
-              <button onClick={nextQuestion} className="mt-4 btn-primary">
-                {current < shuffledQuestions.length - 1 ? "下一题 →" : "完成练习"}
-              </button>
-            </div>
           )}
         </div>
+
+        {loading && <div className="card text-gray-700">Loading real AMC8 problems...</div>}
+
+        {!loading && error && <div className="card text-red-600">{error}</div>}
+
+        {!loading && !error && problems.length === 0 && (
+          <div className="card text-gray-700">No problems found for the selected topic.</div>
+        )}
+
+        {!loading && !error && currentProblem && (
+          <div className="card">
+            <div className="flex justify-between items-center mb-4 gap-3">
+              <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+                AMC8 {currentProblem.year ?? ""}
+              </span>
+              <span className="text-gray-500 text-sm">
+                {currentProblem.topic ?? "General"}
+                {currentProblem.number ? ` • #${currentProblem.number}` : ""}
+              </span>
+            </div>
+
+            <h2 className="text-xl font-semibold text-gray-800 mb-6">{currentProblem.question_text}</h2>
+
+            <div className="space-y-3">
+              {ANSWER_CHOICES.map((letter, idx) => {
+                const optionText = currentProblem.options[idx] ?? "";
+                const optionValue = `${letter}. ${optionText}`;
+
+                return (
+                  <button
+                    key={letter}
+                    onClick={() => setSelectedOption(letter)}
+                    className={`w-full rounded-lg border-2 p-4 text-left transition ${
+                      selectedOption === letter
+                        ? "border-blue-500 bg-blue-50"
+                        : "border-gray-200 hover:border-gray-300"
+                    }`}
+                  >
+                    {optionValue}
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="mt-6 flex items-center justify-between">
+              <span className="text-sm text-gray-600">
+                {selectedOption ? `Selected: ${selectedOption}` : "Select one option (A-E)"}
+              </span>
+              <button
+                onClick={goToNext}
+                disabled={currentIndex >= problems.length - 1}
+                className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Next →
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </main>
   );
