@@ -32,8 +32,10 @@ export default function PracticePage() {
           throw new Error("Failed to fetch problems");
         }
 
-        const payload = (await response.json()) as { problems: PracticeProblem[] };
-        setProblems(payload.problems ?? []);
+        const payload = (await response.json()) as { problems?: PracticeProblem[] };
+        const nextProblems = Array.isArray(payload.problems) ? payload.problems : [];
+
+        setProblems(nextProblems);
         setCurrentIndex(0);
         setSelectedOption(null);
         setSubmitResult(null);
