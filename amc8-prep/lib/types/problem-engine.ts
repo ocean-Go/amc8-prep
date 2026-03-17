@@ -49,10 +49,12 @@ export interface WrongBookRow {
   id: string;
   user_id: string;
   problem_id: string;
-  last_attempt_id: string | null;
-  notes: string | null;
-  review_count: number;
-  created_at: string;
+  wrong_count: number;
+  last_error_type: string | null;
+  status: string;
+  mastery_level: number;
+  next_review_date: string;
+  updated_at: string;
 }
 
 export interface MockRunRow {

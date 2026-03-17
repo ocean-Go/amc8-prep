@@ -20,3 +20,19 @@ export interface CreateAttemptResponse {
   is_correct: boolean;
   time_spent_sec: number;
 }
+
+export interface WrongBookEntry {
+  id: string;
+  user_id: string;
+  problem_id: string;
+  wrong_count: number;
+  last_error_type: string | null;
+  status: string;
+  mastery_level: number;
+  next_review_date: string;
+  updated_at: string;
+}
+
+export interface WrongBookListResponse {
+  entries: WrongBookEntry[];
+}

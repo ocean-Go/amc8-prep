@@ -58,6 +58,63 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: insertError?.message ?? "Failed to record attempt." }, { status: 500 });
   }
 
+  if (!isCorrect) {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    tomorrow.setHours(0, 0, 0, 0);
+
+    const { data: existingWrongBookEntry, error: wrongBookFetchError } = await supabase
+      .from("wrong_book")
+      .select("id, wrong_count")
+      .eq("user_id", userId)
+      .eq("problem_id", problemId)
+      .maybeSingle();
+
+    if (wrongBookFetchError) {
+      return NextResponse.json(
+        { error: wrongBookFetchError.message ?? "Failed to fetch wrong-book record." },
+        { status: 500 }
+      );
+    }
+
+    if (!existingWrongBookEntry) {
+      const { error: wrongBookInsertError } = await supabase.from("wrong_book").insert({
+        user_id: userId,
+        problem_id: problemId,
+        wrong_count: 1,
+        last_error_type: null,
+        status: "review_pending",
+        mastery_level: 0,
+        next_review_date: tomorrow.toISOString(),
+        updated_at: new Date().toISOString(),
+      });
+
+      if (wrongBookInsertError) {
+        return NextResponse.json(
+          { error: wrongBookInsertError.message ?? "Failed to create wrong-book record." },
+          { status: 500 }
+        );
+      }
+    } else {
+      const { error: wrongBookUpdateError } = await supabase
+        .from("wrong_book")
+        .update({
+          wrong_count: existingWrongBookEntry.wrong_count + 1,
+          status: "review_pending",
+          next_review_date: tomorrow.toISOString(),
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", existingWrongBookEntry.id);
+
+      if (wrongBookUpdateError) {
+        return NextResponse.json(
+          { error: wrongBookUpdateError.message ?? "Failed to update wrong-book record." },
+          { status: 500 }
+        );
+      }
+    }
+  }
+
   const response: CreateAttemptResponse = {
     attempt_id: insertedAttempt.id,
     is_correct: isCorrect,
