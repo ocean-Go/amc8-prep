@@ -16,7 +16,7 @@ export default function TopicsPage() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {amc8Topics.map((topic) => (
-            <Link href={`/topics/${topic.id}`} key={topic.id} className="block">
+            <Link href={`/knowledge/${topic.id}`} key={topic.id} className="block">
               <div className="card hover:scale-105 transition cursor-pointer h-full">
                 <div className="flex justify-between items-start mb-4">
                   <span
