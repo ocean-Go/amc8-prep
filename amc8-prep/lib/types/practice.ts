@@ -33,6 +33,17 @@ export interface WrongBookEntry {
   updated_at: string;
 }
 
+export interface WrongBookProblem {
+  id: string;
+  question_text: string;
+  options: string[];
+  correct_answer: string;
+}
+
+export interface WrongBookReviewItem extends WrongBookEntry {
+  problem: WrongBookProblem;
+}
+
 export interface WrongBookListResponse {
-  entries: WrongBookEntry[];
+  entries: WrongBookReviewItem[];
 }
