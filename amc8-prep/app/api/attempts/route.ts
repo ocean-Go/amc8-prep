@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
+import type { Database } from "@/lib/types/problem-engine";
 import type { CreateAttemptRequest, CreateAttemptResponse } from "@/lib/types/practice";
 
 const supabaseUrl = process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
@@ -18,6 +19,10 @@ const MOCK_PROBLEM_CORRECT_ANSWERS: Record<string, string> = {
   "mock-2022-5": "C",
   "mock-2021-9": "C",
 };
+
+function createSupabaseClient(key: string) {
+  return createClient<Database, "public">(supabaseUrl, key);
+}
 
 function isLikelyRealSupabaseKey(key: string): boolean {
   const normalized = key.trim();
@@ -60,7 +65,7 @@ function buildWrongBookDefaults() {
 }
 
 async function syncWrongBookWithCurrentSchema(
-  supabase: ReturnType<typeof createClient>,
+  supabase: ReturnType<typeof createSupabaseClient>,
   userId: string,
   problemId: string,
   updatedAt: string,
@@ -116,7 +121,7 @@ async function syncWrongBookWithCurrentSchema(
 }
 
 async function syncWrongBookWithLegacySchema(
-  supabase: ReturnType<typeof createClient>,
+  supabase: ReturnType<typeof createSupabaseClient>,
   userId: string,
   problemId: string,
   attemptId: string
@@ -164,7 +169,7 @@ async function syncWrongBookWithLegacySchema(
 
 function createWrongBookWriteClient(preferredKey: string) {
   const wrongBookKey = isLikelyRealSupabaseKey(serviceRoleKey) ? serviceRoleKey : preferredKey;
-  return createClient(supabaseUrl, wrongBookKey);
+  return createSupabaseClient(wrongBookKey);
 }
 
 async function syncWrongBookForIncorrectAttempt(
@@ -201,7 +206,7 @@ async function findProblemAndInsertAttempt(
   selectedAnswer: string,
   timeSpentSec: number
 ) {
-  const supabase = createClient(supabaseUrl, preferredKey);
+  const supabase = createSupabaseClient(preferredKey);
 
   const mockCorrectAnswer = MOCK_PROBLEM_CORRECT_ANSWERS[problemId];
 
