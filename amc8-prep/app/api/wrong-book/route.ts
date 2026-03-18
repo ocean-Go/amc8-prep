@@ -31,21 +31,6 @@ function isLikelyRealSupabaseKey(key: string): boolean {
   return true;
 }
 
-function isMissingWrongBookColumnError(message: string | undefined): boolean {
-  const normalized = message?.toLowerCase() ?? "";
-
-  return (
-    normalized.includes("wrong_book") &&
-    normalized.includes("column") &&
-    (normalized.includes("wrong_count") ||
-      normalized.includes("last_error_type") ||
-      normalized.includes("mastery_level") ||
-      normalized.includes("next_review_date") ||
-      normalized.includes("updated_at") ||
-      normalized.includes("status"))
-  );
-}
-
 function normalizeOptions(options: unknown): string[] {
   if (Array.isArray(options)) {
     return options.map((item) => String(item));
@@ -59,30 +44,8 @@ function normalizeOptions(options: unknown): string[] {
   return ["", "", "", "", ""];
 }
 
-function mapLegacyWrongBookEntry(entry: {
-  id: string;
-  user_id: string;
-  problem_id: string;
-  review_count: number | null;
-  created_at: string | null;
-}): Omit<WrongBookReviewItem, "problem"> {
-  const createdAt = entry.created_at ?? new Date(0).toISOString();
-
-  return {
-    id: entry.id,
-    user_id: entry.user_id,
-    problem_id: entry.problem_id,
-    wrong_count: Math.max(0, Number(entry.review_count ?? 0)),
-    last_error_type: null,
-    status: "review_pending",
-    mastery_level: 0,
-    next_review_date: createdAt.slice(0, 10),
-    updated_at: createdAt,
-  };
-}
-
 async function fetchWrongBookRows(supabase: ReturnType<typeof createSupabaseClient>, userId: string) {
-  const currentSchemaResult = await supabase
+  const { data, error } = await supabase
     .from("wrong_book")
     .select(
       "id, user_id, problem_id, wrong_count, last_error_type, status, mastery_level, next_review_date, updated_at"
@@ -90,38 +53,22 @@ async function fetchWrongBookRows(supabase: ReturnType<typeof createSupabaseClie
     .eq("user_id", userId)
     .order("next_review_date", { ascending: true, nullsFirst: false });
 
-  if (!currentSchemaResult.error) {
-    return {
-      rows: (currentSchemaResult.data ?? []).map((entry) => ({
-        id: entry.id,
-        user_id: entry.user_id,
-        problem_id: entry.problem_id,
-        wrong_count: Math.max(0, Number(entry.wrong_count ?? 0)),
-        last_error_type: entry.last_error_type,
-        status: entry.status ?? "review_pending",
-        mastery_level: Math.max(0, Number(entry.mastery_level ?? 0)),
-        next_review_date: entry.next_review_date ?? new Date().toISOString().slice(0, 10),
-        updated_at: entry.updated_at ?? new Date(0).toISOString(),
-      })),
-    };
-  }
-
-  if (!isMissingWrongBookColumnError(currentSchemaResult.error.message)) {
-    return { error: currentSchemaResult.error.message ?? "Failed to fetch wrong-book entries." };
-  }
-
-  const legacyResult = await supabase
-    .from("wrong_book")
-    .select("id, user_id, problem_id, review_count, created_at")
-    .eq("user_id", userId)
-    .order("created_at", { ascending: false, nullsFirst: false });
-
-  if (legacyResult.error) {
-    return { error: legacyResult.error.message ?? "Failed to fetch wrong-book entries." };
+  if (error) {
+    return { error: error.message ?? "Failed to fetch wrong-book entries." };
   }
 
   return {
-    rows: (legacyResult.data ?? []).map(mapLegacyWrongBookEntry),
+    rows: (data ?? []).map((entry) => ({
+      id: entry.id,
+      user_id: entry.user_id,
+      problem_id: entry.problem_id,
+      wrong_count: Math.max(0, Number(entry.wrong_count ?? 0)),
+      last_error_type: entry.last_error_type,
+      status: entry.status ?? "review_pending",
+      mastery_level: Math.max(0, Number(entry.mastery_level ?? 0)),
+      next_review_date: entry.next_review_date ?? new Date().toISOString().slice(0, 10),
+      updated_at: entry.updated_at ?? new Date(0).toISOString(),
+    })),
   };
 }
 

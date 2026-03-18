@@ -63,10 +63,6 @@ export interface WrongBookRow {
   mastery_level: number | null;
   next_review_date: string | null;
   updated_at: string | null;
-  last_attempt_id: string | null;
-  notes: string | null;
-  review_count: number | null;
-  created_at: string | null;
 }
 
 export interface MockRunRow {
@@ -206,10 +202,6 @@ export interface Database {
           mastery_level?: number | null;
           next_review_date?: string | null;
           updated_at?: string | null;
-          last_attempt_id?: string | null;
-          notes?: string | null;
-          review_count?: number | null;
-          created_at?: string | null;
         } & Record<string, unknown>);
         Update: ({
           id?: string;
@@ -221,10 +213,6 @@ export interface Database {
           mastery_level?: number | null;
           next_review_date?: string | null;
           updated_at?: string | null;
-          last_attempt_id?: string | null;
-          notes?: string | null;
-          review_count?: number | null;
-          created_at?: string | null;
         } & Record<string, unknown>);
       };
       mock_runs: {
