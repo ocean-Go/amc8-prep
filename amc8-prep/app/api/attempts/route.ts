@@ -38,21 +38,6 @@ function isLikelyRealSupabaseKey(key: string): boolean {
   return true;
 }
 
-function isMissingWrongBookColumnError(message: string | undefined): boolean {
-  const normalized = message?.toLowerCase() ?? "";
-
-  return (
-    normalized.includes("wrong_book") &&
-    normalized.includes("column") &&
-    (normalized.includes("wrong_count") ||
-      normalized.includes("last_error_type") ||
-      normalized.includes("mastery_level") ||
-      normalized.includes("next_review_date") ||
-      normalized.includes("updated_at") ||
-      normalized.includes("status"))
-  );
-}
-
 function buildWrongBookDefaults() {
   const updatedAt = new Date().toISOString();
   const tomorrow = new Date();
@@ -120,53 +105,6 @@ async function syncWrongBookWithCurrentSchema(
   return {};
 }
 
-async function syncWrongBookWithLegacySchema(
-  supabase: ReturnType<typeof createSupabaseClient>,
-  userId: string,
-  problemId: string,
-  attemptId: string
-) {
-  const { data: existingEntry, error: existingEntryError } = await supabase
-    .from("wrong_book")
-    .select("id, review_count")
-    .eq("user_id", userId)
-    .eq("problem_id", problemId)
-    .maybeSingle();
-
-  if (existingEntryError) {
-    return { error: existingEntryError.message ?? "Failed to query wrong-book entry." };
-  }
-
-  if (existingEntry) {
-    const { error: updateError } = await supabase
-      .from("wrong_book")
-      .update({
-        review_count: Math.max(0, Number(existingEntry.review_count ?? 0)) + 1,
-        last_attempt_id: attemptId,
-      })
-      .eq("id", existingEntry.id);
-
-    if (updateError) {
-      return { error: updateError.message ?? "Failed to update wrong-book entry." };
-    }
-
-    return {};
-  }
-
-  const { error: insertError } = await supabase.from("wrong_book").insert({
-    user_id: userId,
-    problem_id: problemId,
-    last_attempt_id: attemptId,
-    review_count: 1,
-  });
-
-  if (insertError) {
-    return { error: insertError.message ?? "Failed to create wrong-book entry." };
-  }
-
-  return {};
-}
-
 function createWrongBookWriteClient(preferredKey: string) {
   const wrongBookKey = isLikelyRealSupabaseKey(serviceRoleKey) ? serviceRoleKey : preferredKey;
   return createSupabaseClient(wrongBookKey);
@@ -175,28 +113,12 @@ function createWrongBookWriteClient(preferredKey: string) {
 async function syncWrongBookForIncorrectAttempt(
   preferredKey: string,
   userId: string,
-  problemId: string,
-  attemptId: string
+  problemId: string
 ) {
   const supabase = createWrongBookWriteClient(preferredKey);
   const { updatedAt, nextReviewDate } = buildWrongBookDefaults();
-  const currentSchemaResult = await syncWrongBookWithCurrentSchema(
-    supabase,
-    userId,
-    problemId,
-    updatedAt,
-    nextReviewDate
-  );
 
-  if (!currentSchemaResult.error) {
-    return {};
-  }
-
-  if (!isMissingWrongBookColumnError(currentSchemaResult.error)) {
-    return currentSchemaResult;
-  }
-
-  return syncWrongBookWithLegacySchema(supabase, userId, problemId, attemptId);
+  return syncWrongBookWithCurrentSchema(supabase, userId, problemId, updatedAt, nextReviewDate);
 }
 
 async function findProblemAndInsertAttempt(
@@ -252,12 +174,7 @@ async function findProblemAndInsertAttempt(
   }
 
   if (!isCorrect) {
-    const wrongBookResult = await syncWrongBookForIncorrectAttempt(
-      preferredKey,
-      userId,
-      problemId,
-      insertedAttempt.id
-    );
+    const wrongBookResult = await syncWrongBookForIncorrectAttempt(preferredKey, userId, problemId);
 
     if (wrongBookResult.error) {
       console.error("Failed to sync wrong_book after incorrect attempt.", {
