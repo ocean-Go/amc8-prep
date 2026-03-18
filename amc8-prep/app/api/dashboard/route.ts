@@ -15,7 +15,7 @@ const defaultUserId = process.env.DEFAULT_TEST_USER_ID ?? "00000000-0000-0000-00
 type AttemptRow = {
   id: string;
   is_correct: boolean;
-  submitted_at: string;
+  created_at: string;
 };
 
 type LatestMockRow = {
@@ -51,9 +51,9 @@ export async function GET(request: Request) {
       .eq("is_correct", true),
     supabase
       .from("attempts")
-      .select("id, is_correct, submitted_at")
+      .select("id, is_correct, created_at")
       .eq("user_id", userId)
-      .order("submitted_at", { ascending: false })
+      .order("created_at", { ascending: false })
       .limit(5),
     supabase.from("wrong_book").select("id", { count: "exact", head: true }).eq("user_id", userId),
     supabase
@@ -91,7 +91,7 @@ export async function GET(request: Request) {
     (attempt) => ({
       id: `practice-${attempt.id}`,
       type: "practice",
-      created_at: attempt.submitted_at,
+      created_at: attempt.created_at,
       title: attempt.is_correct ? "练习答对一题" : "练习答错一题",
       detail: attempt.is_correct ? "这次答对了，继续加油。" : "这次答错了，记得回头复习。",
     })
