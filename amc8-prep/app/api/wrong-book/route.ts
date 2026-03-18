@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
-import { createClient } from "@supabase/supabase-js";
+import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 
 import type { WrongBookListResponse, WrongBookReviewItem } from "@/lib/types/practice";
+import type { Database } from "@/lib/types/problem-engine";
 
 const supabaseUrl = process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
 const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
@@ -76,7 +77,7 @@ function mapLegacyWrongBookEntry(entry: {
   };
 }
 
-async function fetchWrongBookRows(supabase: ReturnType<typeof createClient>, userId: string) {
+async function fetchWrongBookRows(supabase: SupabaseClient<Database>, userId: string) {
   const currentSchemaResult = await supabase
     .from("wrong_book")
     .select(
@@ -137,7 +138,7 @@ export async function GET(request: Request) {
   let lastError: string | undefined;
 
   for (const key of candidateKeys) {
-    const supabase = createClient(supabaseUrl, key);
+    const supabase = createClient<Database>(supabaseUrl, key);
     const result = await fetchWrongBookRows(supabase, userId);
 
     if (result.rows) {
@@ -170,7 +171,7 @@ export async function GET(request: Request) {
     return NextResponse.json(empty, { status: 200 });
   }
 
-  const supabase = createClient(supabaseUrl, candidateKeys[0]);
+  const supabase = createClient<Database>(supabaseUrl, candidateKeys[0]);
   const { data: problemRows, error: problemError } = await supabase
     .from("problems")
     .select("id, question, options, answer")
