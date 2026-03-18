@@ -144,7 +144,7 @@ export default function Dashboard() {
         </div>
 
         <div className="card">
-          <h3 className="text-lg font-semibold text-gray-700 mb-4">📋 最近学习记录</h3>
+          <h3 className="text-lg font-semibold text-gray-700 mb-4">📋 最近 5 次练习</h3>
           {loading ? <ActivitySkeleton /> : <RecentActivity activity={dashboard?.metrics.recent_activity ?? []} />}
         </div>
       </div>
