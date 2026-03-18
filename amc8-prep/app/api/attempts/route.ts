@@ -162,12 +162,18 @@ async function syncWrongBookWithLegacySchema(
   return {};
 }
 
+function createWrongBookWriteClient(preferredKey: string) {
+  const wrongBookKey = isLikelyRealSupabaseKey(serviceRoleKey) ? serviceRoleKey : preferredKey;
+  return createClient(supabaseUrl, wrongBookKey);
+}
+
 async function syncWrongBookForIncorrectAttempt(
-  supabase: ReturnType<typeof createClient>,
+  preferredKey: string,
   userId: string,
   problemId: string,
   attemptId: string
 ) {
+  const supabase = createWrongBookWriteClient(preferredKey);
   const { updatedAt, nextReviewDate } = buildWrongBookDefaults();
   const currentSchemaResult = await syncWrongBookWithCurrentSchema(
     supabase,
@@ -242,14 +248,21 @@ async function findProblemAndInsertAttempt(
 
   if (!isCorrect) {
     const wrongBookResult = await syncWrongBookForIncorrectAttempt(
-      supabase,
+      preferredKey,
       userId,
       problemId,
       insertedAttempt.id
     );
 
     if (wrongBookResult.error) {
-      return { insertError: wrongBookResult.error };
+      console.error("Failed to sync wrong_book after incorrect attempt.", {
+        userId,
+        problemId,
+        attemptId: insertedAttempt.id,
+        error: wrongBookResult.error,
+      });
+
+      return { insertError: `Attempt recorded but wrong-book sync failed: ${wrongBookResult.error}` };
     }
   }
 
