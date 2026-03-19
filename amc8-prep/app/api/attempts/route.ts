@@ -11,7 +11,7 @@ const anonKey =
   process.env.SUPABASE_ANON_KEY ??
   process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ??
   "";
-const defaultUserId = process.env.DEFAULT_TEST_USER_ID ?? "00000000-0000-0000-0000-000000000001";
+const DEFAULT_TEST_USER_ID = "00000000-0000-0000-0000-000000000001";
 const UUID_PATTERN =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const MOCK_PROBLEM_CORRECT_ANSWERS: Record<string, string> = {
@@ -22,6 +22,11 @@ const MOCK_PROBLEM_CORRECT_ANSWERS: Record<string, string> = {
 
 function createSupabaseClient(key: string) {
   return createClient<Database, "public">(supabaseUrl, key);
+}
+
+function normalizeUserId(candidate: string | undefined | null) {
+  const normalized = candidate?.trim();
+  return normalized ? normalized : DEFAULT_TEST_USER_ID;
 }
 
 function isLikelyRealSupabaseKey(key: string): boolean {
@@ -144,20 +149,37 @@ async function syncWrongBookWithCurrentSchema(
   updatedAt: string,
   nextReviewDate: string
 ) {
-  const { data: existingEntry, error: existingEntryError } = await supabase
+  const { data: existingEntries, error: existingEntryError } = await supabase
     .from("wrong_book")
     .select("id, wrong_count")
     .eq("user_id", userId)
     .eq("problem_id", problemId)
-    .maybeSingle();
+    .limit(2);
 
   if (existingEntryError) {
+    console.error("[wrong_book] Failed to query existing entry.", {
+      userId,
+      problemId,
+      error: existingEntryError.message,
+    });
+
     return { error: existingEntryError.message ?? "Failed to query wrong-book entry." };
   }
 
+  const existingEntry = existingEntries?.[0];
+
+  if ((existingEntries?.length ?? 0) > 1) {
+    console.warn("[wrong_book] Multiple rows matched the same user/problem pair; updating the first row.", {
+      userId,
+      problemId,
+      matchedRowIds: existingEntries?.map((entry) => entry.id) ?? [],
+    });
+  }
+
   if (existingEntry) {
+    const nextWrongCount = Math.max(0, Number(existingEntry.wrong_count ?? 0)) + 1;
     const updateResult = await updateWrongBookEntry(supabase, existingEntry.id, {
-      wrong_count: Math.max(0, Number(existingEntry.wrong_count ?? 0)) + 1,
+      wrong_count: nextWrongCount,
       last_error_type: null,
       status: "review_pending",
       mastery_level: 0,
@@ -166,8 +188,25 @@ async function syncWrongBookWithCurrentSchema(
     });
 
     if (updateResult.error) {
+      console.error("[wrong_book] Failed to update wrong-book row.", {
+        rowId: existingEntry.id,
+        userId,
+        problemId,
+        nextWrongCount,
+        error: updateResult.error,
+      });
+
       return { error: updateResult.error };
     }
+
+    console.info("[wrong_book] Updated existing wrong-book row.", {
+      rowId: existingEntry.id,
+      userId,
+      problemId,
+      previousWrongCount: Math.max(0, Number(existingEntry.wrong_count ?? 0)),
+      nextWrongCount,
+      nextReviewDate,
+    });
 
     return {};
   }
@@ -184,8 +223,21 @@ async function syncWrongBookWithCurrentSchema(
   });
 
   if (insertResult.error) {
+    console.error("[wrong_book] Failed to create wrong-book row.", {
+      userId,
+      problemId,
+      error: insertResult.error,
+    });
+
     return { error: insertResult.error };
   }
+
+  console.info("[wrong_book] Created new wrong-book row.", {
+    userId,
+    problemId,
+    wrongCount: 1,
+    nextReviewDate,
+  });
 
   return {};
 }
@@ -293,7 +345,7 @@ export async function POST(request: Request) {
   }
 
   const body = (await request.json()) as Partial<CreateAttemptRequest>;
-  const userId = body.user_id ?? defaultUserId;
+  const userId = normalizeUserId(body.user_id);
   const problemId = body.problem_id;
   const selectedAnswer = body.selected_answer;
   const timeSpentSec = body.time_spent_sec;

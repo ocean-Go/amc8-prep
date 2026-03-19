@@ -48,6 +48,11 @@ function createSupabaseClient(key: string) {
   return createClient<Database, "public">(supabaseUrl, key);
 }
 
+function normalizeUserId(candidate: string | null) {
+  const normalized = candidate?.trim();
+  return normalized ? normalized : DEFAULT_TEST_USER_ID;
+}
+
 function isLikelyRealSupabaseKey(key: string): boolean {
   const normalized = key.trim();
   if (!normalized) {
@@ -212,7 +217,7 @@ export async function GET(request: Request) {
   }
 
   const { searchParams } = new URL(request.url);
-  const userId = searchParams.get("user_id") ?? DEFAULT_TEST_USER_ID;
+  const userId = normalizeUserId(searchParams.get("user_id"));
 
   let wrongBookRows: WrongBookNormalizedRow[] = [];
   let lastError: string | undefined;
@@ -226,10 +231,18 @@ export async function GET(request: Request) {
       wrongBookRows = result.rows;
       lastError = undefined;
       successfulKey = key;
+      console.info("[wrong_book] Loaded wrong-book rows.", {
+        userId,
+        rowCount: wrongBookRows.length,
+      });
       break;
     }
 
     lastError = result.error;
+    console.error("[wrong_book] Failed to load wrong-book rows with current key.", {
+      userId,
+      error: result.error,
+    });
 
     if (!result.error?.toLowerCase().includes("invalid api key")) {
       return NextResponse.json(
@@ -247,6 +260,7 @@ export async function GET(request: Request) {
   }
 
   if (wrongBookRows.length === 0) {
+    console.info("[wrong_book] No wrong-book rows found for user.", { userId });
     const empty: WrongBookListResponse = { entries: [] };
     return NextResponse.json(empty, { status: 200 });
   }
