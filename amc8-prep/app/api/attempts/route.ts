@@ -2,7 +2,11 @@ import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
 import type { Database } from "@/lib/types/problem-engine";
-import type { CreateAttemptRequest, CreateAttemptResponse } from "@/lib/types/practice";
+import type {
+  CreateAttemptRequest,
+  CreateAttemptResponse,
+  WrongBookSyncDebugInfo,
+} from "@/lib/types/practice";
 
 const supabaseUrl = process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
 const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
@@ -54,92 +58,35 @@ function buildWrongBookDefaults() {
   };
 }
 
-function isMissingColumnError(message: string | undefined) {
-  if (!message) {
-    return false;
-  }
-
-  const normalized = message.toLowerCase();
-  return (
-    normalized.includes("could not find the") ||
-    (normalized.includes("column") && normalized.includes("does not exist"))
-  );
-}
-
-function extractMissingColumn(message: string | undefined) {
-  if (!message) {
-    return null;
-  }
-
-  const schemaCacheMatch = message.match(/'([^']+)' column of 'wrong_book'/i);
-  if (schemaCacheMatch?.[1]) {
-    return schemaCacheMatch[1];
-  }
-
-  const postgresMatch = message.match(/column\s+(?:wrong_book\.)?([a-zA-Z0-9_]+)\s+does not exist/i);
-  if (postgresMatch?.[1]) {
-    return postgresMatch[1];
-  }
-
-  return null;
-}
-
 async function updateWrongBookEntry(
   supabase: ReturnType<typeof createSupabaseClient>,
   id: string,
   payload: Database["public"]["Tables"]["wrong_book"]["Update"]
 ) {
-  const nextPayload = { ...payload };
+  const { error } = await supabase.from("wrong_book").update(payload).eq("id", id);
 
-  while (true) {
-    const { error } = await supabase.from("wrong_book").update(nextPayload).eq("id", id);
-
-    if (!error) {
-      return {};
-    }
-
-    const missingColumn = extractMissingColumn(error.message);
-    if (!isMissingColumnError(error.message) || !missingColumn) {
-      return { error: error.message ?? "Failed to update wrong-book entry." };
-    }
-
-    if (!(missingColumn in nextPayload) || missingColumn === "wrong_count") {
-      return { error: error.message ?? "Failed to update wrong-book entry." };
-    }
-
-    delete nextPayload[missingColumn];
+  if (error) {
+    return { error: error.message ?? "Failed to update wrong-book entry." };
   }
+
+  return {};
 }
 
 async function insertWrongBookEntry(
   supabase: ReturnType<typeof createSupabaseClient>,
   payload: Database["public"]["Tables"]["wrong_book"]["Insert"]
 ) {
-  const nextPayload = { ...payload };
+  const { data, error } = await supabase
+    .from("wrong_book")
+    .insert(payload)
+    .select("id, wrong_count")
+    .single();
 
-  while (true) {
-    const { error } = await supabase.from("wrong_book").insert(nextPayload);
-
-    if (!error) {
-      return {};
-    }
-
-    const missingColumn = extractMissingColumn(error.message);
-    if (!isMissingColumnError(error.message) || !missingColumn) {
-      return { error: error.message ?? "Failed to create wrong-book entry." };
-    }
-
-    if (
-      !(missingColumn in nextPayload) ||
-      missingColumn === "user_id" ||
-      missingColumn === "problem_id" ||
-      missingColumn === "wrong_count"
-    ) {
-      return { error: error.message ?? "Failed to create wrong-book entry." };
-    }
-
-    delete nextPayload[missingColumn];
+  if (error || !data) {
+    return { error: error?.message ?? "Failed to create wrong-book entry." };
   }
+
+  return { data };
 }
 
 async function syncWrongBookWithCurrentSchema(
@@ -147,8 +94,17 @@ async function syncWrongBookWithCurrentSchema(
   userId: string,
   problemId: string,
   updatedAt: string,
-  nextReviewDate: string
-) {
+  nextReviewDate: string,
+  attemptId: string
+): Promise<{ error?: string; debug?: WrongBookSyncDebugInfo }> {
+  console.info("[wrong_book] Entering wrong-book sync.", {
+    attemptId,
+    userId,
+    problemId,
+    updatedAt,
+    nextReviewDate,
+  });
+
   const { data: existingEntries, error: existingEntryError } = await supabase
     .from("wrong_book")
     .select("id, wrong_count")
@@ -157,61 +113,123 @@ async function syncWrongBookWithCurrentSchema(
     .limit(2);
 
   if (existingEntryError) {
-    console.error("[wrong_book] Failed to query existing entry.", {
+    console.error("[wrong_book] Failed to query existing row before sync.", {
+      attemptId,
       userId,
       problemId,
       error: existingEntryError.message,
     });
 
-    return { error: existingEntryError.message ?? "Failed to query wrong-book entry." };
+    return {
+      error: existingEntryError.message ?? "Failed to query wrong-book entry.",
+      debug: {
+        attempted: true,
+        action: "lookup_failed",
+        user_id: userId,
+        problem_id: problemId,
+        attempt_id: attemptId,
+        next_review_date: nextReviewDate,
+      },
+    };
   }
 
   const existingEntry = existingEntries?.[0];
+  const matchedRowIds = existingEntries?.map((entry) => entry.id) ?? [];
+
+  console.info("[wrong_book] Existing row lookup complete.", {
+    attemptId,
+    userId,
+    problemId,
+    matchCount: existingEntries?.length ?? 0,
+    matchedRowIds,
+  });
 
   if ((existingEntries?.length ?? 0) > 1) {
     console.warn("[wrong_book] Multiple rows matched the same user/problem pair; updating the first row.", {
+      attemptId,
       userId,
       problemId,
-      matchedRowIds: existingEntries?.map((entry) => entry.id) ?? [],
+      matchedRowIds,
     });
   }
 
   if (existingEntry) {
-    const nextWrongCount = Math.max(0, Number(existingEntry.wrong_count ?? 0)) + 1;
-    const updateResult = await updateWrongBookEntry(supabase, existingEntry.id, {
+    const previousWrongCount = Math.max(0, Number(existingEntry.wrong_count ?? 0));
+    const nextWrongCount = previousWrongCount + 1;
+    const updatePayload: Database["public"]["Tables"]["wrong_book"]["Update"] = {
       wrong_count: nextWrongCount,
       last_error_type: null,
       status: "review_pending",
       mastery_level: 0,
       next_review_date: nextReviewDate,
       updated_at: updatedAt,
+    };
+
+    console.info("[wrong_book] Update path selected.", {
+      attemptId,
+      rowId: existingEntry.id,
+      userId,
+      problemId,
+      previousWrongCount,
+      nextWrongCount,
+      payload: updatePayload,
     });
+
+    const updateResult = await updateWrongBookEntry(supabase, existingEntry.id, updatePayload);
 
     if (updateResult.error) {
       console.error("[wrong_book] Failed to update wrong-book row.", {
+        attemptId,
         rowId: existingEntry.id,
         userId,
         problemId,
+        previousWrongCount,
         nextWrongCount,
         error: updateResult.error,
       });
 
-      return { error: updateResult.error };
+      return {
+        error: updateResult.error,
+        debug: {
+          attempted: true,
+          action: "update_failed",
+          user_id: userId,
+          problem_id: problemId,
+          row_id: existingEntry.id,
+          attempt_id: attemptId,
+          previous_wrong_count: previousWrongCount,
+          wrong_count: nextWrongCount,
+          next_review_date: nextReviewDate,
+        },
+      };
     }
 
     console.info("[wrong_book] Updated existing wrong-book row.", {
+      attemptId,
       rowId: existingEntry.id,
       userId,
       problemId,
-      previousWrongCount: Math.max(0, Number(existingEntry.wrong_count ?? 0)),
+      previousWrongCount,
       nextWrongCount,
       nextReviewDate,
     });
 
-    return {};
+    return {
+      debug: {
+        attempted: true,
+        action: "updated",
+        user_id: userId,
+        problem_id: problemId,
+        row_id: existingEntry.id,
+        attempt_id: attemptId,
+        previous_wrong_count: previousWrongCount,
+        wrong_count: nextWrongCount,
+        next_review_date: nextReviewDate,
+      },
+    };
   }
 
-  const insertResult = await insertWrongBookEntry(supabase, {
+  const insertPayload: Database["public"]["Tables"]["wrong_book"]["Insert"] = {
     user_id: userId,
     problem_id: problemId,
     wrong_count: 1,
@@ -220,26 +238,78 @@ async function syncWrongBookWithCurrentSchema(
     mastery_level: 0,
     next_review_date: nextReviewDate,
     updated_at: updatedAt,
+  };
+
+  console.info("[wrong_book] Create path selected.", {
+    attemptId,
+    userId,
+    problemId,
+    payload: insertPayload,
   });
+
+  const insertResult = await insertWrongBookEntry(supabase, insertPayload);
 
   if (insertResult.error) {
     console.error("[wrong_book] Failed to create wrong-book row.", {
+      attemptId,
       userId,
       problemId,
+      payload: insertPayload,
       error: insertResult.error,
     });
 
-    return { error: insertResult.error };
+    return {
+      error: insertResult.error,
+      debug: {
+        attempted: true,
+        action: "create_failed",
+        user_id: userId,
+        problem_id: problemId,
+        attempt_id: attemptId,
+        wrong_count: 1,
+        next_review_date: nextReviewDate,
+      },
+    };
+  }
+
+  const insertedWrongBookRow = insertResult.data;
+
+  if (!insertedWrongBookRow) {
+    return {
+      error: "Failed to create wrong-book entry.",
+      debug: {
+        attempted: true,
+        action: "create_failed",
+        user_id: userId,
+        problem_id: problemId,
+        attempt_id: attemptId,
+        wrong_count: 1,
+        next_review_date: nextReviewDate,
+      },
+    };
   }
 
   console.info("[wrong_book] Created new wrong-book row.", {
+    attemptId,
+    rowId: insertedWrongBookRow.id,
     userId,
     problemId,
-    wrongCount: 1,
+    wrongCount: Number(insertedWrongBookRow.wrong_count ?? 1),
     nextReviewDate,
   });
 
-  return {};
+  return {
+    debug: {
+      attempted: true,
+      action: "created",
+      user_id: userId,
+      problem_id: problemId,
+      row_id: insertedWrongBookRow.id,
+      attempt_id: attemptId,
+      wrong_count: Number(insertedWrongBookRow.wrong_count ?? 1),
+      next_review_date: nextReviewDate,
+    },
+  };
 }
 
 function createWrongBookWriteClient(preferredKey: string) {
@@ -250,12 +320,20 @@ function createWrongBookWriteClient(preferredKey: string) {
 async function syncWrongBookForIncorrectAttempt(
   preferredKey: string,
   userId: string,
-  problemId: string
+  problemId: string,
+  attemptId: string
 ) {
   const supabase = createWrongBookWriteClient(preferredKey);
   const { updatedAt, nextReviewDate } = buildWrongBookDefaults();
 
-  return syncWrongBookWithCurrentSchema(supabase, userId, problemId, updatedAt, nextReviewDate);
+  return syncWrongBookWithCurrentSchema(
+    supabase,
+    userId,
+    problemId,
+    updatedAt,
+    nextReviewDate,
+    attemptId
+  );
 }
 
 async function findProblemAndInsertAttempt(
@@ -310,8 +388,17 @@ async function findProblemAndInsertAttempt(
     return { insertError: insertError?.message ?? "Failed to record attempt." };
   }
 
+  let wrongBookSync: WrongBookSyncDebugInfo | undefined;
+
   if (!isCorrect) {
-    const wrongBookResult = await syncWrongBookForIncorrectAttempt(preferredKey, userId, problemId);
+    const wrongBookResult = await syncWrongBookForIncorrectAttempt(
+      preferredKey,
+      userId,
+      problemId,
+      insertedAttempt.id
+    );
+
+    wrongBookSync = wrongBookResult.debug;
 
     if (wrongBookResult.error) {
       console.error("Failed to sync wrong_book after incorrect attempt.", {
@@ -319,9 +406,12 @@ async function findProblemAndInsertAttempt(
         problemId,
         attemptId: insertedAttempt.id,
         error: wrongBookResult.error,
+        debug: wrongBookResult.debug,
       });
 
-      return { insertError: `Attempt recorded but wrong-book sync failed: ${wrongBookResult.error}` };
+      return {
+        insertError: `Attempt recorded but wrong-book sync failed: ${wrongBookResult.error}`,
+      };
     }
   }
 
@@ -329,6 +419,8 @@ async function findProblemAndInsertAttempt(
     attempt_id: insertedAttempt.id,
     is_correct: isCorrect,
     time_spent_sec: roundedTimeSpent,
+    user_id: userId,
+    wrong_book_sync: wrongBookSync,
   };
 
   return { response };
