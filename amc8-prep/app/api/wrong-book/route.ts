@@ -4,16 +4,39 @@ import { createClient } from "@supabase/supabase-js";
 import type { Database } from "@/lib/types/problem-engine";
 import type { WrongBookListResponse, WrongBookReviewItem } from "@/lib/types/practice";
 
-type WrongBookSelectableRow = Pick<
-  Database["public"]["Tables"]["wrong_book"]["Row"],
-  "id" | "user_id" | "problem_id" | "wrong_count"
-> &
+type ProblemJoinRow = Pick<Database["public"]["Tables"]["problems"]["Row"], "id" | "question" | "options" | "answer">;
+
+type WrongBookNormalizedRow = {
+  id: string;
+  user_id: string;
+  problem_id: string;
+  wrong_count: number;
+  last_error_type: string | null;
+  status: string;
+  mastery_level: number;
+  next_review_date: string;
+  updated_at: string;
+  last_attempt_id: string | null;
+  problem: ProblemJoinRow | null;
+};
+
+type WrongBookSelectableRow = Pick<Database["public"]["Tables"]["wrong_book"]["Row"], "id" | "user_id" | "problem_id"> &
   Partial<
     Pick<
       Database["public"]["Tables"]["wrong_book"]["Row"],
-      "last_error_type" | "status" | "mastery_level" | "next_review_date" | "updated_at"
+      | "wrong_count"
+      | "last_error_type"
+      | "status"
+      | "mastery_level"
+      | "next_review_date"
+      | "updated_at"
+      | "created_at"
+      | "review_count"
+      | "last_attempt_id"
     >
-  >;
+  > & {
+    problems?: ProblemJoinRow | ProblemJoinRow[] | null;
+  };
 
 const supabaseUrl = process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
 const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
@@ -91,20 +114,29 @@ async function fetchWrongBookRows(supabase: ReturnType<typeof createSupabaseClie
     "user_id",
     "problem_id",
     "wrong_count",
+    "review_count",
     "last_error_type",
     "status",
     "mastery_level",
     "next_review_date",
     "updated_at",
+    "created_at",
+    "last_attempt_id",
   ];
+  const problemSelect = "problems!inner(id, question, options, answer)";
 
   while (true) {
-    let query = supabase.from("wrong_book").select(selectFields.join(", ")).eq("user_id", userId);
+    let query = supabase
+      .from("wrong_book")
+      .select(`${selectFields.join(", ")}, ${problemSelect}`)
+      .eq("user_id", userId);
 
     if (selectFields.includes("next_review_date")) {
       query = query.order("next_review_date", { ascending: true, nullsFirst: false });
     } else if (selectFields.includes("updated_at")) {
       query = query.order("updated_at", { ascending: false, nullsFirst: false });
+    } else if (selectFields.includes("created_at")) {
+      query = query.order("created_at", { ascending: false, nullsFirst: false });
     }
 
     const { data, error } = await query;
@@ -117,18 +149,25 @@ async function fetchWrongBookRows(supabase: ReturnType<typeof createSupabaseClie
           id: entry.id,
           user_id: entry.user_id,
           problem_id: entry.problem_id,
-          wrong_count: Math.max(0, Number(entry.wrong_count ?? 0)),
+          wrong_count: Math.max(0, Number(entry.wrong_count ?? entry.review_count ?? 0)),
           last_error_type: entry.last_error_type ?? null,
           status: entry.status ?? "review_pending",
           mastery_level: Math.max(0, Number(entry.mastery_level ?? 0)),
-          next_review_date: entry.next_review_date ?? new Date().toISOString().slice(0, 10),
-          updated_at: entry.updated_at ?? new Date(0).toISOString(),
+          next_review_date: String(
+            entry.next_review_date ??
+              entry.created_at ??
+              entry.updated_at ??
+              new Date().toISOString().slice(0, 10)
+          ),
+          updated_at: String(entry.updated_at ?? entry.created_at ?? new Date(0).toISOString()),
+          last_attempt_id: entry.last_attempt_id ? String(entry.last_attempt_id) : null,
+          problem: Array.isArray(entry.problems) ? entry.problems[0] ?? null : entry.problems ?? null,
         })),
       };
     }
 
     const missingColumn = extractMissingColumn(error.message);
-    if (!isMissingColumnError(error.message) || !missingColumn || missingColumn === "wrong_count") {
+    if (!isMissingColumnError(error.message) || !missingColumn) {
       return { error: error.message ?? "Failed to fetch wrong-book entries." };
     }
 
@@ -154,8 +193,9 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const userId = searchParams.get("user_id") ?? defaultUserId;
 
-  let wrongBookRows: Array<Omit<WrongBookReviewItem, "problem">> = [];
+  let wrongBookRows: WrongBookNormalizedRow[] = [];
   let lastError: string | undefined;
+  let successfulKey: string | null = null;
 
   for (const key of candidateKeys) {
     const supabase = createSupabaseClient(key);
@@ -164,6 +204,7 @@ export async function GET(request: Request) {
     if (result.rows) {
       wrongBookRows = result.rows;
       lastError = undefined;
+      successfulKey = key;
       break;
     }
 
@@ -184,48 +225,64 @@ export async function GET(request: Request) {
     );
   }
 
-  const problemIds = Array.from(new Set(wrongBookRows.map((entry) => entry.problem_id)));
-
-  if (problemIds.length === 0) {
+  if (wrongBookRows.length === 0) {
     const empty: WrongBookListResponse = { entries: [] };
     return NextResponse.json(empty, { status: 200 });
   }
 
-  const supabase = createSupabaseClient(candidateKeys[0]);
-  const { data: problemRows, error: problemError } = await supabase
-    .from("problems")
-    .select("id, question, options, answer")
-    .in("id", problemIds);
+  const problemIds = Array.from(new Set(wrongBookRows.map((entry) => entry.problem_id)));
+  const attemptIds = Array.from(
+    new Set(
+      wrongBookRows
+        .map((entry) => entry.last_attempt_id)
+        .filter((attemptId): attemptId is string => Boolean(attemptId))
+    )
+  );
+  const supabase = createSupabaseClient(successfulKey ?? candidateKeys[0]);
+  const { data: latestAttempts, error: attemptsError } =
+    attemptIds.length > 0
+      ? await supabase
+          .from("attempts")
+          .select("id, problem_id, selected_option, is_correct, created_at")
+          .in("id", attemptIds)
+      : { data: [], error: null };
 
-  if (problemError) {
+  if (attemptsError) {
     return NextResponse.json(
-      { error: problemError.message ?? "Failed to fetch wrong-book problems." },
+      { error: attemptsError.message ?? "Failed to fetch wrong-book attempts." },
       { status: 500 }
     );
   }
-
-  const problemMap = new Map(
-    (problemRows ?? []).map((problem) => [
-      problem.id,
-      {
-        id: problem.id,
-        question_text: String(problem.question ?? ""),
-        options: normalizeOptions(problem.options),
-        correct_answer: String(problem.answer ?? "").trim().toUpperCase(),
-      },
-    ])
+  const latestIncorrectAttemptMap = new Map(
+    (latestAttempts ?? [])
+      .filter((attempt) => attempt && !attempt.is_correct)
+      .map((attempt) => [attempt.id, String(attempt.selected_option ?? "").trim().toUpperCase() || null])
   );
 
   const entries: WrongBookReviewItem[] = wrongBookRows
     .map((entry) => {
-      const problem = problemMap.get(entry.problem_id);
+      const problem = entry.problem;
       if (!problem) {
         return null;
       }
 
       return {
-        ...entry,
-        problem,
+        id: entry.id,
+        user_id: entry.user_id,
+        problem_id: entry.problem_id,
+        wrong_count: entry.wrong_count,
+        last_error_type: entry.last_error_type,
+        status: entry.status,
+        mastery_level: entry.mastery_level,
+        next_review_date: entry.next_review_date,
+        updated_at: entry.updated_at,
+        selected_wrong_answer: latestIncorrectAttemptMap.get(entry.last_attempt_id ?? "") ?? null,
+        problem: {
+          id: problem.id,
+          question_text: String(problem.question ?? ""),
+          options: normalizeOptions(problem.options),
+          correct_answer: String(problem.answer ?? "").trim().toUpperCase(),
+        },
       };
     })
     .filter((entry): entry is WrongBookReviewItem => entry !== null);

@@ -80,6 +80,7 @@ export default function WrongBookReviewPanel() {
 
       const payload = (await response.json()) as CreateAttemptResponse;
       setRetryResult((prev) => ({ ...prev, [entry.id]: payload }));
+      await loadWrongBook();
     } catch (submitError) {
       setError(submitError instanceof Error ? submitError.message : "Unknown retry error.");
     } finally {
@@ -145,7 +146,10 @@ export default function WrongBookReviewPanel() {
             </div>
 
             <div className="mt-4 flex items-center justify-between gap-3">
-              <p className="text-sm text-gray-600">Correct answer: {entry.problem.correct_answer}</p>
+              <div className="text-sm text-gray-600">
+                <p>Selected wrong answer: {entry.selected_wrong_answer ?? "-"}</p>
+                <p>Correct answer: {entry.problem.correct_answer}</p>
+              </div>
               <button
                 type="button"
                 onClick={() => submitRetry(entry)}
