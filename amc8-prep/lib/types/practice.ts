@@ -19,6 +19,20 @@ export interface CreateAttemptResponse {
   attempt_id: string;
   is_correct: boolean;
   time_spent_sec: number;
+  user_id?: string;
+  wrong_book_sync?: WrongBookSyncDebugInfo;
+}
+
+export interface WrongBookSyncDebugInfo {
+  attempted: boolean;
+  action: "created" | "updated" | "create_failed" | "update_failed" | "lookup_failed";
+  user_id: string;
+  problem_id: string;
+  row_id?: string;
+  attempt_id?: string;
+  previous_wrong_count?: number;
+  wrong_count?: number;
+  next_review_date?: string;
 }
 
 export interface WrongBookEntry {
