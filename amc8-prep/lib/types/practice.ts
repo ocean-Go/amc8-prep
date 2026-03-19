@@ -42,6 +42,7 @@ export interface WrongBookProblem {
 
 export interface WrongBookReviewItem extends WrongBookEntry {
   problem: WrongBookProblem;
+  selected_wrong_answer: string | null;
 }
 
 export interface WrongBookListResponse {
