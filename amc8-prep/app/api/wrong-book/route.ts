@@ -4,6 +4,17 @@ import { createClient } from "@supabase/supabase-js";
 import type { Database } from "@/lib/types/problem-engine";
 import type { WrongBookListResponse, WrongBookReviewItem } from "@/lib/types/practice";
 
+type WrongBookSelectableRow = Pick<
+  Database["public"]["Tables"]["wrong_book"]["Row"],
+  "id" | "user_id" | "problem_id" | "wrong_count"
+> &
+  Partial<
+    Pick<
+      Database["public"]["Tables"]["wrong_book"]["Row"],
+      "last_error_type" | "status" | "mastery_level" | "next_review_date" | "updated_at"
+    >
+  >;
+
 const supabaseUrl = process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
 const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
 const anonKey =
@@ -44,32 +55,90 @@ function normalizeOptions(options: unknown): string[] {
   return ["", "", "", "", ""];
 }
 
-async function fetchWrongBookRows(supabase: ReturnType<typeof createSupabaseClient>, userId: string) {
-  const { data, error } = await supabase
-    .from("wrong_book")
-    .select(
-      "id, user_id, problem_id, wrong_count, last_error_type, status, mastery_level, next_review_date, updated_at"
-    )
-    .eq("user_id", userId)
-    .order("next_review_date", { ascending: true, nullsFirst: false });
-
-  if (error) {
-    return { error: error.message ?? "Failed to fetch wrong-book entries." };
+function isMissingColumnError(message: string | undefined) {
+  if (!message) {
+    return false;
   }
 
-  return {
-    rows: (data ?? []).map((entry) => ({
-      id: entry.id,
-      user_id: entry.user_id,
-      problem_id: entry.problem_id,
-      wrong_count: Math.max(0, Number(entry.wrong_count ?? 0)),
-      last_error_type: entry.last_error_type,
-      status: entry.status ?? "review_pending",
-      mastery_level: Math.max(0, Number(entry.mastery_level ?? 0)),
-      next_review_date: entry.next_review_date ?? new Date().toISOString().slice(0, 10),
-      updated_at: entry.updated_at ?? new Date(0).toISOString(),
-    })),
-  };
+  const normalized = message.toLowerCase();
+  return (
+    normalized.includes("could not find the") ||
+    (normalized.includes("column") && normalized.includes("does not exist"))
+  );
+}
+
+function extractMissingColumn(message: string | undefined) {
+  if (!message) {
+    return null;
+  }
+
+  const schemaCacheMatch = message.match(/'([^']+)' column of 'wrong_book'/i);
+  if (schemaCacheMatch?.[1]) {
+    return schemaCacheMatch[1];
+  }
+
+  const postgresMatch = message.match(/column\s+(?:wrong_book\.)?([a-zA-Z0-9_]+)\s+does not exist/i);
+  if (postgresMatch?.[1]) {
+    return postgresMatch[1];
+  }
+
+  return null;
+}
+
+async function fetchWrongBookRows(supabase: ReturnType<typeof createSupabaseClient>, userId: string) {
+  const selectFields = [
+    "id",
+    "user_id",
+    "problem_id",
+    "wrong_count",
+    "last_error_type",
+    "status",
+    "mastery_level",
+    "next_review_date",
+    "updated_at",
+  ];
+
+  while (true) {
+    let query = supabase.from("wrong_book").select(selectFields.join(", ")).eq("user_id", userId);
+
+    if (selectFields.includes("next_review_date")) {
+      query = query.order("next_review_date", { ascending: true, nullsFirst: false });
+    } else if (selectFields.includes("updated_at")) {
+      query = query.order("updated_at", { ascending: false, nullsFirst: false });
+    }
+
+    const { data, error } = await query;
+
+    if (!error) {
+      const rows = ((data ?? []) as unknown) as WrongBookSelectableRow[];
+
+      return {
+        rows: rows.map((entry) => ({
+          id: entry.id,
+          user_id: entry.user_id,
+          problem_id: entry.problem_id,
+          wrong_count: Math.max(0, Number(entry.wrong_count ?? 0)),
+          last_error_type: entry.last_error_type ?? null,
+          status: entry.status ?? "review_pending",
+          mastery_level: Math.max(0, Number(entry.mastery_level ?? 0)),
+          next_review_date: entry.next_review_date ?? new Date().toISOString().slice(0, 10),
+          updated_at: entry.updated_at ?? new Date(0).toISOString(),
+        })),
+      };
+    }
+
+    const missingColumn = extractMissingColumn(error.message);
+    if (!isMissingColumnError(error.message) || !missingColumn || missingColumn === "wrong_count") {
+      return { error: error.message ?? "Failed to fetch wrong-book entries." };
+    }
+
+    const index = selectFields.indexOf(missingColumn);
+    if (index === -1) {
+      return { error: error.message ?? "Failed to fetch wrong-book entries." };
+    }
+
+    selectFields.splice(index, 1);
+  }
 }
 
 export async function GET(request: Request) {
