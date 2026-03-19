@@ -118,14 +118,15 @@ export default function WrongBookReviewPanel() {
           <article key={entry.id} className="card">
             <div className="mb-3 flex flex-wrap items-center justify-between gap-2 text-sm">
               <span className="rounded-full bg-amber-100 px-3 py-1 text-amber-800">#{index + 1}</span>
-              <div className="flex gap-2 text-gray-500">
+              <div className="flex flex-wrap gap-2 text-gray-500">
+                <span>problem_id: {entry.problem_id}</span>
                 <span>wrong_count: {entry.wrong_count}</span>
                 <span>status: {entry.status}</span>
                 <span>next review: {formatDate(entry.next_review_date)}</span>
               </div>
             </div>
 
-            <h2 className="mb-4 text-lg font-semibold text-gray-800">{entry.problem.question_text}</h2>
+            <h2 className="mb-4 text-lg font-semibold text-gray-800">{entry.problem.question_text || `Problem ${entry.problem_id}`}</h2>
 
             <div className="space-y-2">
               {ANSWER_CHOICES.map((choice, idx) => {

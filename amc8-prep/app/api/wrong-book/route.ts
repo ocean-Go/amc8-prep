@@ -4,7 +4,7 @@ import { createClient } from "@supabase/supabase-js";
 import type { Database } from "@/lib/types/problem-engine";
 import type { WrongBookListResponse, WrongBookReviewItem } from "@/lib/types/practice";
 
-type ProblemJoinRow = Pick<Database["public"]["Tables"]["problems"]["Row"], "id" | "question" | "options" | "answer">;
+type ProblemRow = Pick<Database["public"]["Tables"]["problems"]["Row"], "id" | "question" | "options" | "answer">;
 
 type WrongBookNormalizedRow = {
   id: string;
@@ -17,7 +17,6 @@ type WrongBookNormalizedRow = {
   next_review_date: string;
   updated_at: string;
   last_attempt_id: string | null;
-  problem: ProblemJoinRow | null;
 };
 
 type WrongBookSelectableRow = Pick<Database["public"]["Tables"]["wrong_book"]["Row"], "id" | "user_id" | "problem_id"> &
@@ -34,9 +33,7 @@ type WrongBookSelectableRow = Pick<Database["public"]["Tables"]["wrong_book"]["R
       | "review_count"
       | "last_attempt_id"
     >
-  > & {
-    problems?: ProblemJoinRow | ProblemJoinRow[] | null;
-  };
+  >;
 
 const supabaseUrl = process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
 const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
@@ -123,12 +120,11 @@ async function fetchWrongBookRows(supabase: ReturnType<typeof createSupabaseClie
     "created_at",
     "last_attempt_id",
   ];
-  const problemSelect = "problems!inner(id, question, options, answer)";
 
   while (true) {
     let query = supabase
       .from("wrong_book")
-      .select(`${selectFields.join(", ")}, ${problemSelect}`)
+      .select(selectFields.join(", "))
       .eq("user_id", userId);
 
     if (selectFields.includes("next_review_date")) {
@@ -161,7 +157,6 @@ async function fetchWrongBookRows(supabase: ReturnType<typeof createSupabaseClie
           ),
           updated_at: String(entry.updated_at ?? entry.created_at ?? new Date(0).toISOString()),
           last_attempt_id: entry.last_attempt_id ? String(entry.last_attempt_id) : null,
-          problem: Array.isArray(entry.problems) ? entry.problems[0] ?? null : entry.problems ?? null,
         })),
       };
     }
@@ -178,6 +173,32 @@ async function fetchWrongBookRows(supabase: ReturnType<typeof createSupabaseClie
 
     selectFields.splice(index, 1);
   }
+}
+
+async function fetchProblemMap(
+  supabase: ReturnType<typeof createSupabaseClient>,
+  problemIds: string[]
+) {
+  if (problemIds.length === 0) {
+    return { problemMap: new Map<string, ProblemRow>() };
+  }
+
+  const { data, error } = await supabase
+    .from("problems")
+    .select("id, question, options, answer")
+    .in("id", problemIds);
+
+  if (error) {
+    return { error: error.message ?? "Failed to fetch wrong-book problems." };
+  }
+
+  const problemMap = new Map<string, ProblemRow>();
+
+  for (const problem of (data ?? []) as ProblemRow[]) {
+    problemMap.set(problem.id, problem);
+  }
+
+  return { problemMap };
 }
 
 export async function GET(request: Request) {
@@ -239,6 +260,14 @@ export async function GET(request: Request) {
     )
   );
   const supabase = createSupabaseClient(successfulKey ?? candidateKeys[0]);
+  const problemResult = await fetchProblemMap(supabase, problemIds);
+
+  if (problemResult.error) {
+    return NextResponse.json({ error: problemResult.error }, { status: 500 });
+  }
+
+  const problemMap = problemResult.problemMap ?? new Map<string, ProblemRow>();
+
   const { data: latestAttempts, error: attemptsError } =
     attemptIds.length > 0
       ? await supabase
@@ -253,39 +282,35 @@ export async function GET(request: Request) {
       { status: 500 }
     );
   }
+
   const latestIncorrectAttemptMap = new Map(
     (latestAttempts ?? [])
       .filter((attempt) => attempt && !attempt.is_correct)
       .map((attempt) => [attempt.id, String(attempt.selected_option ?? "").trim().toUpperCase() || null])
   );
 
-  const entries: WrongBookReviewItem[] = wrongBookRows
-    .map((entry) => {
-      const problem = entry.problem;
-      if (!problem) {
-        return null;
-      }
+  const entries: WrongBookReviewItem[] = wrongBookRows.map((entry) => {
+    const problem = problemMap.get(entry.problem_id);
 
-      return {
-        id: entry.id,
-        user_id: entry.user_id,
-        problem_id: entry.problem_id,
-        wrong_count: entry.wrong_count,
-        last_error_type: entry.last_error_type,
-        status: entry.status,
-        mastery_level: entry.mastery_level,
-        next_review_date: entry.next_review_date,
-        updated_at: entry.updated_at,
-        selected_wrong_answer: latestIncorrectAttemptMap.get(entry.last_attempt_id ?? "") ?? null,
-        problem: {
-          id: problem.id,
-          question_text: String(problem.question ?? ""),
-          options: normalizeOptions(problem.options),
-          correct_answer: String(problem.answer ?? "").trim().toUpperCase(),
-        },
-      };
-    })
-    .filter((entry): entry is WrongBookReviewItem => entry !== null);
+    return {
+      id: entry.id,
+      user_id: entry.user_id,
+      problem_id: entry.problem_id,
+      wrong_count: entry.wrong_count,
+      last_error_type: entry.last_error_type,
+      status: entry.status,
+      mastery_level: entry.mastery_level,
+      next_review_date: entry.next_review_date,
+      updated_at: entry.updated_at,
+      selected_wrong_answer: latestIncorrectAttemptMap.get(entry.last_attempt_id ?? "") ?? null,
+      problem: {
+        id: problem?.id ?? entry.problem_id,
+        question_text: String(problem?.question ?? "题目暂时不可用，请先根据题号复盘。"),
+        options: normalizeOptions(problem?.options),
+        correct_answer: String(problem?.answer ?? "-").trim().toUpperCase() || "-",
+      },
+    };
+  });
 
   const response: WrongBookListResponse = { entries };
   return NextResponse.json(response, { status: 200 });
