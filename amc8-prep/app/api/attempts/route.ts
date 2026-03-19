@@ -49,6 +49,94 @@ function buildWrongBookDefaults() {
   };
 }
 
+function isMissingColumnError(message: string | undefined) {
+  if (!message) {
+    return false;
+  }
+
+  const normalized = message.toLowerCase();
+  return (
+    normalized.includes("could not find the") ||
+    (normalized.includes("column") && normalized.includes("does not exist"))
+  );
+}
+
+function extractMissingColumn(message: string | undefined) {
+  if (!message) {
+    return null;
+  }
+
+  const schemaCacheMatch = message.match(/'([^']+)' column of 'wrong_book'/i);
+  if (schemaCacheMatch?.[1]) {
+    return schemaCacheMatch[1];
+  }
+
+  const postgresMatch = message.match(/column\s+(?:wrong_book\.)?([a-zA-Z0-9_]+)\s+does not exist/i);
+  if (postgresMatch?.[1]) {
+    return postgresMatch[1];
+  }
+
+  return null;
+}
+
+async function updateWrongBookEntry(
+  supabase: ReturnType<typeof createSupabaseClient>,
+  id: string,
+  payload: Database["public"]["Tables"]["wrong_book"]["Update"]
+) {
+  const nextPayload = { ...payload };
+
+  while (true) {
+    const { error } = await supabase.from("wrong_book").update(nextPayload).eq("id", id);
+
+    if (!error) {
+      return {};
+    }
+
+    const missingColumn = extractMissingColumn(error.message);
+    if (!isMissingColumnError(error.message) || !missingColumn) {
+      return { error: error.message ?? "Failed to update wrong-book entry." };
+    }
+
+    if (!(missingColumn in nextPayload) || missingColumn === "wrong_count") {
+      return { error: error.message ?? "Failed to update wrong-book entry." };
+    }
+
+    delete nextPayload[missingColumn];
+  }
+}
+
+async function insertWrongBookEntry(
+  supabase: ReturnType<typeof createSupabaseClient>,
+  payload: Database["public"]["Tables"]["wrong_book"]["Insert"]
+) {
+  const nextPayload = { ...payload };
+
+  while (true) {
+    const { error } = await supabase.from("wrong_book").insert(nextPayload);
+
+    if (!error) {
+      return {};
+    }
+
+    const missingColumn = extractMissingColumn(error.message);
+    if (!isMissingColumnError(error.message) || !missingColumn) {
+      return { error: error.message ?? "Failed to create wrong-book entry." };
+    }
+
+    if (
+      !(missingColumn in nextPayload) ||
+      missingColumn === "user_id" ||
+      missingColumn === "problem_id" ||
+      missingColumn === "wrong_count"
+    ) {
+      return { error: error.message ?? "Failed to create wrong-book entry." };
+    }
+
+    delete nextPayload[missingColumn];
+  }
+}
+
 async function syncWrongBookWithCurrentSchema(
   supabase: ReturnType<typeof createSupabaseClient>,
   userId: string,
@@ -68,26 +156,23 @@ async function syncWrongBookWithCurrentSchema(
   }
 
   if (existingEntry) {
-    const { error: updateError } = await supabase
-      .from("wrong_book")
-      .update({
-        wrong_count: Math.max(0, Number(existingEntry.wrong_count ?? 0)) + 1,
-        last_error_type: null,
-        status: "review_pending",
-        mastery_level: 0,
-        next_review_date: nextReviewDate,
-        updated_at: updatedAt,
-      })
-      .eq("id", existingEntry.id);
+    const updateResult = await updateWrongBookEntry(supabase, existingEntry.id, {
+      wrong_count: Math.max(0, Number(existingEntry.wrong_count ?? 0)) + 1,
+      last_error_type: null,
+      status: "review_pending",
+      mastery_level: 0,
+      next_review_date: nextReviewDate,
+      updated_at: updatedAt,
+    });
 
-    if (updateError) {
-      return { error: updateError.message ?? "Failed to update wrong-book entry." };
+    if (updateResult.error) {
+      return { error: updateResult.error };
     }
 
     return {};
   }
 
-  const { error: insertError } = await supabase.from("wrong_book").insert({
+  const insertResult = await insertWrongBookEntry(supabase, {
     user_id: userId,
     problem_id: problemId,
     wrong_count: 1,
@@ -98,8 +183,8 @@ async function syncWrongBookWithCurrentSchema(
     updated_at: updatedAt,
   });
 
-  if (insertError) {
-    return { error: insertError.message ?? "Failed to create wrong-book entry." };
+  if (insertResult.error) {
+    return { error: insertResult.error };
   }
 
   return {};
