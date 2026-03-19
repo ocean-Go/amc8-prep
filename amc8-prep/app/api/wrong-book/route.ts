@@ -42,7 +42,7 @@ const anonKey =
   process.env.SUPABASE_ANON_KEY ??
   process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ??
   "";
-const defaultUserId = process.env.DEFAULT_TEST_USER_ID ?? "00000000-0000-0000-0000-000000000001";
+const DEFAULT_TEST_USER_ID = "00000000-0000-0000-0000-000000000001";
 
 function createSupabaseClient(key: string) {
   return createClient<Database, "public">(supabaseUrl, key);
@@ -212,7 +212,7 @@ export async function GET(request: Request) {
   }
 
   const { searchParams } = new URL(request.url);
-  const userId = searchParams.get("user_id") ?? defaultUserId;
+  const userId = searchParams.get("user_id") ?? DEFAULT_TEST_USER_ID;
 
   let wrongBookRows: WrongBookNormalizedRow[] = [];
   let lastError: string | undefined;
