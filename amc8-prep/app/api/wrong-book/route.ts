@@ -177,6 +177,7 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const userId = normalizeUserId(searchParams.get("user_id"));
   const diagnostics: string[] = [];
+  console.info("[wrong_book] Using user_id for wrong-book query.", { userId });
 
   let wrongBookRows: WrongBookNormalizedRow[] = [];
   let lastError: string | undefined;
@@ -226,7 +227,7 @@ export async function GET(request: Request) {
 
   if (wrongBookRows.length === 0) {
     console.info("[wrong_book] No wrong-book rows found for user.", { userId });
-    const empty: WrongBookListResponse = { entries: [] };
+    const empty: WrongBookListResponse = { entries: [], raw_row_count: 0, enriched_row_count: 0 };
     return NextResponse.json(empty, { status: 200 });
   }
 
@@ -257,6 +258,18 @@ export async function GET(request: Request) {
   const problemMap = problemResult.problemMap ?? new Map<string, ProblemRow>();
   const latestIncorrectAttemptMap =
     latestAttemptResult.latestIncorrectAttemptMap ?? new Map<string, string | null>();
+  const failedProblemIds = problemIds.filter((problemId) => !problemMap.has(problemId));
+
+  if (failedProblemIds.length > 0) {
+    diagnostics.push(`missing_problem_matches: ${failedProblemIds.join(",")}`);
+  }
+
+  console.info("[wrong_book] Enrichment diagnostics.", {
+    userId,
+    rawRowCount: wrongBookRows.length,
+    problemMatchCount: problemMap.size,
+    failedProblemIds,
+  });
 
   const entries: WrongBookReviewItem[] = wrongBookRows.map((entry) => {
     const problem = problemMap.get(entry.problem_id);
@@ -283,7 +296,16 @@ export async function GET(request: Request) {
 
   const response: WrongBookListResponse = {
     entries,
+    raw_row_count: wrongBookRows.length,
+    enriched_row_count: entries.length,
+    failed_problem_ids: failedProblemIds.length > 0 ? failedProblemIds : undefined,
     diagnostics: diagnostics.length > 0 ? diagnostics : undefined,
   };
+  console.info("[wrong_book] Returning wrong-book response.", {
+    userId,
+    rawRowCount: wrongBookRows.length,
+    enrichedRowCount: entries.length,
+    failedProblemIds,
+  });
   return NextResponse.json(response, { status: 200 });
 }

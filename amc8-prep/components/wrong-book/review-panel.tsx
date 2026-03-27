@@ -22,6 +22,9 @@ function formatDate(value: string): string {
 
 export default function WrongBookReviewPanel() {
   const [entries, setEntries] = useState<WrongBookReviewItem[]>([]);
+  const [rawRowCount, setRawRowCount] = useState(0);
+  const [enrichedRowCount, setEnrichedRowCount] = useState(0);
+  const [diagnostics, setDiagnostics] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedAnswers, setSelectedAnswers] = useState<Record<string, string>>({});
@@ -46,7 +49,26 @@ export default function WrongBookReviewPanel() {
       }
 
       const payload = (await response.json()) as WrongBookListResponse;
-      setEntries(payload.entries ?? []);
+      const fetchedEntries = payload.entries ?? [];
+      const fetchedRawRowCount = Math.max(0, Number(payload.raw_row_count ?? fetchedEntries.length));
+      const fetchedEnrichedRowCount = Math.max(
+        0,
+        Number(payload.enriched_row_count ?? fetchedEntries.length)
+      );
+      const fetchedDiagnostics = payload.diagnostics ?? [];
+
+      console.info("[wrong_book_page] Loaded wrong-book items before render.", {
+        fetchedItemCount: fetchedEntries.length,
+        rawRowCount: fetchedRawRowCount,
+        enrichedRowCount: fetchedEnrichedRowCount,
+        failedProblemIds: payload.failed_problem_ids ?? [],
+        diagnostics: fetchedDiagnostics,
+      });
+
+      setEntries(fetchedEntries);
+      setRawRowCount(fetchedRawRowCount);
+      setEnrichedRowCount(fetchedEnrichedRowCount);
+      setDiagnostics(fetchedDiagnostics);
     } catch (fetchError) {
       setError(fetchError instanceof Error ? fetchError.message : "Unknown error while loading data.");
     } finally {
@@ -99,6 +121,24 @@ export default function WrongBookReviewPanel() {
   }
 
   if (entries.length === 0) {
+    if (rawRowCount > 0) {
+      return (
+        <div className="card py-10">
+          <h2 className="mt-3 text-xl font-semibold text-gray-800">Wrong-book rows exist but details are partial</h2>
+          <p className="mt-1 text-gray-600">
+            raw rows: {rawRowCount}, enriched rows: {enrichedRowCount}. Please check API diagnostics.
+          </p>
+          {diagnostics.length > 0 && (
+            <ul className="mt-2 list-disc pl-5 text-sm text-gray-600">
+              {diagnostics.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      );
+    }
+
     return (
       <div className="card text-center py-10">
         <div className="text-5xl">🎉</div>
