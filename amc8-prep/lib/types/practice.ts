@@ -61,5 +61,8 @@ export interface WrongBookReviewItem extends WrongBookEntry {
 
 export interface WrongBookListResponse {
   entries: WrongBookReviewItem[];
+  raw_row_count?: number;
+  enriched_row_count?: number;
+  failed_problem_ids?: string[];
   diagnostics?: string[];
 }

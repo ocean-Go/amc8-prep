@@ -10,7 +10,7 @@ import type {
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
 const supabaseKey =
   process.env.SUPABASE_SERVICE_ROLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "";
-const defaultUserId = process.env.DEFAULT_TEST_USER_ID ?? "00000000-0000-0000-0000-000000000001";
+const DEFAULT_TEST_USER_ID = "00000000-0000-0000-0000-000000000001";
 
 type AttemptRow = {
   id: string;
@@ -25,13 +25,13 @@ type LatestMockRow = {
 
 function normalizeDashboardUserId(candidate: string | null) {
   const normalized = candidate?.trim();
-  if (normalized && normalized !== defaultUserId) {
+  if (normalized && normalized !== DEFAULT_TEST_USER_ID) {
     console.warn("[dashboard] Received non-default user_id; forcing default test user.", {
       providedUserId: normalized,
-      forcedUserId: defaultUserId,
+      forcedUserId: DEFAULT_TEST_USER_ID,
     });
   }
-  return defaultUserId;
+  return DEFAULT_TEST_USER_ID;
 }
 
 export async function GET(request: Request) {
@@ -41,6 +41,7 @@ export async function GET(request: Request) {
 
   const { searchParams } = new URL(request.url);
   const userId = normalizeDashboardUserId(searchParams.get("user_id"));
+  console.info("[dashboard] Using user_id for dashboard metrics.", { userId });
   const supabase = createClient(supabaseUrl, supabaseKey);
 
   const [
