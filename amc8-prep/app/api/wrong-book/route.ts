@@ -38,7 +38,13 @@ function createSupabaseClient(key: string) {
 
 function normalizeUserId(candidate: string | null) {
   const normalized = candidate?.trim();
-  return normalized ? normalized : DEFAULT_TEST_USER_ID;
+  if (normalized && normalized !== DEFAULT_TEST_USER_ID) {
+    console.warn("[wrong_book] Received non-default user_id; forcing default test user.", {
+      providedUserId: normalized,
+      forcedUserId: DEFAULT_TEST_USER_ID,
+    });
+  }
+  return DEFAULT_TEST_USER_ID;
 }
 
 function isLikelyRealSupabaseKey(key: string): boolean {
@@ -170,6 +176,7 @@ export async function GET(request: Request) {
 
   const { searchParams } = new URL(request.url);
   const userId = normalizeUserId(searchParams.get("user_id"));
+  const diagnostics: string[] = [];
 
   let wrongBookRows: WrongBookNormalizedRow[] = [];
   let lastError: string | undefined;
@@ -198,7 +205,10 @@ export async function GET(request: Request) {
 
     if (!result.error?.toLowerCase().includes("invalid api key")) {
       return NextResponse.json(
-        { error: result.error ?? "Failed to fetch wrong-book entries." },
+        {
+          error: result.error ?? "Failed to fetch wrong-book entries.",
+          failing_step: "fetch_wrong_book_rows",
+        },
         { status: 500 }
       );
     }
@@ -206,7 +216,10 @@ export async function GET(request: Request) {
 
   if (lastError) {
     return NextResponse.json(
-      { error: lastError ?? "Failed to fetch wrong-book entries." },
+      {
+        error: lastError ?? "Failed to fetch wrong-book entries.",
+        failing_step: "fetch_wrong_book_rows",
+      },
       { status: 500 }
     );
   }
@@ -222,17 +235,28 @@ export async function GET(request: Request) {
   const problemResult = await fetchProblemMap(supabase, problemIds);
 
   if (problemResult.error) {
-    return NextResponse.json({ error: problemResult.error }, { status: 500 });
+    diagnostics.push(`fetch_problems_failed: ${problemResult.error}`);
+    console.error("[wrong_book] Failed to fetch problem details for wrong-book rows.", {
+      userId,
+      problemIds,
+      error: problemResult.error,
+    });
   }
 
   const latestAttemptResult = await fetchLatestIncorrectAttemptMap(supabase, userId, problemIds);
 
   if (latestAttemptResult.error) {
-    return NextResponse.json({ error: latestAttemptResult.error }, { status: 500 });
+    diagnostics.push(`fetch_latest_incorrect_attempts_failed: ${latestAttemptResult.error}`);
+    console.error("[wrong_book] Failed to fetch latest incorrect attempts for wrong-book rows.", {
+      userId,
+      problemIds,
+      error: latestAttemptResult.error,
+    });
   }
 
   const problemMap = problemResult.problemMap ?? new Map<string, ProblemRow>();
-  const latestIncorrectAttemptMap = latestAttemptResult.latestIncorrectAttemptMap ?? new Map<string, string | null>();
+  const latestIncorrectAttemptMap =
+    latestAttemptResult.latestIncorrectAttemptMap ?? new Map<string, string | null>();
 
   const entries: WrongBookReviewItem[] = wrongBookRows.map((entry) => {
     const problem = problemMap.get(entry.problem_id);
@@ -257,6 +281,9 @@ export async function GET(request: Request) {
     };
   });
 
-  const response: WrongBookListResponse = { entries };
+  const response: WrongBookListResponse = {
+    entries,
+    diagnostics: diagnostics.length > 0 ? diagnostics : undefined,
+  };
   return NextResponse.json(response, { status: 200 });
 }
