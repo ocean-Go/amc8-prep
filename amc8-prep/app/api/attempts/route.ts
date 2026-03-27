@@ -33,6 +33,19 @@ function normalizeUserId(candidate: string | undefined | null) {
   return normalized ? normalized : DEFAULT_TEST_USER_ID;
 }
 
+function resolveAttemptUserId(candidate: string | undefined | null) {
+  const normalized = normalizeUserId(candidate);
+
+  if (normalized !== DEFAULT_TEST_USER_ID) {
+    console.warn("[attempts] Received non-default user_id in attempt payload; forcing default test user.", {
+      providedUserId: normalized,
+      forcedUserId: DEFAULT_TEST_USER_ID,
+    });
+  }
+
+  return DEFAULT_TEST_USER_ID;
+}
+
 function isLikelyRealSupabaseKey(key: string): boolean {
   const normalized = key.trim();
   if (!normalized) {
@@ -437,7 +450,7 @@ export async function POST(request: Request) {
   }
 
   const body = (await request.json()) as Partial<CreateAttemptRequest>;
-  const userId = normalizeUserId(body.user_id);
+  const userId = resolveAttemptUserId(body.user_id);
   const problemId = body.problem_id;
   const selectedAnswer = body.selected_answer;
   const timeSpentSec = body.time_spent_sec;

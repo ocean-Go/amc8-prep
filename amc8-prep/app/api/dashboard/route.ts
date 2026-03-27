@@ -23,8 +23,15 @@ type LatestMockRow = {
   total_questions: number | null;
 };
 
-function getSafeCount(count: number | null, hasError: boolean) {
-  return hasError ? 0 : (count ?? 0);
+function normalizeDashboardUserId(candidate: string | null) {
+  const normalized = candidate?.trim();
+  if (normalized && normalized !== defaultUserId) {
+    console.warn("[dashboard] Received non-default user_id; forcing default test user.", {
+      providedUserId: normalized,
+      forcedUserId: defaultUserId,
+    });
+  }
+  return defaultUserId;
 }
 
 export async function GET(request: Request) {
@@ -33,7 +40,7 @@ export async function GET(request: Request) {
   }
 
   const { searchParams } = new URL(request.url);
-  const userId = searchParams.get("user_id") ?? defaultUserId;
+  const userId = normalizeDashboardUserId(searchParams.get("user_id"));
   const supabase = createClient(supabaseUrl, supabaseKey);
 
   const [
@@ -67,21 +74,30 @@ export async function GET(request: Request) {
   ]);
 
   const requiredFailure = [
-    attemptsCountResponse,
-    correctAttemptsCountResponse,
-    recentAttemptsResponse,
-  ].find((result) => result.error);
+    { step: "count_attempts", result: attemptsCountResponse },
+    { step: "count_correct_attempts", result: correctAttemptsCountResponse },
+    { step: "fetch_recent_attempts", result: recentAttemptsResponse },
+    { step: "count_wrong_book_rows", result: wrongBookCountResponse },
+  ].find(({ result }) => result.error);
 
-  if (requiredFailure?.error) {
+  if (requiredFailure?.result.error) {
+    console.error("[dashboard] Failed to load dashboard metric step.", {
+      userId,
+      failingStep: requiredFailure.step,
+      error: requiredFailure.result.error.message,
+    });
     return NextResponse.json(
-      { error: requiredFailure.error.message ?? "Failed to fetch dashboard metrics." },
+      {
+        error: requiredFailure.result.error.message ?? "Failed to fetch dashboard metrics.",
+        failing_step: requiredFailure.step,
+      },
       { status: 500 }
     );
   }
 
   const attemptsCount = attemptsCountResponse.count ?? 0;
   const correctAttemptsCount = correctAttemptsCountResponse.count ?? 0;
-  const wrongBookCount = getSafeCount(wrongBookCountResponse.count, Boolean(wrongBookCountResponse.error));
+  const wrongBookCount = wrongBookCountResponse.count ?? 0;
   const latestMock = latestMockResponse.error ? null : (latestMockResponse.data as LatestMockRow | null);
 
   const accuracyPercent =
