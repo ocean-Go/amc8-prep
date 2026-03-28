@@ -7,9 +7,13 @@ import type {
   DashboardMetrics,
 } from "@/lib/types/dashboard";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
-const supabaseKey =
-  process.env.SUPABASE_SERVICE_ROLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "";
+const supabaseUrl = process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
+const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
+const anonKey =
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ??
+  process.env.SUPABASE_ANON_KEY ??
+  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ??
+  "";
 const DEFAULT_TEST_USER_ID = "00000000-0000-0000-0000-000000000001";
 
 type AttemptRow = {
@@ -34,7 +38,32 @@ function normalizeDashboardUserId(candidate: string | null) {
   return DEFAULT_TEST_USER_ID;
 }
 
+function isLikelyRealSupabaseKey(key: string): boolean {
+  const normalized = key.trim();
+  if (!normalized) {
+    return false;
+  }
+
+  const lower = normalized.toLowerCase();
+  if (lower.includes("your_") || lower.includes("placeholder") || lower.includes("changeme")) {
+    return false;
+  }
+
+  return true;
+}
+
+function resolveSupabaseKey() {
+  const preferredKey = isLikelyRealSupabaseKey(serviceRoleKey) ? serviceRoleKey : anonKey;
+
+  if (!isLikelyRealSupabaseKey(preferredKey)) {
+    return null;
+  }
+
+  return preferredKey;
+}
+
 export async function GET(request: Request) {
+  const supabaseKey = resolveSupabaseKey();
   if (!supabaseUrl || !supabaseKey) {
     return NextResponse.json({ error: "Supabase credentials are not configured." }, { status: 500 });
   }

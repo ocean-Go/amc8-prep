@@ -8,7 +8,7 @@ import type {
   WrongBookSyncDebugInfo,
 } from "@/lib/types/practice";
 
-const supabaseUrl = process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? process.env.SUPABASE_URL ?? "";
 const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
 const anonKey =
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ??
@@ -58,6 +58,16 @@ function isLikelyRealSupabaseKey(key: string): boolean {
   }
 
   return true;
+}
+
+function resolveSupabaseKey() {
+  const preferredKey = isLikelyRealSupabaseKey(serviceRoleKey) ? serviceRoleKey : anonKey;
+
+  if (!isLikelyRealSupabaseKey(preferredKey)) {
+    return null;
+  }
+
+  return preferredKey;
 }
 
 function buildWrongBookDefaults() {
@@ -326,8 +336,7 @@ async function syncWrongBookWithCurrentSchema(
 }
 
 function createWrongBookWriteClient(preferredKey: string) {
-  const wrongBookKey = isLikelyRealSupabaseKey(serviceRoleKey) ? serviceRoleKey : preferredKey;
-  return createSupabaseClient(wrongBookKey);
+  return createSupabaseClient(preferredKey);
 }
 
 async function syncWrongBookForIncorrectAttempt(
@@ -444,8 +453,8 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Supabase credentials are not configured." }, { status: 500 });
   }
 
-  const candidateKeys = [serviceRoleKey, anonKey].filter(isLikelyRealSupabaseKey);
-  if (candidateKeys.length === 0) {
+  const supabaseKey = resolveSupabaseKey();
+  if (!supabaseKey) {
     return NextResponse.json({ error: "Supabase credentials are not configured." }, { status: 500 });
   }
 
@@ -462,35 +471,21 @@ export async function POST(request: Request) {
     );
   }
 
-  let lastProblemError: string | undefined;
-  let lastInsertError: string | undefined;
+  const result = await findProblemAndInsertAttempt(
+    supabaseKey,
+    userId,
+    problemId,
+    selectedAnswer,
+    timeSpentSec
+  );
 
-  for (const key of candidateKeys) {
-    const result = await findProblemAndInsertAttempt(key, userId, problemId, selectedAnswer, timeSpentSec);
-
-    if (result.response) {
-      return NextResponse.json(result.response, { status: 201 });
-    }
-
-    if (result.problemError) {
-      lastProblemError = result.problemError;
-
-      if (!result.problemError.toLowerCase().includes("invalid api key")) {
-        return NextResponse.json({ error: result.problemError }, { status: 404 });
-      }
-    }
-
-    if (result.insertError) {
-      lastInsertError = result.insertError;
-
-      if (!result.insertError.toLowerCase().includes("invalid api key")) {
-        return NextResponse.json({ error: result.insertError }, { status: 500 });
-      }
-    }
+  if (result.response) {
+    return NextResponse.json(result.response, { status: 201 });
   }
 
-  return NextResponse.json(
-    { error: lastInsertError ?? lastProblemError ?? "Failed to record attempt." },
-    { status: 500 }
-  );
+  if (result.problemError) {
+    return NextResponse.json({ error: result.problemError }, { status: 404 });
+  }
+
+  return NextResponse.json({ error: result.insertError ?? "Failed to record attempt." }, { status: 500 });
 }

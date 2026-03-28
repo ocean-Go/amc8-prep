@@ -23,7 +23,7 @@ type AttemptLookupRow = Pick<
   "problem_id" | "selected_option" | "created_at"
 >;
 
-const supabaseUrl = process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? process.env.SUPABASE_URL ?? "";
 const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
 const anonKey =
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ??
@@ -59,6 +59,16 @@ function isLikelyRealSupabaseKey(key: string): boolean {
   }
 
   return true;
+}
+
+function resolveSupabaseKey() {
+  const preferredKey = isLikelyRealSupabaseKey(serviceRoleKey) ? serviceRoleKey : anonKey;
+
+  if (!isLikelyRealSupabaseKey(preferredKey)) {
+    return null;
+  }
+
+  return preferredKey;
 }
 
 function normalizeOptions(options: unknown): string[] {
@@ -169,8 +179,8 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Supabase credentials are not configured." }, { status: 500 });
   }
 
-  const candidateKeys = [serviceRoleKey, anonKey].filter(isLikelyRealSupabaseKey);
-  if (candidateKeys.length === 0) {
+  const supabaseKey = resolveSupabaseKey();
+  if (!supabaseKey) {
     return NextResponse.json({ error: "Supabase credentials are not configured." }, { status: 500 });
   }
 
@@ -179,51 +189,27 @@ export async function GET(request: Request) {
   const diagnostics: string[] = [];
   console.info("[wrong_book] Using user_id for wrong-book query.", { userId });
 
-  let wrongBookRows: WrongBookNormalizedRow[] = [];
-  let lastError: string | undefined;
-  let successfulKey: string | null = null;
-
-  for (const key of candidateKeys) {
-    const supabase = createSupabaseClient(key);
-    const result = await fetchWrongBookRows(supabase, userId);
-
-    if (result.rows) {
-      wrongBookRows = result.rows;
-      lastError = undefined;
-      successfulKey = key;
-      console.info("[wrong_book] Loaded wrong-book rows.", {
-        userId,
-        rowCount: wrongBookRows.length,
-      });
-      break;
-    }
-
-    lastError = result.error;
-    console.error("[wrong_book] Failed to load wrong-book rows with current key.", {
+  const supabase = createSupabaseClient(supabaseKey);
+  const result = await fetchWrongBookRows(supabase, userId);
+  if (result.error) {
+    console.error("[wrong_book] Failed to load wrong-book rows.", {
       userId,
       error: result.error,
     });
-
-    if (!result.error?.toLowerCase().includes("invalid api key")) {
-      return NextResponse.json(
-        {
-          error: result.error ?? "Failed to fetch wrong-book entries.",
-          failing_step: "fetch_wrong_book_rows",
-        },
-        { status: 500 }
-      );
-    }
-  }
-
-  if (lastError) {
     return NextResponse.json(
       {
-        error: lastError ?? "Failed to fetch wrong-book entries.",
+        error: result.error ?? "Failed to fetch wrong-book entries.",
         failing_step: "fetch_wrong_book_rows",
       },
       { status: 500 }
     );
   }
+
+  const wrongBookRows = result.rows ?? [];
+  console.info("[wrong_book] Loaded wrong-book rows.", {
+    userId,
+    rowCount: wrongBookRows.length,
+  });
 
   if (wrongBookRows.length === 0) {
     console.info("[wrong_book] No wrong-book rows found for user.", { userId });
@@ -232,7 +218,6 @@ export async function GET(request: Request) {
   }
 
   const problemIds = Array.from(new Set(wrongBookRows.map((entry) => entry.problem_id)));
-  const supabase = createSupabaseClient(successfulKey ?? candidateKeys[0]);
   const problemResult = await fetchProblemMap(supabase, problemIds);
 
   if (problemResult.error) {
