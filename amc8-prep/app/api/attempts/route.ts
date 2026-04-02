@@ -130,7 +130,7 @@ async function syncWrongBookWithCurrentSchema(
 
   const { data: existingEntries, error: existingEntryError } = await supabase
     .from("wrong_book")
-    .select("id, wrong_count")
+    .select("*")
     .eq("user_id", userId)
     .eq("problem_id", problemId)
     .limit(2);
@@ -181,10 +181,6 @@ async function syncWrongBookWithCurrentSchema(
     const nextWrongCount = previousWrongCount + 1;
     const updatePayload: Database["public"]["Tables"]["wrong_book"]["Update"] = {
       wrong_count: nextWrongCount,
-      last_error_type: null,
-      status: "review_pending",
-      mastery_level: 0,
-      next_review_date: nextReviewDate,
       updated_at: updatedAt,
     };
 
