@@ -86,38 +86,44 @@ export interface ProblemEngineSchema {
   mock_runs: MockRunRow;
 }
 
-type DbRecord<T extends object> = T & Record<string, unknown>;
-
-interface TableDefinition<Row extends Record<string, unknown>, Insert extends Record<string, unknown>, Update extends Record<string, unknown>> {
-  Row: Row;
-  Insert: Insert;
-  Update: Update;
+type Table<Row extends object, Insert extends object, Update extends object> = {
+  Row: Row & Record<string, unknown>;
+  Insert: Insert & Record<string, unknown>;
+  Update: Update & Record<string, unknown>;
   Relationships: [];
-}
+};
 
 export interface Database {
   public: {
     Tables: {
-      profiles: TableDefinition<
-        DbRecord<ProfileRow>,
-        DbRecord<{
-          id: string;
-          username?: string | null;
-          full_name?: string | null;
-          avatar_url?: string | null;
-          created_at?: string;
-        }>,
-        DbRecord<{
+      attempts: Table<
+        AttemptRow,
+        {
           id?: string;
-          username?: string | null;
-          full_name?: string | null;
-          avatar_url?: string | null;
+          user_id: string;
+          problem_id: string;
+          session_id?: string | null;
+          selected_option?: string | null;
+          is_correct: boolean;
+          time_spent_seconds?: number | null;
+          submitted_at?: string;
           created_at?: string;
-        }>
+        },
+        {
+          id?: string;
+          user_id?: string;
+          problem_id?: string;
+          session_id?: string | null;
+          selected_option?: string | null;
+          is_correct?: boolean;
+          time_spent_seconds?: number | null;
+          submitted_at?: string;
+          created_at?: string;
+        }
       >;
-      problems: TableDefinition<
-        DbRecord<ProblemRow>,
-        DbRecord<{
+      problems: Table<
+        ProblemRow,
+        {
           id?: string;
           source?: string | null;
           year?: number | null;
@@ -131,8 +137,8 @@ export interface Database {
           methods?: Json;
           hints?: Json;
           created_at?: string;
-        }>,
-        DbRecord<{
+        },
+        {
           id?: string;
           source?: string | null;
           year?: number | null;
@@ -146,60 +152,16 @@ export interface Database {
           methods?: Json;
           hints?: Json;
           created_at?: string;
-        }>
+        }
       >;
-      sessions: TableDefinition<
-        DbRecord<SessionRow>,
-        DbRecord<{
-          id?: string;
-          user_id: string;
-          mode: SessionMode;
-          started_at?: string;
-          ended_at?: string | null;
-          created_at?: string;
-        }>,
-        DbRecord<{
-          id?: string;
-          user_id?: string;
-          mode?: SessionMode;
-          started_at?: string;
-          ended_at?: string | null;
-          created_at?: string;
-        }>
-      >;
-      attempts: TableDefinition<
-        DbRecord<AttemptRow>,
-        DbRecord<{
-          id?: string;
-          user_id: string;
-          problem_id: string;
-          session_id?: string | null;
-          selected_option?: string | null;
-          is_correct: boolean;
-          time_spent_seconds?: number | null;
-          submitted_at?: string;
-          created_at?: string;
-        }>,
-        DbRecord<{
-          id?: string;
-          user_id?: string;
-          problem_id?: string;
-          session_id?: string | null;
-          selected_option?: string | null;
-          is_correct?: boolean;
-          time_spent_seconds?: number | null;
-          submitted_at?: string;
-          created_at?: string;
-        }>
-      >;
-      wrong_book: TableDefinition<
-        DbRecord<WrongBookRow & {
+      wrong_book: Table<
+        WrongBookRow & {
           last_attempt_id: string | null;
           notes: string | null;
           review_count: number | null;
           created_at: string | null;
-        }>,
-        DbRecord<{
+        },
+        {
           id?: string;
           user_id: string;
           problem_id: string;
@@ -213,8 +175,8 @@ export interface Database {
           notes?: string | null;
           review_count?: number | null;
           created_at?: string | null;
-        }>,
-        DbRecord<{
+        },
+        {
           id?: string;
           user_id?: string;
           problem_id?: string;
@@ -228,32 +190,7 @@ export interface Database {
           notes?: string | null;
           review_count?: number | null;
           created_at?: string | null;
-        }>
-      >;
-      mock_runs: TableDefinition<
-        DbRecord<MockRunRow>,
-        DbRecord<{
-          id?: string;
-          user_id: string;
-          session_id?: string | null;
-          score?: number | null;
-          total_questions?: number | null;
-          duration_seconds?: number | null;
-          started_at?: string;
-          completed_at?: string | null;
-          created_at?: string;
-        }>,
-        DbRecord<{
-          id?: string;
-          user_id?: string;
-          session_id?: string | null;
-          score?: number | null;
-          total_questions?: number | null;
-          duration_seconds?: number | null;
-          started_at?: string;
-          completed_at?: string | null;
-          created_at?: string;
-        }>
+        }
       >;
     };
     Views: Record<string, never>;
