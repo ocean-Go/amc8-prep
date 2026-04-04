@@ -72,9 +72,9 @@ export async function GET(request: NextRequest) {
 
   let query = supabase
     .from("problems")
-    .select("id, year, contest, number, topic, question, options")
+    .select("id, year, contest, problem_number, topic, question, options")
     .order("year", { ascending: false, nullsFirst: false })
-    .order("number", { ascending: true, nullsFirst: false })
+    .order("problem_number", { ascending: true, nullsFirst: false })
     .limit(50);
 
   if (topic && topic !== "all") {
@@ -95,7 +95,7 @@ export async function GET(request: NextRequest) {
     id: problem.id,
     year: problem.year,
     contest: problem.contest,
-    number: problem.number,
+    number: problem.problem_number,
     topic: problem.topic,
     question_text: problem.question,
     options: normalizeOptions(problem.options),

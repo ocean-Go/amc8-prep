@@ -21,7 +21,7 @@ export interface ProblemRow {
   source: string | null;
   year: number | null;
   contest: string | null;
-  number: number | null;
+  problem_number: number | null;
   topic: string;
   difficulty: number | null;
   question: string;
@@ -68,12 +68,9 @@ export interface WrongBookRow {
 export interface MockRunRow {
   id: string;
   user_id: string;
-  session_id: string | null;
   score: number | null;
-  total_questions: number | null;
   duration_seconds: number | null;
-  started_at: string;
-  completed_at: string | null;
+  total_questions: number | null;
   created_at: string;
 }
 
@@ -117,7 +114,7 @@ export interface Database {
           source?: string | null;
           year?: number | null;
           contest?: string | null;
-          number?: number | null;
+          problem_number?: number | null;
           topic: string;
           difficulty?: number | null;
           question: string;
@@ -132,7 +129,7 @@ export interface Database {
           source?: string | null;
           year?: number | null;
           contest?: string | null;
-          number?: number | null;
+          problem_number?: number | null;
           topic?: string;
           difficulty?: number | null;
           question?: string;
@@ -221,23 +218,17 @@ export interface Database {
         Insert: ({
           id?: string;
           user_id: string;
-          session_id?: string | null;
           score?: number | null;
-          total_questions?: number | null;
           duration_seconds?: number | null;
-          started_at?: string;
-          completed_at?: string | null;
+          total_questions?: number | null;
           created_at?: string;
         } & Record<string, unknown>);
         Update: ({
           id?: string;
           user_id?: string;
-          session_id?: string | null;
           score?: number | null;
-          total_questions?: number | null;
           duration_seconds?: number | null;
-          started_at?: string;
-          completed_at?: string | null;
+          total_questions?: number | null;
           created_at?: string;
         } & Record<string, unknown>);
       };

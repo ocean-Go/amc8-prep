@@ -38,9 +38,9 @@ export async function GET() {
 
   const { data, error } = await supabase
     .from("problems")
-    .select("id, year, contest, number, topic, question, options")
+    .select("id, year, contest, problem_number, topic, question, options")
     .order("year", { ascending: false, nullsFirst: false })
-    .order("number", { ascending: true, nullsFirst: false })
+    .order("problem_number", { ascending: true, nullsFirst: false })
     .limit(MOCK_QUESTION_COUNT);
 
   if (error) {
@@ -51,7 +51,7 @@ export async function GET() {
     id: problem.id,
     year: problem.year,
     contest: problem.contest,
-    number: problem.number,
+    number: problem.problem_number,
     topic: problem.topic,
     question_text: String(problem.question ?? ""),
     options: normalizeOptions(problem.options),
@@ -122,7 +122,8 @@ export async function POST(request: Request) {
     .insert({
       user_id: userId,
       score,
-      time_used_sec: normalizedTimeUsed,
+      duration_seconds: normalizedTimeUsed,
+      total_questions: problemIds.length,
       created_at: new Date().toISOString(),
     })
     .select("id, created_at")
