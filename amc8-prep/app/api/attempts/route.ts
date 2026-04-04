@@ -87,11 +87,12 @@ async function syncWrongBookForIncorrectAttempt(
     nextReviewDate,
   });
 
-  const { data: existingRows, error: lookupError } = await supabase
+  const { data: existingRow, error: lookupError } = await supabase
     .from("wrong_book")
     .select("id, wrong_count")
     .eq("user_id", userId)
-    .eq("problem_id", problemId);
+    .eq("problem_id", problemId)
+    .maybeSingle();
 
   if (lookupError) {
     console.error("[wrong_book] Lookup failed.", {
@@ -114,11 +115,9 @@ async function syncWrongBookForIncorrectAttempt(
     };
   }
 
-  const existingRow = existingRows?.[0];
-
   if (existingRow) {
     const previousWrongCount = Math.max(0, Number(existingRow.wrong_count ?? 0));
-    const nextWrongCount = previousWrongCount + 1;
+    const wrongCount = previousWrongCount + 1;
 
     console.info("[wrong_book] Update path selected.", {
       attemptId,
@@ -126,16 +125,17 @@ async function syncWrongBookForIncorrectAttempt(
       userId,
       problemId,
       previousWrongCount,
-      nextWrongCount,
+      wrongCount,
     });
 
     const { error: updateError } = await supabase
       .from("wrong_book")
       .update({
-        wrong_count: nextWrongCount,
+        wrong_count: wrongCount,
         updated_at: updatedAt,
       })
-      .eq("id", existingRow.id);
+      .eq("user_id", userId)
+      .eq("problem_id", problemId);
 
     if (updateError) {
       console.error("[wrong_book] Update failed.", {
@@ -156,7 +156,7 @@ async function syncWrongBookForIncorrectAttempt(
           row_id: existingRow.id,
           attempt_id: attemptId,
           previous_wrong_count: previousWrongCount,
-          wrong_count: nextWrongCount,
+          wrong_count: wrongCount,
           next_review_date: nextReviewDate,
         },
       };
@@ -171,7 +171,7 @@ async function syncWrongBookForIncorrectAttempt(
         row_id: existingRow.id,
         attempt_id: attemptId,
         previous_wrong_count: previousWrongCount,
-        wrong_count: nextWrongCount,
+        wrong_count: wrongCount,
         next_review_date: nextReviewDate,
       },
     };
