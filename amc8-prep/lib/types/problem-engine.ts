@@ -57,12 +57,12 @@ export interface WrongBookRow {
   id: string;
   user_id: string;
   problem_id: string;
-  wrong_count: number | null;
+  wrong_count: number;
   last_error_type: string | null;
   status: string | null;
   mastery_level: number | null;
   next_review_date: string | null;
-  updated_at: string | null;
+  updated_at: string;
 }
 
 export interface MockRunRow {
@@ -110,7 +110,7 @@ export interface Database {
         Relationships: [];
         Row: SupabaseRecord<ProblemRow>;
         Insert: ({
-          id?: string;
+          id: string;
           source?: string | null;
           year?: number | null;
           contest?: string | null;
@@ -193,23 +193,23 @@ export interface Database {
           id?: string;
           user_id: string;
           problem_id: string;
-          wrong_count?: number | null;
+          wrong_count?: number;
           last_error_type?: string | null;
           status?: string | null;
           mastery_level?: number | null;
           next_review_date?: string | null;
-          updated_at?: string | null;
+          updated_at?: string;
         } & Record<string, unknown>);
         Update: ({
           id?: string;
           user_id?: string;
           problem_id?: string;
-          wrong_count?: number | null;
+          wrong_count?: number;
           last_error_type?: string | null;
           status?: string | null;
           mastery_level?: number | null;
           next_review_date?: string | null;
-          updated_at?: string | null;
+          updated_at?: string;
         } & Record<string, unknown>);
       };
       mock_runs: {
