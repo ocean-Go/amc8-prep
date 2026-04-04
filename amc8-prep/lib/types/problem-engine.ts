@@ -21,7 +21,7 @@ export interface ProblemRow {
   source: string | null;
   year: number | null;
   contest: string | null;
-  number: number | null;
+  problem_number: number | null;
   topic: string;
   difficulty: number | null;
   question: string;
@@ -57,23 +57,20 @@ export interface WrongBookRow {
   id: string;
   user_id: string;
   problem_id: string;
-  wrong_count: number | null;
+  wrong_count: number;
   last_error_type: string | null;
   status: string | null;
   mastery_level: number | null;
   next_review_date: string | null;
-  updated_at: string | null;
+  updated_at: string;
 }
 
 export interface MockRunRow {
   id: string;
   user_id: string;
-  session_id: string | null;
   score: number | null;
-  total_questions: number | null;
   duration_seconds: number | null;
-  started_at: string;
-  completed_at: string | null;
+  total_questions: number | null;
   created_at: string;
 }
 
@@ -113,11 +110,11 @@ export interface Database {
         Relationships: [];
         Row: SupabaseRecord<ProblemRow>;
         Insert: ({
-          id?: string;
+          id: string;
           source?: string | null;
           year?: number | null;
           contest?: string | null;
-          number?: number | null;
+          problem_number?: number | null;
           topic: string;
           difficulty?: number | null;
           question: string;
@@ -132,7 +129,7 @@ export interface Database {
           source?: string | null;
           year?: number | null;
           contest?: string | null;
-          number?: number | null;
+          problem_number?: number | null;
           topic?: string;
           difficulty?: number | null;
           question?: string;
@@ -196,23 +193,23 @@ export interface Database {
           id?: string;
           user_id: string;
           problem_id: string;
-          wrong_count?: number | null;
+          wrong_count?: number;
           last_error_type?: string | null;
           status?: string | null;
           mastery_level?: number | null;
           next_review_date?: string | null;
-          updated_at?: string | null;
+          updated_at?: string;
         } & Record<string, unknown>);
         Update: ({
           id?: string;
           user_id?: string;
           problem_id?: string;
-          wrong_count?: number | null;
+          wrong_count?: number;
           last_error_type?: string | null;
           status?: string | null;
           mastery_level?: number | null;
           next_review_date?: string | null;
-          updated_at?: string | null;
+          updated_at?: string;
         } & Record<string, unknown>);
       };
       mock_runs: {
@@ -221,23 +218,17 @@ export interface Database {
         Insert: ({
           id?: string;
           user_id: string;
-          session_id?: string | null;
           score?: number | null;
-          total_questions?: number | null;
           duration_seconds?: number | null;
-          started_at?: string;
-          completed_at?: string | null;
+          total_questions?: number | null;
           created_at?: string;
         } & Record<string, unknown>);
         Update: ({
           id?: string;
           user_id?: string;
-          session_id?: string | null;
           score?: number | null;
-          total_questions?: number | null;
           duration_seconds?: number | null;
-          started_at?: string;
-          completed_at?: string | null;
+          total_questions?: number | null;
           created_at?: string;
         } & Record<string, unknown>);
       };
