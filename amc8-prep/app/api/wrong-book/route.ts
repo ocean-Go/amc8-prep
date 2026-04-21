@@ -31,6 +31,9 @@ const anonKey =
   process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ??
   "";
 const DEFAULT_TEST_USER_ID = "00000000-0000-0000-0000-000000000001";
+const SECONDARY_TEST_USER_ID = "00000000-0000-0000-0000-000000000002";
+const UUID_PATTERN =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
 function createSupabaseClient(key: string) {
   return createClient<Database, "public">(supabaseUrl, key);
@@ -38,12 +41,26 @@ function createSupabaseClient(key: string) {
 
 function normalizeUserId(candidate: string | null) {
   const normalized = candidate?.trim();
-  if (normalized && normalized !== DEFAULT_TEST_USER_ID) {
-    console.warn("[wrong_book] Received non-default user_id; forcing default test user.", {
-      providedUserId: normalized,
-      forcedUserId: DEFAULT_TEST_USER_ID,
-    });
+  if (!normalized) {
+    return DEFAULT_TEST_USER_ID;
   }
+
+  if (normalized.toLowerCase() === "matt") {
+    return DEFAULT_TEST_USER_ID;
+  }
+
+  if (normalized.toLowerCase() === "chris") {
+    return SECONDARY_TEST_USER_ID;
+  }
+
+  if (UUID_PATTERN.test(normalized)) {
+    return normalized;
+  }
+
+  console.warn("[wrong_book] Unsupported user_id format; fallback to default.", {
+    providedUserId: normalized,
+    fallbackUserId: DEFAULT_TEST_USER_ID,
+  });
   return DEFAULT_TEST_USER_ID;
 }
 

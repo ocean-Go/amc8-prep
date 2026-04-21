@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 import type { CreateAttemptResponse, WrongBookListResponse, WrongBookReviewItem } from "@/lib/types/practice";
 
 const ANSWER_CHOICES = ["A", "B", "C", "D", "E"];
-const DEFAULT_TEST_USER_ID = "00000000-0000-0000-0000-000000000001";
+const DEFAULT_TEST_USER = "matt";
 
 function formatDate(value: string): string {
   const date = new Date(value);
@@ -30,19 +30,18 @@ export default function WrongBookReviewPanel() {
   const [selectedAnswers, setSelectedAnswers] = useState<Record<string, string>>({});
   const [submittingId, setSubmittingId] = useState<string | null>(null);
   const [retryResult, setRetryResult] = useState<Record<string, CreateAttemptResponse>>({});
+  const [activeUser, setActiveUser] = useState(DEFAULT_TEST_USER);
 
   const reviewCount = useMemo(() => entries.length, [entries.length]);
 
-  useEffect(() => {
-    loadWrongBook();
-  }, []);
-
-  async function loadWrongBook() {
+  const loadWrongBook = useCallback(async (userId: string = activeUser) => {
     setLoading(true);
     setError(null);
 
     try {
-      const response = await fetch(`/api/wrong-book?user_id=${DEFAULT_TEST_USER_ID}`, { cache: "no-store" });
+      const response = await fetch(`/api/wrong-book?user_id=${encodeURIComponent(userId)}`, {
+        cache: "no-store",
+      });
       if (!response.ok) {
         const payload = (await response.json()) as { error?: string };
         throw new Error(payload.error ?? "Failed to load wrong-book problems.");
@@ -74,7 +73,13 @@ export default function WrongBookReviewPanel() {
     } finally {
       setLoading(false);
     }
-  }
+  }, [activeUser]);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("amc8_current_user") ?? DEFAULT_TEST_USER;
+    setActiveUser(storedUser);
+    void loadWrongBook(storedUser);
+  }, [loadWrongBook]);
 
   async function submitRetry(entry: WrongBookReviewItem) {
     const selectedAnswer = selectedAnswers[entry.id];
@@ -90,7 +95,7 @@ export default function WrongBookReviewPanel() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          user_id: DEFAULT_TEST_USER_ID,
+          user_id: activeUser,
           problem_id: entry.problem_id,
           selected_answer: selectedAnswer,
           time_spent_sec: 1,
@@ -104,7 +109,7 @@ export default function WrongBookReviewPanel() {
 
       const payload = (await response.json()) as CreateAttemptResponse;
       setRetryResult((prev) => ({ ...prev, [entry.id]: payload }));
-      await loadWrongBook();
+      await loadWrongBook(activeUser);
     } catch (submitError) {
       setError(submitError instanceof Error ? submitError.message : "Unknown retry error.");
     } finally {

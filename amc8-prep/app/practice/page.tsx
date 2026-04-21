@@ -85,12 +85,14 @@ export default function PracticePage() {
     const timeSpentSec = Math.max(1, Math.round((Date.now() - questionStartMs) / 1000));
 
     try {
+      const storedUser = localStorage.getItem("amc8_current_user") ?? "matt";
       const response = await fetch("/api/attempts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          user_id: storedUser,
           problem_id: currentProblem.id,
           selected_answer: selectedOption,
           time_spent_sec: timeSpentSec,

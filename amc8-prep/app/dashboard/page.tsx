@@ -39,7 +39,10 @@ export default function Dashboard() {
   useEffect(() => {
     async function loadDashboardData() {
       try {
-        const response = await fetch("/api/dashboard", { cache: "no-store" });
+        const storedUser = localStorage.getItem("amc8_current_user") ?? "matt";
+        const response = await fetch(`/api/dashboard?user_id=${encodeURIComponent(storedUser)}`, {
+          cache: "no-store",
+        });
         const data = (await response.json()) as DashboardApiResponse | { error?: string };
 
         if (!response.ok) {
@@ -134,7 +137,7 @@ export default function Dashboard() {
               <p className="text-gray-500 text-sm">历年真题强化训练</p>
             </div>
           </Link>
-          <Link href="/wrong-answers" className="block">
+          <Link href="/wrong-book" className="block">
             <div className="card text-center hover:bg-red-50 transition cursor-pointer">
               <div className="text-4xl mb-2">📕</div>
               <h3 className="text-xl font-semibold">错题本</h3>

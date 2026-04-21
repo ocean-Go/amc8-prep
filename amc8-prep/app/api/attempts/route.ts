@@ -16,6 +16,7 @@ const anonKey =
   process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ??
   "";
 const DEFAULT_TEST_USER_ID = "00000000-0000-0000-0000-000000000001";
+const SECONDARY_TEST_USER_ID = "00000000-0000-0000-0000-000000000002";
 const UUID_PATTERN =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const MOCK_PROBLEM_CORRECT_ANSWERS: Record<string, string> = {
@@ -30,14 +31,26 @@ function createSupabaseClient(key: string) {
 
 function resolveAttemptUserId(candidate: string | undefined | null) {
   const normalized = candidate?.trim();
-
-  if (normalized && normalized !== DEFAULT_TEST_USER_ID) {
-    console.warn("[attempts] Received non-default user_id; forcing Issue 5 fixed user.", {
-      providedUserId: normalized,
-      forcedUserId: DEFAULT_TEST_USER_ID,
-    });
+  if (!normalized) {
+    return DEFAULT_TEST_USER_ID;
   }
 
+  if (normalized.toLowerCase() === "matt") {
+    return DEFAULT_TEST_USER_ID;
+  }
+
+  if (normalized.toLowerCase() === "chris") {
+    return SECONDARY_TEST_USER_ID;
+  }
+
+  if (UUID_PATTERN.test(normalized)) {
+    return normalized;
+  }
+
+  console.warn("[attempts] Unsupported user_id format; falling back to default test user.", {
+    providedUserId: normalized,
+    fallbackUserId: DEFAULT_TEST_USER_ID,
+  });
   return DEFAULT_TEST_USER_ID;
 }
 
@@ -132,6 +145,7 @@ async function syncWrongBookForIncorrectAttempt(
       .from("wrong_book")
       .update({
         wrong_count: wrongCount,
+        next_review_date: nextReviewDate,
         updated_at: updatedAt,
       })
       .eq("user_id", userId)
@@ -234,6 +248,76 @@ async function syncWrongBookForIncorrectAttempt(
   };
 }
 
+async function syncWrongBookForCorrectAttempt(
+  supabase: ReturnType<typeof createSupabaseClient>,
+  userId: string,
+  problemId: string,
+  attemptId: string
+): Promise<{ error?: string; debug?: WrongBookSyncDebugInfo }> {
+  const { data: existingRow, error: lookupError } = await supabase
+    .from("wrong_book")
+    .select("id")
+    .eq("user_id", userId)
+    .eq("problem_id", problemId)
+    .maybeSingle();
+
+  if (lookupError) {
+    return {
+      error: lookupError.message ?? "Failed to query wrong_book for correct attempt sync.",
+      debug: {
+        attempted: true,
+        action: "remove_failed",
+        user_id: userId,
+        problem_id: problemId,
+        attempt_id: attemptId,
+      },
+    };
+  }
+
+  if (!existingRow) {
+    return {
+      debug: {
+        attempted: true,
+        action: "removed",
+        user_id: userId,
+        problem_id: problemId,
+        attempt_id: attemptId,
+      },
+    };
+  }
+
+  const { error: deleteError } = await supabase
+    .from("wrong_book")
+    .delete()
+    .eq("user_id", userId)
+    .eq("problem_id", problemId);
+
+  if (deleteError) {
+    return {
+      error: deleteError.message ?? "Failed to remove wrong_book row after correct attempt.",
+      debug: {
+        attempted: true,
+        action: "remove_failed",
+        user_id: userId,
+        problem_id: problemId,
+        row_id: existingRow.id,
+        attempt_id: attemptId,
+      },
+    };
+  }
+
+  return {
+    debug: {
+      attempted: true,
+      action: "removed",
+      user_id: userId,
+      problem_id: problemId,
+      row_id: existingRow.id,
+      attempt_id: attemptId,
+    },
+  };
+}
+
 async function findProblemAndInsertAttempt(
   supabase: ReturnType<typeof createSupabaseClient>,
   userId: string,
@@ -286,29 +370,24 @@ async function findProblemAndInsertAttempt(
 
   let wrongBookSync: WrongBookSyncDebugInfo | undefined;
 
-  if (!isCorrect) {
-    const wrongBookResult = await syncWrongBookForIncorrectAttempt(
-      supabase,
+  const wrongBookResult = isCorrect
+    ? await syncWrongBookForCorrectAttempt(supabase, userId, problemId, insertedAttempt.id)
+    : await syncWrongBookForIncorrectAttempt(supabase, userId, problemId, insertedAttempt.id);
+
+  wrongBookSync = wrongBookResult.debug;
+
+  if (wrongBookResult.error) {
+    console.error("[wrong_book] Sync failed after attempt insert.", {
       userId,
       problemId,
-      insertedAttempt.id
-    );
+      attemptId: insertedAttempt.id,
+      error: wrongBookResult.error,
+      debug: wrongBookResult.debug,
+    });
 
-    wrongBookSync = wrongBookResult.debug;
-
-    if (wrongBookResult.error) {
-      console.error("[wrong_book] Sync failed after attempt insert.", {
-        userId,
-        problemId,
-        attemptId: insertedAttempt.id,
-        error: wrongBookResult.error,
-        debug: wrongBookResult.debug,
-      });
-
-      return {
-        insertError: `Attempt recorded but wrong-book sync failed: ${wrongBookResult.error}`,
-      };
-    }
+    return {
+      insertError: `Attempt recorded but wrong-book sync failed: ${wrongBookResult.error}`,
+    };
   }
 
   const response: CreateAttemptResponse = {
