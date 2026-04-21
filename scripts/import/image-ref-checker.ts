@@ -11,7 +11,17 @@
 
 import { readFile, readdir } from "node:fs/promises";
 import { resolve, join } from "node:path";
-import { extractImageRefs } from "./markdown-parser.js";
+// ─── Image Reference Extraction (inlined, no ESM import) ──────────────────────
+
+function extractImageRefs(content: string): string[] {
+  const refs = content.match(/!\[\[AMC8_\d{4}_p\d+\.png\|/g) ?? [];
+  return refs
+    .map((r) => {
+      const m = r.match(/!\[\[(AMC8_\d{4}_p\d+\.png)\|/);
+      return m ? m[1] : "";
+    })
+    .filter(Boolean);
+}
 
 const MARKDOWN_DIR = resolve("content/amc8/markdown");
 const IMAGES_DIR = resolve("content/amc8/markdown/images");
