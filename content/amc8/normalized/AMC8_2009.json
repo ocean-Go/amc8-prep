@@ -1,0 +1,487 @@
+[
+  {
+    "problem_id": "amc8-2009-01",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 1,
+    "question_text_raw": "Bridget bought a bag of apples at the grocery store. She gave half of the apples to Ann. Then shegaveCassie3apples,keeping4applesforherself.HowmanyapplesdidBridgetbuy?",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "7",
+      "D": "11",
+      "E": "14"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2009-02",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 2,
+    "question_text_raw": "Onaverage,forevery4sportscarssoldatthelocaldealership,7sedansaresold.Thedealership predictsthatitwillsell28sportscarsnextmonth.Howmanysedansdoesitexpecttosell?",
+    "options": {
+      "A": "7",
+      "B": "32",
+      "C": "35",
+      "D": "49",
+      "E": "112"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2009-03",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 3,
+    "question_text_raw": "ThegraphshowstheconstantrateatwhichSuzannaridesherbike.Ifsheridesatotalofahalf anhouratthesamespeed,howmanymileswouldshehaveridden? 4 3 2 1 0 0 5 10 15 20 MINUTES SELIM",
+    "options": {
+      "A": "5",
+      "B": "5.5",
+      "C": "6",
+      "D": "6.5",
+      "E": "7"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2009-04",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 4,
+    "question_text_raw": "The five pieces shown below can be arranged to form four of the five figures shown in the choices.Whichfigurecannotbeformed? ©2022AoPSIncorporated 1 --- ## 📷 Pages (9 pages)![[AMC8_2009_p1.png page 1]]![[AMC8_2009_p2.png page 2]]![[AMC8_2009_p3.png page 3]]![[AMC8_2009_p4.png page 4]]![[AMC8_2009_p5.png page 5]]![[AMC8_2009_p6.png page 6]]![[AMC8_2009_p7.png page 7]]![[AMC8_2009_p8.png page 8]]![[AMC8_2009_p9.png page 9]] --- AoPS Community 2009 AMC 8 ---- --------- --- --- --- --- --- -------- --- (A) (B) (C) (D) (E) Asequenceofnumbersstartswith1,2,and3.Thefourthnumberofthesequenceisthesumof 5 thepreviousthreenumbersinthesequence:1+2+3 6.Inthesameway,everynumberafter = thefourthisthesumofthepreviousthreenumbers.Whatistheeighthnumberinthesequence? (A) 11 (B) 20 (C) 37 (D) 68 (E) 99 --- ----- ----- ----- ----- ----- --- --- ---",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [
+      "content/amc8/markdown/images/AMC8_2009_p1.png",
+      "content/amc8/markdown/images/AMC8_2009_p2.png",
+      "content/amc8/markdown/images/AMC8_2009_p3.png",
+      "content/amc8/markdown/images/AMC8_2009_p4.png",
+      "content/amc8/markdown/images/AMC8_2009_p5.png",
+      "content/amc8/markdown/images/AMC8_2009_p6.png",
+      "content/amc8/markdown/images/AMC8_2009_p7.png",
+      "content/amc8/markdown/images/AMC8_2009_p8.png",
+      "content/amc8/markdown/images/AMC8_2009_p9.png"
+    ],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2009-05",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 5,
+    "question_text_raw": "©2022AoPSIncorporated AoPS Community 2009 AMC 8 ---- --------- --- --- --- --- -------- --- The diagram represents a 7-foot-by-7-foot floor that is tiled with 1-square-foot black tiles and 18 whitetiles.Noticethatthecornershavewhitetiles.Ifa15-foot-by-15-footflooristobetiledin thesamemanner,howmanywhitetileswillbeneeded?",
+    "options": {
+      "A": "49",
+      "B": "57",
+      "C": "64",
+      "D": "96",
+      "E": "126 --- ----- ----- ----- ----- ------ --- --- Twoanglesofanisoscelestrianglemeasure70◦ andx◦.Whatisthesumofthethreepossible"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2009-06",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 6,
+    "question_text_raw": "Steve’s empty swimming pool will hold 24,000 gallons of water when full. It will be filled by 4 hoses, each of which supplies gallons of water per minute. How many hours will it take to 2.5 fillSteve’spool?",
+    "options": {
+      "A": "40",
+      "B": "42",
+      "C": "44",
+      "D": "46",
+      "E": "48 --- ----- ----- ----- ----- ----- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2009-07",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 7,
+    "question_text_raw": "The triangular plot of ACD lies between Aspen Road, Brown Road and a railroad. Main Street runseastandwest,andtherailroadrunsnorthandsouth.Thenumbersinthediagramindicate distancesinmiles.Thewidthoftherailroadtrackcanbeignored.Howmanysquaremilesare intheplotoflandACD? 2 ©2022AoPSIncorporated AoPS Community 2009 AMC 8 D 3 n w o r B C n e 3 p s A Main A 3 B",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4.5",
+      "D": "6",
+      "E": "9"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2009-08",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 8,
+    "question_text_raw": "Thelengthofarectangleisincreasedby10%andthewidthisdecreasedby10%.Whatpercent oftheoldareaisthenewarea?",
+    "options": {
+      "A": "90",
+      "B": "99",
+      "C": "100",
+      "D": "101",
+      "E": "110"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2009-09",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 9,
+    "question_text_raw": "Constructasquareononesideofanequilateraltriangle.Oneonnon-adjacentsideofthesquare, constructaregularpentagon,asshown.Oneanon-adjacentsideofthepentagon,constructa hexagon. Continue to construct regular polygons in the same way, until you construct an oc- tagon.Howmanysidesdoestheresultingpolygonhave? ©2022AoPSIncorporated 3 AoPS Community 2009 AMC 8 ---- --------- ----------- ----- ----- -------- ---",
+    "options": {
+      "A": "21",
+      "B": "23",
+      "C": "25",
+      "D": "27",
+      "E": "29 Onacheckerboardcomposedof64unitsquares,whatistheprobabilitythatarandomlychosen"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2009-10",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 10,
+    "question_text_raw": "unitsquaredoes not touchtheouteredgeoftheboard? --- -------------- -------------------------------- ----- ----- --- ---",
+    "options": {
+      "A": "1",
+      "B": "7",
+      "C": "1",
+      "D": "9",
+      "E": "49 16 16 2 16 64"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2009-11",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 11,
+    "question_text_raw": "TheAmacoMiddleSchoolbookstoresellspencilscostingawholenumberofcents.Somesev- enth graders each bought a pencil, paying a total of $1.43. Some of the sixth graders each 30 bought a pencil, and they paid a total of $1.95. How many more sixth graders than seventh gradersboughtapencil?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4",
+      "E": "5 --- --------- ---- ---- ---- --- --- Thetwospinnersshownarespunonceandeachlandsononeofthenumberedsectors.What"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2009-12",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 12,
+    "question_text_raw": "2 **D**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2009-13",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 13,
+    "question_text_raw": "A three-digit integer contains one of each of the digits 1, 3, and 5. What is the probability that theintegerisdivisibleby5?",
+    "options": {
+      "A": "1",
+      "B": "1",
+      "C": "1",
+      "D": "2",
+      "E": "5 --- ----- --- --- ----- ----- --- --- --- --- --- 6 3 2 3 6 AustinandTempleare50milesapartalongInterstate35.BonniedrovefromAustintoherdaugh-"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2009-14",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 14,
+    "question_text_raw": "ter’s house in Temple, averaging miles per hour. Leaving the car with her daughter, Bonnie 60 rodabusbacktoAustinalongthesamerouteandaveraged40milesperhouronthereturntrip. Whatwastheaveragespeedfortheroundtrip,inmilesperhour?",
+    "options": {
+      "A": "46",
+      "B": "48",
+      "C": "50",
+      "D": "52",
+      "E": "54 --- ----- ----- --- ----- ----- --- ----- --- --- --- A recipe that makes servings of hot chocolate requires squares of chocolate, 1 cup sugar,"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2009-15",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 15,
+    "question_text_raw": "5 2 --- --- --- --- --- --- --- --- --- --- --- 4 1cupwaterand4cupsmilk.Jordanhas5squaresofchocolate,2cupsofsugar,lotsofwater and7cupsofmilk.Ifshemaintainsthesameratioofingredients,whatisthegreatestnumber ofservingsofhotchocolateshecanmake?",
+    "options": {
+      "A": "51",
+      "B": "61",
+      "C": "71",
+      "D": "83",
+      "E": "97 --- ----- ----- --- ----- ----- --- ----- --- --- --- 8 4 2 4 8"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2009-16",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 16,
+    "question_text_raw": "Howmany3-digitpositiveintegershavedigitswhoseproductequals24?",
+    "options": {
+      "A": "12",
+      "B": "15",
+      "C": "18",
+      "D": "21",
+      "E": "24 --- ----- ----- --- ----- ----- --- ----- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2009-17",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 17,
+    "question_text_raw": "Thepositiveintegersxandyarethetwosmallestpositiveintegersforwhichtheproductof360 andxisasquareandtheproductof360andy isacube.Whatisthesumofxandy?",
+    "options": {
+      "A": "80",
+      "B": "85",
+      "C": "115",
+      "D": "165",
+      "E": "610 --- ----- ----- --- ------ ------ --- ------ --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2009-18",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 18,
+    "question_text_raw": "8 **C**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2009-19",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 19,
+    "question_text_raw": "valuesofx?",
+    "options": {
+      "A": "95",
+      "B": "125",
+      "C": "140",
+      "D": "165",
+      "E": "180 --- ----- ------ ------ ------ ------ --- --- Howmanynon-congruenttriangleshaveverticesatthreeoftheeightpointsinthearrayshown"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2009-20",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 20,
+    "question_text_raw": "below?",
+    "options": {
+      "A": "5",
+      "B": "6",
+      "C": "7",
+      "D": "8",
+      "E": "9 --- ---- ---- ---- --------- --- --- --- AndyandBethanyhavearectangulararrayofnumberswith40rowsand75columns.Andyadds"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2009-21",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 21,
+    "question_text_raw": "1 **D**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2009-22",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 22,
+    "question_text_raw": "Howmanywholenumbersbetween1and1000donotcontainthedigit1?",
+    "options": {
+      "A": "512",
+      "B": "648",
+      "C": "720",
+      "D": "728",
+      "E": "800"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2009-23",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 23,
+    "question_text_raw": "On the last day of school, Mrs. Wonderful gave jelly beans to her class. She gave each boy as many jelly beans as there were boys in the class. She gave each girl as many jelly beans as there were girls in the class. She brought jelly beans, and when she finished, she had six 400 jelly beans left. There were two more boys than girls in her class. How many students were in 6 ©2022AoPSIncorporated AoPS Community 2009 AMC 8 ---- --------- --- --- --- --- -------- --- herclass?",
+    "options": {
+      "A": "26",
+      "B": "28",
+      "C": "30",
+      "D": "32",
+      "E": "34 --- ----- ----- ----- ----- ----- --- --- A B A B The letters A, B, and represent digits. If + C A and - C A, what digit does"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2009-24",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 24,
+    "question_text_raw": "C D D --- --- --- --- --- --- --- --- D A A represent?",
+    "options": {
+      "A": "5",
+      "B": "6",
+      "C": "7",
+      "D": "8",
+      "E": "9 --- ---- ---- ---- --------- --- --- --- Aone-cubic-footcubeiscutintofourpiecesbythreecutsparalleltothetopfaceofthecube."
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2009-25",
+    "contest": "AMC8",
+    "year": 2009,
+    "problem_number": 25,
+    "question_text_raw": "The first cub is 1 foot from the top face. The second cut is 1 foot below the first cut, and the 2 3 thirdcutis 1 footbelowthesecondcut.FromthetoptothebottomthepiecesarelabeledA,B, 17 C,andD.Thepiecesarethengluedtogetherendtoendasshownintheseconddiagram.What isthetotalsurfaceareaofthissolidinsquarefeet? 7 ©2022AoPSIncorporated AoPS Community 2009 AMC 8 -------------- -------- --- 8 ©2022AoPSIncorporated AoPS Community 2009 AMC 8 ---- -------------------------------------------------------- ------- ------- -------------- --------- ---",
+    "options": {
+      "A": "6",
+      "B": "7",
+      "C": "419",
+      "D": "158",
+      "E": "11 51 17 These problems are copy- – right©MathematicalAssociationofAmerica("
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2009.md",
+    "parse_status": "parsed"
+  }
+]

@@ -1,0 +1,484 @@
+[
+  {
+    "problem_id": "amc8-2008-01",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 1,
+    "question_text_raw": "manydollarsdidshehavelefttospend?",
+    "options": {
+      "A": "12",
+      "B": "14",
+      "C": "26",
+      "D": "38",
+      "E": "50 --- ----- ----- ----- ----- ----- --- --- --- Theten-lettercodeBESTOFLUCKrepresentsthetendigits0−9,inorder.What4-digitnumber"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2008-02",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 2,
+    "question_text_raw": "isrepresentedbythecodewordCLUE?",
+    "options": {
+      "A": "8671",
+      "B": "8672",
+      "C": "9781",
+      "D": "9782",
+      "E": "9872 --- ------- ------- ------- --- ------- ------- --- --- th,whatdayoftheweekisFebruary1?"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2008-03",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 3,
+    "question_text_raw": "IfFebruaryisamonththatcontainsFridaythe13 --- ----------------------------------------- --------- --- ------------ --- ----------- ----------- ---",
+    "options": {
+      "A": "Sunday",
+      "B": "Monday",
+      "C": "Wednesday",
+      "D": "Thursday",
+      "E": "Saturday"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2008-04",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 4,
+    "question_text_raw": "Inthefigure,theouterequilateraltrianglehasarea16,theinnerequilateraltrianglehasarea1, andthethreetrapezoidsarecongruent.Whatistheareaofoneofthetrapezoids?",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6",
+      "E": "7 --- ---- ---- ---- --------- --- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2008-05",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 5,
+    "question_text_raw": "Barney Schwinn notices that the odometer on his bicycle reads 1441, a palindrome, because it reads the same forward and backward. After riding 4 more hours that day and 6 the next, henoticesthattheodometershowsanotherpalindrome,1661.Whatwashisaveragespeedin milesperhour?",
+    "options": {
+      "A": "15",
+      "B": "16",
+      "C": "18",
+      "D": "20",
+      "E": "22 --- ----- ----- ----- ----- ----- --- --- --- Inthefigure,whatistheratiooftheareaofthegraysquarestotheareaofthewhitesquares?"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2008-06",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 6,
+    "question_text_raw": "1 ©2022AoPSIncorporated --- ## 📷 Pages (6 pages)![[AMC8_2008_p1.png page 1]]![[AMC8_2008_p2.png page 2]]![[AMC8_2008_p3.png page 3]]![[AMC8_2008_p4.png page 4]]![[AMC8_2008_p5.png page 5]]![[AMC8_2008_p6.png page 6]] --- AoPS Community 2008 AMC 8 ---- --------- ----- ---------- -------- ------ ---- ------------ --- -------- ---",
+    "options": {
+      "A": "3: 10",
+      "B": "3: 8",
+      "C": "3: 7",
+      "D": "3: 5",
+      "E": "1: 1"
+    },
+    "image_refs": [
+      "content/amc8/markdown/images/AMC8_2008_p1.png",
+      "content/amc8/markdown/images/AMC8_2008_p2.png",
+      "content/amc8/markdown/images/AMC8_2008_p3.png",
+      "content/amc8/markdown/images/AMC8_2008_p4.png",
+      "content/amc8/markdown/images/AMC8_2008_p5.png",
+      "content/amc8/markdown/images/AMC8_2008_p6.png"
+    ],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2008-07",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 7,
+    "question_text_raw": "If 3 = M = 60,whatisM +N? 5 45 N",
+    "options": {
+      "A": "27",
+      "B": "29",
+      "C": "45",
+      "D": "105",
+      "E": "127"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2008-08",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 8,
+    "question_text_raw": "CandysalesfromtheBoostersClubfromJanuarythroughAprilareshown.Whatweretheav- eragesalespermonthindollars? $120 $80 $40 Jan Feb Mar Apr --- ----- ----- --- ----- ----- --- ----------- --- --- ---",
+    "options": {
+      "A": "60",
+      "B": "70",
+      "C": "75",
+      "D": "80",
+      "E": "85 In2005TycoonTammyinvested$100fortwoyears.Duringthethefirstyear"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2008-09",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 9,
+    "question_text_raw": "herinvestmentsuffereda15%loss,butduringthesecondyeartheremaining investmentshoweda20%gain.Overthetwo-yearperiod,whatwasthechange inTammy’sinvestment?",
+    "options": {
+      "A": "5%loss",
+      "B": "2%loss",
+      "C": "1%gain",
+      "D": "2%gain",
+      "E": "5%gain --- --------- --- --------- --- --------- --- --------- --------- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2008-10",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 10,
+    "question_text_raw": "Theaverageageofthe6peopleinRoomAis40.Theaverageageofthe4peopleinRoomBis 25.Ifthetwogroupsarecombined,whatistheaverageageofallthepeople?",
+    "options": {
+      "A": "32.5",
+      "B": "33",
+      "C": "33.5",
+      "D": "34",
+      "E": "35 --- ------- --- ----- ------- --- ----- ----- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2008-11",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 11,
+    "question_text_raw": "Each of the 39 students in the eighth grade at Lincoln Middle School has one dog or one cat or both a dog and a cat. Twenty students have a dog and 26 students have a cat. How many studentshavebothadogandacat? 2 ©2022AoPSIncorporated AoPS Community 2008 AMC 8",
+    "options": {
+      "A": "7",
+      "B": "13",
+      "C": "19",
+      "D": "39",
+      "E": "46"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2008-12",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 12,
+    "question_text_raw": "Aballisdroppedfromaheightof3meters.Onitsfirstbounceitrisestoaheightof2meters. It keeps falling and bouncing to 2 of the height it reached in the previous bounce. On which 3 bouncewillitnotrisetoaheightof0.5meters?",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6",
+      "E": "7"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2008-13",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 13,
+    "question_text_raw": "Mr. Harman needs to know the combined weight in pounds of three boxes he wants to mail. However,theonlyavailablescaleisnotaccurateforweightslessthan100poundsormorethan 150 pounds. So the boxes are weighed in pairs in every possible way. The results are 122, 125 and127pounds.Whatisthecombinedweightinpoundsofthethreeboxes?",
+    "options": {
+      "A": "160",
+      "B": "170",
+      "C": "187",
+      "D": "195",
+      "E": "354"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2008-14",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 14,
+    "question_text_raw": "Three A’s, three B’s, and three C’s are placed in the nine spaces so that each row and column contain one of each letter. If A is placed in the upper left corner, how many arrangements are possible? A",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5",
+      "E": "6"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2008-15",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 15,
+    "question_text_raw": "InTheresa’sfirst8basketballgames,shescored7,4,3,6,8,3,1and5points.Inherninthgame, she scored fewer than 10 points and her points-per-game average for the nine games was an integer. Similarly in her tenth game, she scored fewer than 10 points and her points-per-game averageforthe10gameswasalsoaninteger.Whatistheproductofthenumberofpointsshe scoredintheninthandtenthgames?",
+    "options": {
+      "A": "35",
+      "B": "40",
+      "C": "48",
+      "D": "56",
+      "E": "72"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2008-16",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 16,
+    "question_text_raw": "A shape is created by joining seven unit cubes, as shown. What is the ratio of the volume in cubicunitstothesurfaceareainsquareunits? ©2022AoPSIncorporated 3 AoPS Community 2008 AMC 8 ---- --------- ------ --------- -------- -------------- --- -------- ---",
+    "options": {
+      "A": "1: 6",
+      "B": "7: 36",
+      "C": "1: 5",
+      "D": "7: 30",
+      "E": "6: 25 Ms.Osborneaskseachstudentinherclasstodrawarectanglewithintegersidelengthsanda"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2008-17",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 17,
+    "question_text_raw": "perimeterof50units.Allofherstudentscalculatetheareaoftherectangletheydraw.Whatis thedifferencebetweenthelargestandsmallestpossibleareasoftherectangles?",
+    "options": {
+      "A": "76",
+      "B": "120",
+      "C": "128",
+      "D": "132",
+      "E": "136 --- ----- ------ ------ ------ ------ --- --- --- Two circles that share the same center have radii 10 meters and 20 meters. An aardvark runs"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2008-18",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 18,
+    "question_text_raw": "alongthepathshown,startingatAandendingatK.Howmanymetersdoestheaardvarkrun? A K",
+    "options": {
+      "A": "10π+20",
+      "B": "10π+30",
+      "C": "10π+40",
+      "D": "20π+20",
+      "E": "20π+40 --- --------- --------- --- --------- --------- --------- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2008-19",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 19,
+    "question_text_raw": "9 Eight points are spaced around at intervals of one unit around a 2×2 square, as shown. Two of the 8 points are chosen at random. What is the probability that the two points are one unit apart? 4 ©2022AoPSIncorporated AoPS Community 2008 AMC 8 ---- --------- --- --- --- --- -------- --- 1 2 4 1 4 (A) (B) (C) (D) (E) 4 7 11 2 7",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2008-20",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 20,
+    "question_text_raw": "The students in Mr. Neatkin’s class took a penmanship test. Two-thirds of the boys and 3 of 4 the girls passed the test, and an equal number of boys and girls passed the test. What is the minimumpossiblenumberofstudentsintheclass?",
+    "options": {
+      "A": "12",
+      "B": "17",
+      "C": "24",
+      "D": "27",
+      "E": "36 --- ----- ----- ----- ----- ----- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2008-21",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 21,
+    "question_text_raw": "Jerrycutsawedgefroma6-cmcylinderofbolognaasshownbythedashedcurve.Whichan- swerchoiceisclosesttothevolumeofhiswedgeincubiccentimeters? 6 cm 8 cm",
+    "options": {
+      "A": "48",
+      "B": "75",
+      "C": "151",
+      "D": "192",
+      "E": "603 --- ----- ----- ------ ------ ------ --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2008-22",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 22,
+    "question_text_raw": "Forhowmanypositiveintegervaluesofnareboth n and3nthree-digitwholenumbers? 3",
+    "options": {
+      "A": "12",
+      "B": "21",
+      "C": "27",
+      "D": "33",
+      "E": "34 --- ----- ----- ----- ----- ----- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2008-23",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 23,
+    "question_text_raw": "In square ABCE, AF = 2FE and CD = 2DE. What is the ratio of the area of △BFD to the areaofsquareABCE? 5 ©2022AoPSIncorporated AoPS Community 2008 AMC 8 ---- --------- --- --- --- --- -------- --- A B F E C D",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "5",
+      "D": "1",
+      "E": "7 --- ----- ----- ----- ----- ----- --- --- 6 9 18 3 20 Ten tiles numbered through are turned face down. One tile is turned up at random, and a"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2008-24",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 24,
+    "question_text_raw": "1 10 --- --- --- --- --- --- --- --- dieisrolled.Whatistheprobabilitythattheproductofthenumbersonthetileandthediewill beasquare?",
+    "options": {
+      "A": "1",
+      "B": "1",
+      "C": "11",
+      "D": "1",
+      "E": "7 --- ----- ----- ------ ----- ----- --- --- 10 6 60 5 30 Margie’swinningartdesignisshown.Thesmallestcirclehasradius2inches,witheachsucces-"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2008-25",
+    "contest": "AMC8",
+    "year": 2008,
+    "problem_number": 25,
+    "question_text_raw": "sivecircle’sradiusincreasingby2inches.Approximatelywhatpercentofthedesignisblack?",
+    "options": {
+      "A": "42",
+      "B": "44",
+      "C": "45",
+      "D": "46",
+      "E": "48 --- -------------------------------------------------------- ----- ----- ----- -------------- --------- --- These problems are copy- – right©MathematicalAssociationofAmerica("
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2008.md",
+    "parse_status": "parsed"
+  }
+]

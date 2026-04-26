@@ -1,0 +1,477 @@
+[
+  {
+    "problem_id": "amc8-2024-01",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 1,
+    "question_text_raw": "222,222−22,222−2,222−222−22−2?",
+    "options": {
+      "A": "0",
+      "B": "2",
+      "C": "4",
+      "D": "6",
+      "E": "8 --- -------------------------------------------- ---- ---- --------- --------- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2024-02",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 2,
+    "question_text_raw": "Whatisthevalueofthisexpressionindecimalform? 44 110 44 + + 11 44 1100 --- ------ -------- ------- ------ ---------- --- ---",
+    "options": {
+      "A": "6.4",
+      "B": "6.504",
+      "C": "6.54",
+      "D": "6.9",
+      "E": "6.94 Foursquaresofsidelength4,7,9,and10arearrangedinincreasingsizeordersothattheirleft"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2024-03",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 3,
+    "question_text_raw": "edges and bottom edges align. The squares alternate in color white-gray-white-gray, respec- tively,asshowninthefigure.Whatistheareaofthevisiblegrayregioninsquareunits? 9 10 7 4",
+    "options": {
+      "A": "42",
+      "B": "45",
+      "C": "49",
+      "D": "50",
+      "E": "52 --- ----- ----- ----- ----- ----- --- --- When Yunji added all the integers from to 9, she mistakenly left out a number. Her incorrect"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2024-04",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 4,
+    "question_text_raw": "1 --- --- --- --- --- --- --- --- sumturnedouttobeasquarenumber.WhichnumberdidYunjileaveout?",
+    "options": {
+      "A": "5",
+      "B": "6",
+      "C": "7",
+      "D": "8",
+      "E": "9 --- ---- ---- ---- --------- --- --- --- Aaliyahrollstwostandard6-sideddice.Shenoticesthattheproductofthetwonumbersrolled"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2024-05",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 5,
+    "question_text_raw": "©2024AoPSIncorporated AoPS Community 2024 AMC 8 - 21 A group of frogs (called an army) is living in a tree. A frog turns green when in the shade and yellow when in the sun. Initially the ratio of green to yellow frogs was 3:1. Then 3 green frogs movedtothesunnysideand5yellowfrogsmovedtotheshadyside.Nowtheratiois4:1.What isthedifferencebetweenthenumberofgreenfrogsandyellowfrogsnow?",
+    "options": {
+      "A": "10",
+      "B": "12",
+      "C": "16",
+      "D": "20",
+      "E": "24"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2024-06",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 6,
+    "question_text_raw": "showfourofthepathslabeledP,Q,R,andS.Whatisthesortedorderofthefourpathsfrom shortesttolongest?",
+    "options": {
+      "A": "P,Q,R,S",
+      "B": "P,R,S,Q",
+      "C": "Q,S,P,R",
+      "D": "R,P,S,Q",
+      "E": "R,S,P,Q --- ---------- ---------- --- ---------- ---------- ---------- --- --- A3×7iscoveredwithoutoverlapby3shapesoftiles:2×2,1×4,and1×1,shownbelow.What"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2024-07",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 7,
+    "question_text_raw": "istheminimumpossiblenumberof1×1tilesused?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4",
+      "E": "5 --- ---- ---- ---- --------- --- --- --- --- On Monday Tayehas $2. Everyday he eithergains $3 or doublesthe amount of money hehad"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2024-08",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 8,
+    "question_text_raw": "on the previous day. How many different dollar amounts could Taye have on Thursday, 3 days later?",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6",
+      "E": "7 --- ---- ---- ---- --------- --- --- --- --- AllthemarblesinMaria’scollectionarered,green,orblue.Mariahashalfasmanyredmarbles"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2024-09",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 9,
+    "question_text_raw": "as green marbles and twice as many blue marbles as green marbles. Which of the following couldbethetotalnumberofmarblesinMaria’scollection?",
+    "options": {
+      "A": "24",
+      "B": "25",
+      "C": "26",
+      "D": "27",
+      "E": "28 --- ----- ----- ----- ----- ----- --- --- --- InJanuary1980theMoanaLoaObservationrecordedcarbondioxidelevelsof338ppm(parts"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2024-10",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 10,
+    "question_text_raw": "per million). Over the years the average carbon dioxide reading has increased by about 1.515 ppmeachyear.WhatistheexpectedcarbondioxidelevelinppminJanuary2030?Roundyour answertothenearestinteger.",
+    "options": {
+      "A": "399",
+      "B": "414",
+      "C": "420",
+      "D": "444",
+      "E": "459 --- ------ ------ ------ ------ ------ --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2024-11",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 11,
+    "question_text_raw": "The coordinates of △ABC are A(5,7), B(11,7), C(3,y), with y > 7. The area of △ABC is 12. Whatisthevalueofy? 2 ©2024AoPSIncorporated AoPS Community 2024 AMC 8 - ---- --------- --- --- --- --- --- --- --- -------- --- C(3,y) A(5,7) B(11,7) --- ---- ---- ----- ----- ------ --- --- ------- --- ---",
+    "options": {
+      "A": "8",
+      "B": "9",
+      "C": "10",
+      "D": "11",
+      "E": "12 Rohankeepsatotalof90guppiesin4fishtanks."
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2024-12",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 12,
+    "question_text_raw": "Thereis1moreguppyinthe2ndtankthanthe1sttank. Thereare2moreguppiesthethe3rdtankthanthe2ndtank. Thereare3moreguppiesinthe4thtankthanthe3rdtank. Howmanyguppiesareinthe4thtank?",
+    "options": {
+      "A": "20",
+      "B": "21",
+      "C": "23",
+      "D": "24",
+      "E": "26 --- ----- ----- ----- ----- --- ----- --- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2024-13",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 13,
+    "question_text_raw": "BuzzBunnyishoppingupanddownasetofstairs,onestepatatime.Inhowmanywayscan Buzz start on the ground, make a sequence of 6 hops, and end up back on the ground? (For example,onesequenceofhopsisup-up-down-down-up-down.)",
+    "options": {
+      "A": "4",
+      "B": "5",
+      "C": "6",
+      "D": "8",
+      "E": "12 --- ---- ---- ---- ---- ----- --- --- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2024-14",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 14,
+    "question_text_raw": "Theone-wayroutesconnectingtownsA,M,C,X,Y,andZ areshowninthefigurebelow(not drawntoscale).Thedistancesinkilometersalongeachroutearemarked.Travelingalongthese routes,whatistheshortestdistancefromAtoZinkilometers? X Y --- --- --- --- --- --- --- --- --- --- --- 10 17 5 2 6 5 --- --- --- --- --- --- --- --- --- --- --- A M C Z 8 14 10 25 3 ©2024AoPSIncorporated AoPS Community 2024 AMC 8 - ---- --------- ----- ----- ----- ----- -------- ---",
+    "options": {
+      "A": "28",
+      "B": "29",
+      "C": "30",
+      "D": "31",
+      "E": "32 LetthelettersF,L,Y,B,U,Grepresentdifferentdigits.SupposeFLYFLY isthelargestnum-"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2024-15",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 15,
+    "question_text_raw": "berthatsatisfiestheequation 8·FLYFLY BUGBUG. --- --- --- --- -------- ------- --- --- = WhatisthevalueofFLY +BUG? --- ------------------- ------- ------- --- --------------- --- ---",
+    "options": {
+      "A": "1089",
+      "B": "1098",
+      "C": "1107",
+      "D": "1116",
+      "E": "1125 Minhentersthenumbersfrom1to81ina9×9gridinsomeorder.Shecalculatestheproduct"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2024-16",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 16,
+    "question_text_raw": "of the numbers in each row and column. What is the least number of rows and columns that couldhaveaproductdivisibleby3?",
+    "options": {
+      "A": "8",
+      "B": "9",
+      "C": "10",
+      "D": "11",
+      "E": "12 --- ---- ---- ----- ----- ----- --- --- A chess king is said to ”attack” all squares one step away from it (basically any square right"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2024-17",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 17,
+    "question_text_raw": "nexttoitinanydirection),horizontally,vertically,ordiagonally.Forinstance,akingonthecenter squareofa3x3gridattacksall8othersquares,asshownbelow.Supposeawhitekinganda blackkingareplacedondifferentsquaresof3x3gridsothattheydonotattackeachother.In howmanywayscanthisbedone? K",
+    "options": {
+      "A": "20",
+      "B": "24",
+      "C": "27",
+      "D": "28",
+      "E": "32 --- ----- ----- ----- ----- ----- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2024-18",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 18,
+    "question_text_raw": "ThreeconcentriccirclescenteredatOhaveradiiof1,2,and3.PointsBandC lieonthelargest circle. The region between the two smaller circles is shaded, as is the portion of the region between the two larger circles bounded by central angle BOC, as shown in the figure below. Supposetheshadedandunshadedregionsareequalinarea.Whatisthemeasureof∠BOC in degrees? 4 ©2024AoPSIncorporated AoPS Community 2024 AMC 8 - ---- --------- --- --- --- --- -------- --- B O C",
+    "options": {
+      "A": "108",
+      "B": "120",
+      "C": "135",
+      "D": "144",
+      "E": "150 --- ------ ------ ------ ------ ------ --- --- Jordanowns15pairsofsneakers.Threefifthsofthepairsareredandtherestarewhite.Two"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2024-19",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 19,
+    "question_text_raw": "9 **C**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2024-20",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 20,
+    "question_text_raw": "PQRSTUVW, --- --- --- --- --------- --- --- --- form a triangle. (For example, vertices and can be connected to form How P,Q, R △PQR.) --- --------------------------------------------- --------- ---- ---- ---------- ------ --- manyofthesetrianglesareequilateralandcontainP asavertex?",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "2",
+      "D": "3",
+      "E": "6 S R P Q --- --- --- --- --- --- --- --- T U W V"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2024-21",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 21,
+    "question_text_raw": "1 A group of frogs (called an army) is living in a tree. A frog turns green when in the shade and yellow when in the sun. Initially the ratio of green to yellow frogs was 3:1. Then 3 green frogs movedtothesunnysideand5yellowfrogsmovedtotheshadyside.Nowtheratiois4:1.What isthedifferencebetweenthenumberofgreenfrogsandyellowfrogsnow? (A) 10 (B) 12 (C) 16 (D) 20 (E) 24",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2024-22",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 22,
+    "question_text_raw": "Arolloftapeis4inchesindiameterandiswrappedaroundaringthatis2inchesindiameter.A crosssectionofthetapeisshowninthefigurebelow.Thetapeis0.015inchesthick.Ifthetape iscompletelyunrolled,approximatelyhowlongwoulditbe?Roundyouranswertothenearest 100inches. 2 in. 4 in.",
+    "options": {
+      "A": "300",
+      "B": "600",
+      "C": "1200",
+      "D": "1500",
+      "E": "1800"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2024-23",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 23,
+    "question_text_raw": "Rodrigohasaverylargesheetofgraphpaper.Firsthedrawsalinesegmentconnectingpoint (0,4)topoint(2,0)andcolorsthe4cellswhoseinteriorsintersectthesegment,asshownbelow. Next Rodrigo draws a line segment connecting point (2000,3000) to point (5000,8000). How manycellswillhecolorthistime? (0,4) (2,0) ©2024AoPSIncorporated 6 AoPS Community 2024 AMC 8 - ---- --------- ------- ------- ------- ------- -------- ---",
+    "options": {
+      "A": "6000",
+      "B": "6500",
+      "C": "7000",
+      "D": "7500",
+      "E": "8000 Jean made a piece of stained glass art in the shape of two mountains, as shown in the figure"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2024-24",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 24,
+    "question_text_raw": "below.Onemountainpeakis8feethighandtheotherpeakis12feethigh.Eachpeakformsa 90◦ angle, and the straight sides of the mountains form 45◦ with the ground. The artwork has an area of 183 square feet. The sides of the mountains meet at an intersection point near the centeroftheartwork,hfeetabovetheground.Whatisthevalueofh? 12 8 h 45 45 ◦ ◦ --- ---- --------- ---- ---- --- --- --- √ √",
+    "options": {
+      "A": "4",
+      "B": "5",
+      "C": "4",
+      "D": "6",
+      "E": "5 2 2 Asmallairplanehas4rowsofseatswith3seatsineachrow.Eightpassengershaveboarded"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2024-25",
+    "contest": "AMC8",
+    "year": 2024,
+    "problem_number": 25,
+    "question_text_raw": "5 **C**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2024.md",
+    "parse_status": "placeholder"
+  }
+]

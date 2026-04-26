@@ -1,0 +1,486 @@
+[
+  {
+    "problem_id": "amc8-2001-01",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 1,
+    "question_text_raw": "him2secondstopaintonedimple,howmanyminuteswillheneedtodohisjob?",
+    "options": {
+      "A": "4",
+      "B": "6",
+      "C": "8",
+      "D": "10",
+      "E": "12 --- ---- ---- ---- ----- ----- --- --- I’m thinking of two whole numbers. Their product is 24 and their sum is 11. What is the larger"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2001-02",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 2,
+    "question_text_raw": "number?",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "6",
+      "D": "8",
+      "E": "12 --- ---- ---- ---- ---------- --- --- --- Granny Smith has $63. Elberta has more than Anjou and Anjou has one-third as much as"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2001-03",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 3,
+    "question_text_raw": "$2 --- --- --- --- --- --- --- --- GrannySmith.HowmanydollarsdoesElbertahave?",
+    "options": {
+      "A": "17",
+      "B": "18",
+      "C": "19",
+      "D": "21",
+      "E": "23 --- ----- ----- ----- ----- ----- --- --- Thedigits1,2,3,4and9areeachusedoncetoformthesmallestpossibleevenfive-digitnumber."
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2001-04",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 4,
+    "question_text_raw": "©2022AoPSIncorporated AoPS Community 2001 AMC 8 ---- --------- --- --- --- --- --- -------- --- For the game show Who Wants To Be A Millionaire?, the dollar values of each question are 17 showninthefollowingtable(whereK=1000). Question 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 --- -------- --- --- ----- --- ----- ----- ----- Value 100 200 300 500 1K 2K 4K 8K 16K 32K 64K 125K 250K 500K 1000K Betweenwhichtwoquestionsisthepercentincreaseofthevaluethesmallest?",
+    "options": {
+      "A": "From1to2",
+      "B": "From2to3",
+      "C": "From3to4",
+      "D": "From11to12",
+      "E": "From14to15"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2001-05",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 5,
+    "question_text_raw": "heardthesoundofthunder.Thespeedofsoundis1088feetpersecondandonemileis5280 feet.Estimate,tothenearesthalf-mile,howfarSnoopywasfromtheflashoflightning.",
+    "options": {
+      "A": "1",
+      "B": "11",
+      "C": "2",
+      "D": "21",
+      "E": "3 --- ---- ----- ---- ----- ---- --- --- 2 2 Six treesare equally spacedalong one sideof a straight road.The distance fromthe first tree"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2001-06",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 6,
+    "question_text_raw": "©2022AoPSIncorporated AoPS Community 2001 AMC 8 ---- --------- --- --- --- --- -------- --- PointsR,SandT areverticesofanequilateraltriangle,andpointsX,Y andZ aremidpointsof 23 its sides. How many noncongruent triangles can be drawn using any three of these six points asvertices? S Y Z --- ---- --------- ---- ----- --- --- --- R X T",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4",
+      "E": "20 Each half of this figure is composed of 3 red triangles, 5 blue triangles and 8 white triangles."
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2001-07",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 7,
+    "question_text_raw": "Problems7,8and9areaboutthesekites. Topromoteherschool’sannualKiteOlympics,Genevievemakesasmallkiteandalargekitefor abulletinboarddisplay.Thekiteslookliketheoneinthediagram.ForhersmallkiteGenevieve drawsthekiteonaone-inchgrid.Forthelargekiteshetriplesboththeheightandwidthofthe entiregrid. 1 ©2022AoPSIncorporated --- ## 📷 Pages (8 pages)![[AMC8_2001_p1.png page 1]]![[AMC8_2001_p2.png page 2]]![[AMC8_2001_p3.png page 3]]![[AMC8_2001_p4.png page 4]]![[AMC8_2001_p5.png page 5]]![[AMC8_2001_p6.png page 6]]![[AMC8_2001_p7.png page 7]]![[AMC8_2001_p8.png page 8]] --- AoPS Community 2001 AMC 8 ---- --------- --- --- --- -------- --- Whatisthenumberofsquareinchesintheareaofthesmallkite?",
+    "options": {
+      "A": "21",
+      "B": "22",
+      "C": "23",
+      "D": "24",
+      "E": "25 --- ----- ----------- ----- ----- --- --- Problems7,8and9areaboutthesekites."
+    },
+    "image_refs": [
+      "content/amc8/markdown/images/AMC8_2001_p1.png",
+      "content/amc8/markdown/images/AMC8_2001_p2.png",
+      "content/amc8/markdown/images/AMC8_2001_p3.png",
+      "content/amc8/markdown/images/AMC8_2001_p4.png",
+      "content/amc8/markdown/images/AMC8_2001_p5.png",
+      "content/amc8/markdown/images/AMC8_2001_p6.png",
+      "content/amc8/markdown/images/AMC8_2001_p7.png",
+      "content/amc8/markdown/images/AMC8_2001_p8.png"
+    ],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2001-08",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 8,
+    "question_text_raw": "Genevieveputsbracingonherlargekiteintheformofacrossconnectingoppositecornersof thekite.Howmanyinchesofbracingmaterialdoessheneed?",
+    "options": {
+      "A": "30",
+      "B": "32",
+      "C": "35",
+      "D": "38",
+      "E": "39 --- ---------------------------------- ----------- ----- ----- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2001-09",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 9,
+    "question_text_raw": "Problems7,8and9areaboutthesekites. 2 ©2022AoPSIncorporated AoPS Community 2001 AMC 8 ---- --------- --- --- --- --- ---- ----- Thelargekiteiscoveredwithgoldfoil.Thefoiliscutfromarectangularpiecethatjustcovers theentiregrid.Howmanysquareinchesofwastematerialarecutofffromthefourcorners?",
+    "options": {
+      "A": "63",
+      "B": "72",
+      "C": "180",
+      "D": "189",
+      "E": "264 --- ----- ----- ------ ------ ------ --- --- Acollectorofferstobuystatequartersfor2000%oftheirfacevalue.Atthatratehowmuchwill"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2001-10",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 10,
+    "question_text_raw": "Brydengetforhisfourstatequarters?",
+    "options": {
+      "A": "20dollars",
+      "B": "50dollars",
+      "C": "200dollars",
+      "D": "500dollars",
+      "E": "2000dollars Points and have these coordinates: and D(−3,0). The --- ------ ----- ---- ------------------ ----------------------- ------------ ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2001-11",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 11,
+    "question_text_raw": "A,B,C D A(3,2),B(3,−2),C(−3,−2) areaofquadrilateralABCDis",
+    "options": {
+      "A": "12",
+      "B": "15",
+      "C": "18",
+      "D": "21",
+      "E": "24 --- ----- ---------------- ----- ----- ----- --- --- Ifa⊗b a+b,then(6⊗4)⊗3 =="
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2001-12",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 12,
+    "question_text_raw": "= a−b 3 ©2022AoPSIncorporated AoPS Community 2001 AMC 8 ---- --------- ----- ----------- ----- -------- ---",
+    "options": {
+      "A": "4",
+      "B": "13",
+      "C": "15",
+      "D": "30",
+      "E": "72 Ofthe36studentsinRichelle’sclass,12preferchocolatepie,8preferapple,and6preferblue-"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2001-13",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 13,
+    "question_text_raw": "berry.Halfoftheremainingstudentsprefercherrypieandhalfpreferlemon.ForRichelle’spie graphshowingthisdata,howmanydegreesshouldsheuseforcherrypie?",
+    "options": {
+      "A": "10",
+      "B": "20",
+      "C": "30",
+      "D": "50",
+      "E": "72 --- ----- ----- ----------- ----- --- --- Tylerhasenteredabuffetlineinwhichhechoosesonekindofmeat,twodifferentvegetables"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2001-14",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 14,
+    "question_text_raw": "andonedessert.Iftheorderoffooditemsisnotimportant,howmanydifferentmealsmighthe choose? -Meat:beef,chicken,pork -Vegetables:bakedbeans,corn,potatoes,tomatoes -Dessert:brownies,chocolatecake,chocolatepudding,icecream",
+    "options": {
+      "A": "4",
+      "B": "24",
+      "C": "72",
+      "D": "80",
+      "E": "144 --- ---- ----- ----------- ------ --- --- Homer began peeling a pile of 44 potatoes at the rate of 3 potatoes per minute. Four minutes"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2001-15",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 15,
+    "question_text_raw": "later Christen joined him and peeled at the rate of 5 potatoes per minute. When they finished, howmanypotatoeshadChristenpeeled?",
+    "options": {
+      "A": "20",
+      "B": "24",
+      "C": "32",
+      "D": "33",
+      "E": "40 --- ----- ----- ----------- ----- --- --- Asquarepieceofpaper,4inchesonaside,isfoldedinhalfvertically.Bothlayersarethencut"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2001-16",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 16,
+    "question_text_raw": "in half parallel to the fold. Three new rectangles are formed, a large one and two small ones. What is the ratio of the perimeter of one of the small rectangles to the perimeter of the large rectangle?",
+    "options": {
+      "A": "1",
+      "B": "1",
+      "C": "3",
+      "D": "4",
+      "E": "5 --- ----- ----- ----------- ----- --- --- 3 2 4 5 6"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2001-17",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 17,
+    "question_text_raw": "7 **B**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2001-18",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 18,
+    "question_text_raw": "Twodicearethrown.Whatistheprobabilitythattheproductofthetwonumbersisamultiple of5?",
+    "options": {
+      "A": "1",
+      "B": "1",
+      "C": "1",
+      "D": "11",
+      "E": "1 --- ----- ----- ------------ ----- --- --- --- --- 36 18 6 36 3 Car M traveled at a constant speed for a given time. This is shown by the dashed line. Car N"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2001-19",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 19,
+    "question_text_raw": "9 **D**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2001-20",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 20,
+    "question_text_raw": "thinks, ”At least two of us have the same score.” Marty thinks, ”I didn’t get the lowest score.” Shana thinks, ”I didn’t get the highest score.” List the scores from lowest to highest for Marty (M),Quay(Q)andShana(S).",
+    "options": {
+      "A": "S,Q,M",
+      "B": "Q,M,S",
+      "C": "Q,S,M",
+      "D": "M,S,Q",
+      "E": "S,M,Q --- -------- -------- -------- -------- -------- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2001-21",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 21,
+    "question_text_raw": "The mean of a set of five different positive integers is 15. The median is 18. The maximum possiblevalueofthelargestofthesefiveintegersis",
+    "options": {
+      "A": "19",
+      "B": "24",
+      "C": "32",
+      "D": "35",
+      "E": "40 --- ----- ----------- ----- ----- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2001-22",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 22,
+    "question_text_raw": "Onatwenty-questiontest,eachcorrectanswerisworth5points,eachunansweredquestionis worth1pointandeachincorrectanswerisworth0points.WhichofthefollowingscoresisNOT possible?",
+    "options": {
+      "A": "90",
+      "B": "91",
+      "C": "92",
+      "D": "95",
+      "E": "97 --- ----- ----------- ----- ----- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2001-23",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 23,
+    "question_text_raw": "3 **D**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2001-24",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 24,
+    "question_text_raw": "Whentheupperhalfisfoldeddownoverthecenterline,2pairsofredtrianglescoincide,asdo 3pairsofbluetriangles.Thereare2red-whitepairs.Howmanywhitepairscoincide?",
+    "options": {
+      "A": "4",
+      "B": "5",
+      "C": "6",
+      "D": "7",
+      "E": "9 --- ---- --------- ---- ---- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2001-25",
+    "contest": "AMC8",
+    "year": 2001,
+    "problem_number": 25,
+    "question_text_raw": "Thereare24four-digitwholenumbersthatuseeachofthefourdigits2,4,5and7exactlyonce. Onlyoneofthesefour-digitnumbersisamultipleofanotherone.Whichofthefollowingisit?",
+    "options": {
+      "A": "5724",
+      "B": "7245",
+      "C": "7254",
+      "D": "7425",
+      "E": "7542 --- ------- ------- ------- ------- ------- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2001.md",
+    "parse_status": "parsed"
+  }
+]

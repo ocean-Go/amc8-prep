@@ -1,0 +1,485 @@
+[
+  {
+    "problem_id": "amc8-2000-01",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 1,
+    "question_text_raw": "©2022AoPSIncorporated --- ## 📷 Pages (7 pages)![[AMC8_2000_p1.png page 1]]![[AMC8_2000_p2.png page 2]]![[AMC8_2000_p3.png page 3]]![[AMC8_2000_p4.png page 4]]![[AMC8_2000_p5.png page 5]]![[AMC8_2000_p6.png page 6]]![[AMC8_2000_p7.png page 7]] --- AoPS Community 2000 AMC 8 ---- --------- --- --- --- --- -------- --- Figure is a square. Inside this square three smaller squares are drawn with the side 6 ABCD --- --- ---- --- --- --- --- --- lengthsaslabeled.TheareaoftheshadedL-shapedregionis D 1 A --- --- --- --- --- --- --- --- 1 3 3 1 --- --- --- --- --- --- --- --- 1 C B --- ---- ------------- ----- ----- --- --- ---",
+    "options": {
+      "A": "7",
+      "B": "10",
+      "C": "12.5",
+      "D": "14",
+      "E": "15"
+    },
+    "image_refs": [
+      "content/amc8/markdown/images/AMC8_2000_p1.png",
+      "content/amc8/markdown/images/AMC8_2000_p2.png",
+      "content/amc8/markdown/images/AMC8_2000_p3.png",
+      "content/amc8/markdown/images/AMC8_2000_p4.png",
+      "content/amc8/markdown/images/AMC8_2000_p5.png",
+      "content/amc8/markdown/images/AMC8_2000_p6.png",
+      "content/amc8/markdown/images/AMC8_2000_p7.png"
+    ],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2000-02",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 2,
+    "question_text_raw": "**A**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2000-03",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 3,
+    "question_text_raw": "Howmanywholenumberslieintheintervalbetween 5 and2π? 3",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5",
+      "E": "infinitelymany --- ---- ---- ---- ---- ----------------- --- --- --- In1960only5%oftheworkingadultsinCarlinCityworkedathome.By1970the”at-home”work"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2000-04",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 4,
+    "question_text_raw": "**E**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2000-05",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 5,
+    "question_text_raw": "numberofprincipalsthisschoolcouldhaveduringan8-yearperiod?",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5",
+      "E": "8 --- ---- ---- ---- ---- ---- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2000-06",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 6,
+    "question_text_raw": "ABCD --- --- ---- --- --- --- --- --- lengthsaslabeled.TheareaoftheshadedL-shapedregionis D 1 A --- --- --- --- --- --- --- --- 1 3 3 1 --- --- --- --- --- --- --- --- 1 C B --- ---- ------------- ----- ----- --- --- --- (A) 7 (B) 10 (C) 12.5 (D) 14 (E) 15",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2000-07",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 7,
+    "question_text_raw": "Whatistheminimumpossibleproductofthreedifferentnumbersoftheset{−8,−6,−4,0,3,5,7}?",
+    "options": {
+      "A": "−336",
+      "B": "−280",
+      "C": "−210",
+      "D": "−192",
+      "E": "0 --- -------- -------- -------- -------- ---- --- --- Threedicewithfacesnumbered1through6arestackedasshown.Sevenoftheeighteenfaces"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2000-08",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 8,
+    "question_text_raw": "arevisible,leavingelevenfaceshidden(back,bottom,between).ThetotalnumberofdotsNOT visibleinthisviewis",
+    "options": {
+      "A": "21",
+      "B": "22",
+      "C": "31",
+      "D": "41",
+      "E": "53 --- ----- ----------- ----- ----- --- --- --- Three-digitpowersof2and5areusedinthis”cross-number”puzzle.Whatistheonlypossible"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2000-09",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 9,
+    "question_text_raw": "2 ©2022AoPSIncorporated AoPS Community 2000 AMC 8 ---- --------- --- --- ------ ---- --- -------- --- ACROSS DOWN digitfortheoutlinedsquare? 2.2m 1.5n --- --- --- --- ---- ---- --- --- --- 1 2",
+    "options": {
+      "A": "0",
+      "B": "2",
+      "C": "4",
+      "D": "6",
+      "E": "8 --- ---- --------- --- --------- --- --- --- --- AraandSheawereoncethesameheight.SincethenSheahasgrown20%whileArahasgrow"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2000-10",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 10,
+    "question_text_raw": "halfasmanyinchesasShea.Sheaisnow60inchestall.Howtall,ininches,isAranow?",
+    "options": {
+      "A": "48",
+      "B": "51",
+      "C": "52",
+      "D": "54",
+      "E": "55 --- ----- ----- ----- ----- ----- --- --- --- Thenumber64hasthepropertythatitisdivisiblebyitsunitsdigit.Howmanywholenumbers"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2000-11",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 11,
+    "question_text_raw": "between10and50havethisproperty?",
+    "options": {
+      "A": "15",
+      "B": "16",
+      "C": "17",
+      "D": "18",
+      "E": "20 --- ----- ----- ----- ----- ----- --- --- --- Ablockwall100feetlongand7feethighwillbeconstructedusingblocksthatare1foothigh"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2000-12",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 12,
+    "question_text_raw": "andeither2feetlongor1footlong(noblocksmaybecut).Theverticaljoinsintheblocksmust bestaggeredasshown,andthewallmustbeevenontheends.Whatisthesmallestnumberof blocksneededtobuildthiswall?",
+    "options": {
+      "A": "344",
+      "B": "347",
+      "C": "350",
+      "D": "353",
+      "E": "356 --- ------ ------ ------ ------ ------ --- --- --- In triangle CAT, we have ∠ACT ∠ATC and ∠CAT 36◦. If bisects ∠ATC, then"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2000-13",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 13,
+    "question_text_raw": "= = TR --- --- --- --- --- --- ---- --- --- ∠CRT = 3 ©2022AoPSIncorporated AoPS Community 2000 AMC 8 ---- --------- --- --- --- --- --- --- -------- --- A R C T --- ------ ------ ------ --- ------ ------- --- --- ---",
+    "options": {
+      "A": "36◦",
+      "B": "54◦",
+      "C": "72◦",
+      "D": "90◦",
+      "E": "108◦ Whatistheunitsdigitof1919+9999?"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2000-14",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 14,
+    "question_text_raw": "4 **D**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2000-15",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 15,
+    "question_text_raw": "EFG D G AC --- -------------------- --- --- -------------------------------------- --- --- --- --- --- AE,respectively.IfAB = 4,whatistheperimeteroffigureABCDEFG? C D E --- --- --- --- --- --- --- --- --- --- G F B A",
+    "options": {
+      "A": "12",
+      "B": "13",
+      "C": "15",
+      "D": "18",
+      "E": "21 --- ----- ----- ----- ----- --- ----- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2000-16",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 16,
+    "question_text_raw": "In order for Mateen to walk a kilometer (1000m) in his rectangular backyard, he must walk the length25timesorwalkitsperimeter10times.WhatistheareaofMateen’sbackyardinsquare meters?",
+    "options": {
+      "A": "40",
+      "B": "200",
+      "C": "400",
+      "D": "500",
+      "E": "1000 --- ----- ------ ------ --- ------ ------- --- --- --- a2 Theoperation⊗isdefinedforallnonzeronumbersbya⊗b.Determine[(1⊗2)⊗3]−[1⊗"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2000-17",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 17,
+    "question_text_raw": "7 = --- --- --- --- --- --- --- --- --- --- b (2⊗3)]. 4 ©2022AoPSIncorporated AoPS Community 2000 AMC 8 ---- --------- ----- ---- ------- -------- --- 2 1 1 2 (A) − (B) − (C) 0 (D) (E) 3 4 4 3 Considerthesetwogeoboardquadrilaterals.Whichofthefollowingstatementsistrue? 18 I II (A)TheareaofquadrilateralIismorethantheareaofquadrilateralII. (B)TheareaofquadrilateralIislessthantheareaofquadrilateralII. (C)Thequadrilateralshavethesameareaandthesameperimeter. (D)Thequadrilateralshavethesamearea,buttheperimeterofIismorethantheperimeterofII. (E)Thequadrilateralshavethesamearea,buttheperimeterofIislessthantheperimeterofII.",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2000-18",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 18,
+    "question_text_raw": "I II",
+    "options": {
+      "A": "TheareaofquadrilateralIismorethantheareaofquadrilateralII.",
+      "B": "TheareaofquadrilateralIislessthantheareaofquadrilateralII.",
+      "C": "Thequadrilateralshavethesameareaandthesameperimeter.",
+      "D": "Thequadrilateralshavethesamearea,buttheperimeterofIismorethantheperimeterofII.",
+      "E": "Thequadrilateralshavethesamearea,buttheperimeterofIislessthantheperimeterofII."
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2000-19",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 19,
+    "question_text_raw": "Three circular arcs of radius 5 units bound the region shown. Arcs AB and AD are quarter- circles,andarcBCDisasemicircle.Whatisthearea,insquareunits,oftheregion? C B D A 5 ©2022AoPSIncorporated AoPS Community 2000 AMC 8 ---- --------- --- -------- --- ----- --- -------- --- ------ -------- ---",
+    "options": {
+      "A": "25",
+      "B": "10+5π",
+      "C": "50",
+      "D": "50+5π",
+      "E": "25π You have nine coins: a collection of pennies, nickels, dimes, and quarters having a total value"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2000-20",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 20,
+    "question_text_raw": "of$1.02,withatleastonecoinofeachtype.Howmanydimesmustyouhave?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4",
+      "E": "5 --- ---- --- ---- ---- --- ---- ---- --- --- --- --- KeikotossesonepennyandEphraimtossestwopennies.TheprobabilitythatEphraimgetsthe"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2000-21",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 21,
+    "question_text_raw": "1 **B**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2000-22",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 22,
+    "question_text_raw": "so that one of its faces rests entirely on the top face of the larger cube. The percent increase in the surface area (sides, top, and bottom) from the original cube to the new solid formed is closestto",
+    "options": {
+      "A": "10",
+      "B": "15",
+      "C": "17",
+      "D": "21",
+      "E": "25 --- ----- --- ----- --- ----- ----- --- ----- --- --- --- Thereisalistofsevennumbers.Theaverageofthefirstfournumbersis5,andtheaverageof"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2000-23",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 23,
+    "question_text_raw": "thelastfournumbersis8.Iftheaverageofallsevennumbersis64,thenthenumbercommon 7 tobothsetsoffournumbersis",
+    "options": {
+      "A": "53",
+      "B": "6",
+      "C": "64",
+      "D": "7",
+      "E": "73 --- ----- --- ----------- --- ----- -------------- --- ----- --- --- --- 7 7 7 If∠A 20◦ and∠AFG ∠AGF,then∠B+∠D"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2000-24",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 24,
+    "question_text_raw": "= = = 6 ©2022AoPSIncorporated AoPS Community 2000 AMC 8 B G A C F D E",
+    "options": {
+      "A": "48◦",
+      "B": "60◦",
+      "C": "72◦",
+      "D": "80◦",
+      "E": "90◦"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2000-25",
+    "contest": "AMC8",
+    "year": 2000,
+    "problem_number": 25,
+    "question_text_raw": "The area of rectangle ABCD is 72. If point A and the midpoints of BC and CD are joined to formatriangle,theareaofthattriangleis A B D C",
+    "options": {
+      "A": "21",
+      "B": "27",
+      "C": "30",
+      "D": "36",
+      "E": "40 – These problems are copy- right©MathematicalAssociationofAmerica( ©2022AoPSIncorporated 7 ArtofProblemSolvingisanACSWASCAccreditedSchool. --- ## Answer Key (2000 AMC 8) # Answer --- --------"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2000.md",
+    "parse_status": "parsed"
+  }
+]

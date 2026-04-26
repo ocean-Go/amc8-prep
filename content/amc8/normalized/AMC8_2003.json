@@ -1,0 +1,489 @@
+[
+  {
+    "problem_id": "amc8-2003-01",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 1,
+    "question_text_raw": "©2022AoPSIncorporated --- ## 📷 Pages (11 pages)![[AMC8_2003_p1.png page 1]]![[AMC8_2003_p2.png page 2]]![[AMC8_2003_p3.png page 3]]![[AMC8_2003_p4.png page 4]]![[AMC8_2003_p5.png page 5]]![[AMC8_2003_p6.png page 6]]![[AMC8_2003_p7.png page 7]]![[AMC8_2003_p8.png page 8]]![[AMC8_2003_p9.png page 9]]![[AMC8_2003_p10.png page 10]]![[AMC8_2003_p11.png page 11]] --- AoPS Community 2003 AMC 8 7 Blake and Jenny each took four 100 point tests. Blake averaged 78 on the four tests. Jenny scored10pointshigherthanBlakeonthefirsttest,10pointsloweronthesecondtest,and20 pointshigheronboththethirdandfourthtest. What is the difference between Blake’s average on the four tests and Jenny’s average on the fourtests?",
+    "options": {
+      "A": "10",
+      "B": "15",
+      "C": "20",
+      "D": "25",
+      "E": "40"
+    },
+    "image_refs": [
+      "content/amc8/markdown/images/AMC8_2003_p1.png",
+      "content/amc8/markdown/images/AMC8_2003_p10.png",
+      "content/amc8/markdown/images/AMC8_2003_p11.png",
+      "content/amc8/markdown/images/AMC8_2003_p2.png",
+      "content/amc8/markdown/images/AMC8_2003_p3.png",
+      "content/amc8/markdown/images/AMC8_2003_p4.png",
+      "content/amc8/markdown/images/AMC8_2003_p5.png",
+      "content/amc8/markdown/images/AMC8_2003_p6.png",
+      "content/amc8/markdown/images/AMC8_2003_p7.png",
+      "content/amc8/markdown/images/AMC8_2003_p8.png",
+      "content/amc8/markdown/images/AMC8_2003_p9.png"
+    ],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2003-02",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 2,
+    "question_text_raw": "**C**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2003-03",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 3,
+    "question_text_raw": "AburgeratRickyC’sweighs120grams,ofwhich30gramsarefiller.Whatpercentoftheburger isnotfiller?",
+    "options": {
+      "A": "60%",
+      "B": "65%",
+      "C": "70%",
+      "D": "75%",
+      "E": "90% --- ------ ------ ------ ------ ------ --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2003-04",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 4,
+    "question_text_raw": "AgroupofchildrenridingonbicyclesandtricyclesrodepastBillyBob’shouse.BillyBobcounted 7childrenand19wheels.Howmanytricycleswerethere?",
+    "options": {
+      "A": "2",
+      "B": "4",
+      "C": "5",
+      "D": "6",
+      "E": "7 --- -------------------------------------------- ----- ----- --------- ----- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2003-05",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 5,
+    "question_text_raw": "©2022AoPSIncorporated AoPS Community 2003 AMC 8 ---- --------- --- --- --- --- -------- --- T W O 14 Inthisadditionproblem,eachletterstandsforadifferentdigit. + T W O F O U R IfT=7andtheletterOrepresentsanevennumber,whatistheonlypossiblevalueforW?",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "2",
+      "D": "3",
+      "E": "4 --- --------- ---- --------- --- --- --- --- Afigureisconstructedfromunitcubes.Eachcubesharesatleastonefacewithanothercube."
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2003-06",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 6,
+    "question_text_raw": "169 25 144",
+    "options": {
+      "A": "13",
+      "B": "30",
+      "C": "60",
+      "D": "300",
+      "E": "1800 --- ----- ----- ----- ------ ------- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2003-07",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 7,
+    "question_text_raw": "Blake and Jenny each took four 100 point tests. Blake averaged 78 on the four tests. Jenny scored10pointshigherthanBlakeonthefirsttest,10pointsloweronthesecondtest,and20 pointshigheronboththethirdandfourthtest. What is the difference between Blake’s average on the four tests and Jenny’s average on the fourtests? (A) 10 (B) 15 (C) 20 (D) 25 (E) 40",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2003-08",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 8,
+    "question_text_raw": "BakeSale Fourfriends,Art,Roger,PaulandTrisha,bakecookies,andallcookieshavethesamethickness. Theshapesofthecookiesdiffer,asshown. ◦Art’scookiesaretrapezoids: 3in 3in 5in ◦Roger’scookiesarerectangles: 2in 4in ◦Paul’scookiesareparallelograms: 2in 3in ◦Trisha’scookiesaretriangles: ©2022AoPSIncorporated 2 AoPS Community 2003 AMC 8 4in 3in Eachfriendusesthesameamountofdough,andArtmakesexactly12cookies.Whogetsthe fewestcookiesfromonebatchofcookiedough?",
+    "options": {
+      "A": "Art",
+      "B": "Roger",
+      "C": "Paul",
+      "D": "Trisha",
+      "E": "Thereisatieforfewest."
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2003-09",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 9,
+    "question_text_raw": "BakeSale Fourfriends,Art,Roger,PaulandTrisha,bakecookies,andallcookieshavethesamethickness. Theshapesofthecookiesdiffer,asshown. ◦Art’scookiesaretrapezoids: 3in 3in 5in ◦Roger’scookiesarerectangles: 2in 4in ◦Paul’scookiesareparallelograms: 2in 3in ◦Trisha’scookiesaretriangles: ©2022AoPSIncorporated 3 AoPS Community 2003 AMC 8 4in 3in Each friend uses the same amount of dough, and Art makes exactly 12 cookies. Art’s cookies sellfor60centseach.Toearnthesameamountfromasinglebatch,howmuchshouldoneof Roger’scookiescostincents?",
+    "options": {
+      "A": "18",
+      "B": "25",
+      "C": "40",
+      "D": "75",
+      "E": "90"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2003-10",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 10,
+    "question_text_raw": "BakeSale Fourfriends,Art,Roger,PaulandTrisha,bakecookies,andallcookieshavethesamethickness. Theshapesofthecookiesdiffer,asshown. ◦Art’scookiesaretrapezoids: 3in 3in 5in ◦Roger’scookiesarerectangles: 2in 4in ◦Paul’scookiesareparallelograms: 2in 3in ◦Trisha’scookiesaretriangles: ©2022AoPSIncorporated 4 AoPS Community 2003 AMC 8 ---- --------- --- --- --- --- -------- --- 4in 3in Each friend uses the same amount of dough, and Art makes exactly 12 cookies. How many cookieswillbeinonebatchofTrisha’scookies?",
+    "options": {
+      "A": "10",
+      "B": "12",
+      "C": "16",
+      "D": "18",
+      "E": "24 --- ----- ----- ----- ----- ----- --- --- Business is a little slow at Lou’s Fine Shoes, so Lou decides to have a sale. On Friday, Lou"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2003-11",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 11,
+    "question_text_raw": "increases all of Thursday’s prices by 10 percent. Over the weekend, Lou advertises the sale: ”Tenpercentoffthelistedprice.SalestartsMonday.”Howmuchdoesapairofshoescoston Mondaythatcost40dollarsonThursday?",
+    "options": {
+      "A": "36",
+      "B": "39.60",
+      "C": "40",
+      "D": "40.40",
+      "E": "44 --- ----- -------- ----- -------- ----- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2003-12",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 12,
+    "question_text_raw": "Whenafairsix-sideddiceistossedonatabletop,thebottomfacecannotbeseen.Whatisthe probabilitythattheproductofthe5facesthancanbeseenisdivisibleby6?",
+    "options": {
+      "A": "1/3",
+      "B": "1/2",
+      "C": "2/3",
+      "D": "5/6",
+      "E": "1 --- ------ ------ ------ ------ ---- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2003-13",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 13,
+    "question_text_raw": "Fourteen white cubes are put together to form the fi gure on the right. The complete surface of the figure, including the bottom, is painted red. The figure is then separated into individual cubes.Howmanyoftheindividualcubeshaveexactlyfourredfaces?",
+    "options": {
+      "A": "4",
+      "B": "6",
+      "C": "8",
+      "D": "10",
+      "E": "12 --- ---- ---- ---- ----- ----- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2003-14",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 14,
+    "question_text_raw": "4 Inthisadditionproblem,eachletterstandsforadifferentdigit. + T W O F O U R IfT=7andtheletterOrepresentsanevennumber,whatistheonlypossiblevalueforW? (A) 0 (B) 1 (C) 2 (D) 3 (E) 4 --- --------- ---- --------- --- --- --- --- Afigureisconstructedfromunitcubes.Eachcubesharesatleastonefacewithanothercube. 15 What is the minimum number of cubes needed to build a fi gure with the front and side views shown? FRONT SIDE --- --------- ---- --------- --- ---- --- --- (A) 3 (B) 4 (C) 5 (D) 6 (E) 7 Ali,Bonnie,Carlo,andDiannaaregoingtodrivetogethertoanearbythemepark.Thecarthey 16 are using has 4 seats: 1 Driver seat, 1 front passenger seat, and 2 back passenger seat. Bon- nie and Carlo are the only ones who know how to drive the car. How many possible seating arrangementsarethere? (A) 2 (B) 4 (C) 6 (D) 12 (E) 24 --- --------- ---- ----------- --- --- --- ---",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2003-15",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 15,
+    "question_text_raw": "What is the minimum number of cubes needed to build a fi gure with the front and side views shown? FRONT SIDE --- --------- ---- --------- --- ---- --- ---",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6",
+      "E": "7 Ali,Bonnie,Carlo,andDiannaaregoingtodrivetogethertoanearbythemepark.Thecarthey"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2003-16",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 16,
+    "question_text_raw": "are using has 4 seats: 1 Driver seat, 1 front passenger seat, and 2 back passenger seat. Bon- nie and Carlo are the only ones who know how to drive the car. How many possible seating arrangementsarethere?",
+    "options": {
+      "A": "2",
+      "B": "4",
+      "C": "6",
+      "D": "12",
+      "E": "24 --- --------- ---- ----------- --- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2003-17",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 17,
+    "question_text_raw": "The six children listed below are from two families of three siblings each. Each child has blue orbrowneyesandblackorblondhair.Childrenfromthesamefamilyhaveatleastoneofthese characteristicsincommon.WhichtwochildrenareJim’ssiblings? Child EyeColor HairColor --- --- --- -------- -------- --------- --- --- Benjamin Blue Black Jim Brown Blonde Nadeen Brown Black Austin Blue Blonde Tevyn Blue Black Sue Blue Blonde",
+    "options": {
+      "A": "NadeenandAustin",
+      "B": "BenjaminandSue",
+      "C": "BenjaminandAustin",
+      "D": "NadeenandTevyn",
+      "E": "AustinandSue EachofthetwentydotsonthegraphbelowrepresentsoneofSarah’sclassmates.Classmates"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2003-18",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 18,
+    "question_text_raw": "whoarefriendsareconnectedwithalinesegment.Forherbirthdayparty,Sarahisinvitingonly 6 ©2022AoPSIncorporated AoPS Community 2003 AMC 8 ---- --------- --- --- --- -------- --- thefollowing:allofherfriendsandallofthoseclassmateswhoarefriendswithatleastoneof herfriends.HowmanyclassmateswillnotbeinvitedtoSarah’sparty? Sarah",
+    "options": {
+      "A": "1",
+      "B": "4",
+      "C": "5",
+      "D": "6",
+      "E": "7 --- --------- ---- ---- ---- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2003-19",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 19,
+    "question_text_raw": "How many integers between 1000 and 2000 have all three of the numbers 15, 20, and 25 as factors?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4",
+      "E": "5 --- --------- ---- ---- ---- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2003-20",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 20,
+    "question_text_raw": "Whatisthemeasureoftheacuteangleformedbythehandsoftheclockat4: 20PM?",
+    "options": {
+      "A": "0",
+      "B": "5",
+      "C": "8",
+      "D": "10",
+      "E": "12 --- --------- ---- ----- ----- --- --- TheareaoftrapezoidABCDis164cm2.Thealtitudeis8cm,ABis10cm,andCDis17cm.What"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2003-21",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 21,
+    "question_text_raw": "isBC,incentimeters? B C --- --- --- --- --- --- --- 10 17 8 A D --- ---------- ----- ----- ----- --- ---",
+    "options": {
+      "A": "9",
+      "B": "10",
+      "C": "12",
+      "D": "15",
+      "E": "20"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2003-22",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 22,
+    "question_text_raw": "The following figures are composed of squares and circles. Which figure has a shaded region withlargestarea? 7 ©2022AoPSIncorporated AoPS Community 2003 AMC 8 ---- --------- -------- -------- ------------ -------------- -------- --- A B C 2 cm 2 cm 2 cm",
+    "options": {
+      "A": "Aonly",
+      "B": "Bonly",
+      "C": "Conly",
+      "D": "bothAandB",
+      "E": "allareequal In the pattern below, the cat (denoted as a large circle in the figures below) moves clockwise"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2003-23",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 23,
+    "question_text_raw": "3 **A**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2003-24",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 24,
+    "question_text_raw": "4 A ship travels from point A to point B along a semicircular path, centered at Island X. Then it travelsalongastraightpathfromBtoC.Whichofthesegraphsbestshowstheship’sdistance fromIslandXasitmovesalongitscourse? C X A B (A) ©2022AoPSIncorporated 9 AoPS Community 2003 AMC 8 distancetraveled Xotecnatsid (B) distancetraveled Xotecnatsid (C) distancetraveled Xotecnatsid (D) distancetraveled Xotecnatsid (E) ©2022AoPSIncorporated 10 AoPS Community 2003 AMC 8 ---- --------- --- --- --- --- -------- --- Xotecnatsid distancetraveled",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2003-25",
+    "contest": "AMC8",
+    "year": 2003,
+    "problem_number": 25,
+    "question_text_raw": "Inthefigure,theareaofsquareWXYZis25cm2.Thefoursmallersquareshavesides1cmlong, eitherparalleltoorcoincidingwiththesidesofthelargesquare.In∆ABC,AB = AC,andwhen isfoldedoversideBC,pointAcoincideswithO,thecenterofsquareWXYZ.Whatisthe ∆ABC areaof∆ABC,insquarecentimeters? W X B A O C Y Z",
+    "options": {
+      "A": "15",
+      "B": "21",
+      "C": "27",
+      "D": "21",
+      "E": "27 --- -------------------------------------------------------- ------ ------ ------ -------------- --------- --- 4 4 4 2 2 These problems are copy- – right©MathematicalAssociationofAmerica("
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2003.md",
+    "parse_status": "parsed"
+  }
+]

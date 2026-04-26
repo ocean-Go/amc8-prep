@@ -1,0 +1,485 @@
+[
+  {
+    "problem_id": "amc8-2018-01",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 1,
+    "question_text_raw": "©2025AoPSIncorporated --- ## 📷 Pages (7 pages)![[AMC8_2018_p1.png page 1]]![[AMC8_2018_p2.png page 2]]![[AMC8_2018_p3.png page 3]]![[AMC8_2018_p4.png page 4]]![[AMC8_2018_p5.png page 5]]![[AMC8_2018_p6.png page 6]]![[AMC8_2018_p7.png page 7]] --- AoPS Community 2018 AMC 8 ---- ---------------------- ---- --- ---- ------- ---------- ------- --- ------- ------- ---- -------- --- Whatisthevalueof1+3+5+ 2018? 5 +2017+2019 2 4 6 2016 ··· − − − −···− −",
+    "options": {
+      "A": "1010",
+      "B": "1009",
+      "C": "1008",
+      "D": "1009",
+      "E": "1010 − − Onatriptothebeach,Anhtraveled50milesonthehighwayand10milesonacoastalaccess"
+    },
+    "image_refs": [
+      "content/amc8/markdown/images/AMC8_2018_p1.png",
+      "content/amc8/markdown/images/AMC8_2018_p2.png",
+      "content/amc8/markdown/images/AMC8_2018_p3.png",
+      "content/amc8/markdown/images/AMC8_2018_p4.png",
+      "content/amc8/markdown/images/AMC8_2018_p5.png",
+      "content/amc8/markdown/images/AMC8_2018_p6.png",
+      "content/amc8/markdown/images/AMC8_2018_p7.png"
+    ],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2018-02",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 2,
+    "question_text_raw": "©2025AoPSIncorporated AoPS Community 2018 AMC 8 ---- --------- --- --- --- --- --- -------- --- Theharmonicmeanofasetofnon-zeronumbersisthereciprocaloftheaverageoftherecip- 10 rocalsofthenumbers.Whatistheharmonicmeanof1,2,and4?",
+    "options": {
+      "A": "3",
+      "B": "7",
+      "C": "12",
+      "D": "7",
+      "E": "7 --- ----- ----- --- ------ ------- --- --- --- 7 12 7 4 3 Abby,Bridget,andfouroftheirclassmateswillbeseatedintworowsofthreeforagrouppicture,"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2018-03",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 3,
+    "question_text_raw": "StudentsArn,Bob,Cyd,Dan,Eve,andFonarearrangedinthatorderinacircle.Theystartcount- ing: Arn first, then Bob, and so forth. When the number contains a 7 as a digit (such as 47) or isamultipleof7thatpersonleavesthecircleandthecountingcontinues.Whoisthelastone presentinthecircle?",
+    "options": {
+      "A": "Arn",
+      "B": "Bob",
+      "C": "Cyd",
+      "D": "Dan",
+      "E": "Eve --- ------ --- ------ ------ --- ------ --- ------ --- --- --- --- --- The twelve-sided figure shown has been drawn on 1cm 1cm graph paper. What is the area"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2018-04",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 4,
+    "question_text_raw": "× ofthefigureincm2?",
+    "options": {
+      "A": "12",
+      "B": "12.5",
+      "C": "13",
+      "D": "13.5",
+      "E": "14 --- ----- ------- --- ----- --- ------- --- ----- --- --- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2018-05",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 5,
+    "question_text_raw": "+2017+2019 2 4 6 2016 ··· − − − −···− − (A) 1010 (B) 1009 (C) 1008 (D) 1009 (E) 1010 − − Onatriptothebeach,Anhtraveled50milesonthehighwayand10milesonacoastalaccess 6 road.Hedrovethreetimesasfastonthehighwayasonthecoastalroad.IfAnhspent30min- utesdrivingonthecoastalroad,howmanyminutesdidhisentiretriptake? (A) 50 (B) 70 (C) 80 (D) 90 (E) 100 --- ----- ----- --- ----- ----- --- ------ --- --- --- --- --- --- The5-digitnumber2018U isdivisibleby9.Whatistheremainderwhenthisnumberisdivided 7 by8? (A) 1 (B) 3 (C) 5 (D) 6 (E) 7 --- ---- ---- ---- --- ---- ---- --- --- --- --- --- --- --- Mr.Garciaaskedthemembersofhishealthclasshowmanydayslastweektheyexercisedfor 8 atleast30minutes.Theresultsaresummarizedinthefollowingbargraph,wheretheheights ofthebarsrepresentthenumberofstudents. 8 stnedutS 7 6 5 fo 4 rebmuN 3 2 1 1 2 3 4 5 6 7 --- --- --- --- --- --- ------ --- ---- ----------- --- --- --- --- Number of Days of Exercise What was the mean number of days of exercise last week, rounded to the nearest hundredth, reportedbythestudentsinMr.Garcia’sclass? (A) 3.50 (B) 3.57 (C) 4.36 (D) 4.50 (E) 5.00 --- ------- ------- --- ------- --- ------- --- ------- --- --- --- --- ---",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2018-06",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 6,
+    "question_text_raw": "road.Hedrovethreetimesasfastonthehighwayasonthecoastalroad.IfAnhspent30min- utesdrivingonthecoastalroad,howmanyminutesdidhisentiretriptake?",
+    "options": {
+      "A": "50",
+      "B": "70",
+      "C": "80",
+      "D": "90",
+      "E": "100 --- ----- ----- --- ----- ----- --- ------ --- --- --- --- --- --- The5-digitnumber2018U isdivisibleby9.Whatistheremainderwhenthisnumberisdivided"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2018-07",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 7,
+    "question_text_raw": "by8?",
+    "options": {
+      "A": "1",
+      "B": "3",
+      "C": "5",
+      "D": "6",
+      "E": "7 --- ---- ---- ---- --- ---- ---- --- --- --- --- --- --- --- Mr.Garciaaskedthemembersofhishealthclasshowmanydayslastweektheyexercisedfor"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2018-08",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 8,
+    "question_text_raw": "atleast30minutes.Theresultsaresummarizedinthefollowingbargraph,wheretheheights ofthebarsrepresentthenumberofstudents. 8 stnedutS 7 6 5 fo 4 rebmuN 3 2 1 1 2 3 4 5 6 7 --- --- --- --- --- --- ------ --- ---- ----------- --- --- --- --- Number of Days of Exercise What was the mean number of days of exercise last week, rounded to the nearest hundredth, reportedbythestudentsinMr.Garcia’sclass?",
+    "options": {
+      "A": "3.50",
+      "B": "3.57",
+      "C": "4.36",
+      "D": "4.50",
+      "E": "5.00 --- ------- ------- --- ------- --- ------- --- ------- --- --- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2018-09",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 9,
+    "question_text_raw": "Tyleristilingthefloorofhis12footby16footlivingroom.Heplanstoplaceone-footbyone-foot squaretilestoformaborderalongtheedgesoftheroomandtofillintherestofthefloorwith two-footbytwo-footsquaretiles.Howmanytileswillheuse?",
+    "options": {
+      "A": "48",
+      "B": "87",
+      "C": "91",
+      "D": "96",
+      "E": "120 --- ----- ----- --- ----- ----- --- ------ --- --- --- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2018-10",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 10,
+    "question_text_raw": "0 **C**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2018-11",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 11,
+    "question_text_raw": "1 **C**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2018-12",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 12,
+    "question_text_raw": "TheclockinSri’scar,whichisnotaccurate,gainstimeataconstantrate.Onedayashebegins shopping he notes that his car clock and his watch (which is accurate) both say 12:00 noon. Whenheisdoneshopping,hiswatchsays12:30andhiscarclocksays12:35.Laterthatday,Sri loseshiswatch.Helooksathiscarclockanditsays7:00.Whatistheactualtime?",
+    "options": {
+      "A": "5: 50",
+      "B": "6: 00",
+      "C": "6: 30",
+      "D": "6: 55",
+      "E": "8: 10 --- ------ ------- ---- --------- --------- --------- --- --- Lailatookfivemathtests,eachworthamaximumof100points.Laila’sscoreoneachtestwas"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2018-13",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 13,
+    "question_text_raw": "an integer between 0 and 100, inclusive. Laila received the same score on the first four tests, and she received a higher score on the last test. Her average score on the five tests was 82. HowmanyvaluesarepossibleforLaila’sscoreonthelasttest?",
+    "options": {
+      "A": "4",
+      "B": "5",
+      "C": "9",
+      "D": "10",
+      "E": "18 --- ---- ---- ---- ----- ----- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2018-14",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 14,
+    "question_text_raw": "LetN bethegreatestfive-digitnumberwhosedigitshaveaproductof120.Whatisthesumof thedigitsofN?",
+    "options": {
+      "A": "15",
+      "B": "16",
+      "C": "17",
+      "D": "18",
+      "E": "20 --- ----- ----- ----- ----- ----- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2018-15",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 15,
+    "question_text_raw": "Inthediagrambelow,adiameterofeachofthetwosmallercirclesisaradiusofthelargercircle. If the two smaller circles have a combined area of square unit, then what is the area of the 1 shadedregion,insquareunits? 3 ©2025AoPSIncorporated AoPS Community 2018 AMC 8 ---- --------- ----- --- ------ --- ----- --- --- -------- ---",
+    "options": {
+      "A": "1",
+      "B": "1",
+      "C": "1",
+      "D": "1",
+      "E": "π 4 3 2 2 ProfessorChanghasninedifferentlanguagebookslineduponabookshelf:twoArabic,three"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2018-16",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 16,
+    "question_text_raw": "German, and four Spanish. How many ways are there to arrange the nine books on the shelf keepingtheArabicbookstogetherandkeepingtheSpanishbookstogether?",
+    "options": {
+      "A": "1440",
+      "B": "2880",
+      "C": "5760",
+      "D": "182,440",
+      "E": "362,880 --- ------- ------- --- ------- --- ---------- --- ---------- --- --- BellabeginstowalkfromherhousetowardherfriendElla’shouse.Atthesametime,Ellabegins"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2018-17",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 17,
+    "question_text_raw": "torideherbicycletowardBella’shouse.Theyeachmaintainaconstantspeed,andEllarides5 timesasfastasBellawalks.Thedistancebetweentheirhousesis2miles,whichis10,560feet, andBellacovers21 feetwitheachstep.HowmanystepswillBellatakebythetimeshemeets 2 Ella?",
+    "options": {
+      "A": "704",
+      "B": "845",
+      "C": "1056",
+      "D": "1760",
+      "E": "3520 --- ------ ------ --- ------- ------- --- ------- --- --- --- Howmanypositivefactorsdoes23,232have?"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2018-18",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 18,
+    "question_text_raw": "8 **E**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2018-19",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 19,
+    "question_text_raw": "Inasignpyramidacellgetsa”+”ifthetwocellsbelowithavethesamesign,anditgetsa”-” ifthetwocellsbelowithavedifferentsigns.Thediagrambelowillustratesasignpyramidwith fourlevels.Howmanypossiblewaysaretheretofillthefourcellsinthebottomrowtoproduce a”+”atthetopofthepyramid? + + + --- --- --- --- --- --- --- --- --- --- --- − − − + + − − 4 ©2025AoPSIncorporated AoPS Community 2018 AMC 8 ---- --------- ---- ---- ----- ----- --- --- --- -------- ---",
+    "options": {
+      "A": "2",
+      "B": "4",
+      "C": "8",
+      "D": "12",
+      "E": "16"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2018-20",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 20,
+    "question_text_raw": "0 In ABC, a point E is on AB with AE = 1 and EB = 2. Point D is on AC so that DE BC and △ point is on so that What is the ratio of the area of to the area ∥ of F BC EF AC. CDEF --- --- --- --- --- --- --- --- --- ---- --- ∥ ABC? △ C F D A 1 E 2 B --- --- --- --- --- --- --- --- --- --- --- 4 1 5 3 2 (A) (B) (C) (D) (E) 9 2 9 5 3",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2018-21",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 21,
+    "question_text_raw": "Howmanypositivethree-digitintegershavearemainderof2whendividedby6,aremainderof 5whendividedby9,andaremainderof7whendividedby11?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4",
+      "E": "5 --- ---- ---- ---- ---- ---- --- --- --- --- --- PointEisthemidpointofsideCDinsquareABCD,andBEmeetsdiagonalACatF.Thearea"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2018-22",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 22,
+    "question_text_raw": "ofquadrilateralAFED is45.WhatistheareaofABCD? --- ------------------- --- --- ------------------------- --- --- --- --- --- --- A B F D E C --- --- --- --- --- --- --- --- --- --- --- 5 ©2025AoPSIncorporated AoPS Community 2018 AMC 8 ---- --------- ------ --- ------ ------ --- ------ -------- ---",
+    "options": {
+      "A": "100",
+      "B": "108",
+      "C": "120",
+      "D": "135",
+      "E": "144 From a regular octagon, a triangle is formed by connecting three randomly chosen vertices of"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2018-23",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 23,
+    "question_text_raw": "the octagon. What is the probability that at least one of the sides of the triangle is also a side oftheoctagon?",
+    "options": {
+      "A": "2",
+      "B": "5",
+      "C": "11",
+      "D": "5",
+      "E": "6 --- ----- ----- --- ------ ----- --- --- --- --- 7 42 14 7 7"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2018-24",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 24,
+    "question_text_raw": "4 InthecubeABCDEFGH withoppositeverticesC andE,J andI arethemidpointsofedges andHD,respectively.LetRbetheratiooftheareaofthecross-sectionEJCI tothearea FB ofoneofthefacesofthecube.WhatisR2? E F H G J A I B D C 5 4 3 25 9 --- --- --- --- --- --- --- --- --- --- (A) (B) (C) (D) (E) 4 3 2 16 4 Howmanyperfectcubesliebetween28+1and218+1,inclusive? 25 (A) 4 (B) 9 (C) 10 (D) 57 (E) 58 --- ---- ---- ----- --- ----- ----- --- --- --- 6 ©2025AoPSIncorporated AoPS Community 2018 AMC 8 -------------- --------- --- These problems are copy- – right©MathematicalAssociationofAmerica( 7 ©2025AoPSIncorporated ArtofProblemSolvingisanACSWASCAccreditedSchool. --- ## Answer Key (2018 AMC 8) # Answer --- --------",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2018-25",
+    "contest": "AMC8",
+    "year": 2018,
+    "problem_number": 25,
+    "question_text_raw": "5 **E**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2018.md",
+    "parse_status": "placeholder"
+  }
+]

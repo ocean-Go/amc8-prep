@@ -1,0 +1,485 @@
+[
+  {
+    "problem_id": "amc8-2002-01",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 1,
+    "question_text_raw": "ofpointsofintersectionofthesefigures?",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5",
+      "E": "6 --- ---- ---- ---- ---- ---- --- --- --- --- --- --- Howmanydifferentcombinationsof5billsand2billscanbeusedtomakeatotalof17?Order"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2002-02",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 2,
+    "question_text_raw": "doesnotmatterinthisproblem.",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5",
+      "E": "6 --- ---- ---- ---- ---- ---- --- --- --- --- --- --- Whatisthesmallestpossibleaverageoffourdistinctpositiveevenintegers?"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2002-03",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 3,
+    "question_text_raw": "**C**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2002-04",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 4,
+    "question_text_raw": "Theyear2002isapalindrome(anumberthatreadsthesamefromlefttorightasitdoesfrom righttoleft).Whatistheproductofthedigitsofthenextyearafter2002thatisapalindrome?",
+    "options": {
+      "A": "0",
+      "B": "4",
+      "C": "9",
+      "D": "16",
+      "E": "25 --- ---- ---- ---- ----- ----- --- --- --- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2002-05",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 5,
+    "question_text_raw": "CarlosMontadowasbornonSaturday,November9,2002.OnwhatdayoftheweekwillCarlos be706daysold?",
+    "options": {
+      "A": "Monday",
+      "B": "Wednesday",
+      "C": "Friday",
+      "D": "Saturday",
+      "E": "Sunday --- --------- --- ------------ --- --------- ----------- --- --------- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2002-06",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 6,
+    "question_text_raw": "A birdbath is designed to overflow so that it will be self-cleaning. Water flows in at the rate of 20millilitersperminuteanddrainsattherateof18millilitersperminute.Oneofthesegraphs showsthevolumeofwaterinthebirdbathduringthefillingtimeandcontinuingintotheoverflow time.Whichoneisit? emuloV emuloV emuloV emuloV emuloV --- ------ ---- ------ ---- ------ ---- ------ ---- ------ ---- --- Time Time Time Time Time A B C D E 1 ©2022AoPSIncorporated --- ## 📷 Pages (7 pages)![[AMC8_2002_p1.png page 1]]![[AMC8_2002_p2.png page 2]]![[AMC8_2002_p3.png page 3]]![[AMC8_2002_p4.png page 4]]![[AMC8_2002_p5.png page 5]]![[AMC8_2002_p6.png page 6]]![[AMC8_2002_p7.png page 7]] --- AoPS Community 2002 AMC 8 ---- --------- ---- ---- ---- --- -------- ---",
+    "options": {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D",
+      "E": "E ThestudentsinMrs.Sawyer’sclasswereaskedtodoatastetestoffivekindsofcandy.Each"
+    },
+    "image_refs": [
+      "content/amc8/markdown/images/AMC8_2002_p1.png",
+      "content/amc8/markdown/images/AMC8_2002_p2.png",
+      "content/amc8/markdown/images/AMC8_2002_p3.png",
+      "content/amc8/markdown/images/AMC8_2002_p4.png",
+      "content/amc8/markdown/images/AMC8_2002_p5.png",
+      "content/amc8/markdown/images/AMC8_2002_p6.png",
+      "content/amc8/markdown/images/AMC8_2002_p7.png"
+    ],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2002-07",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 7,
+    "question_text_raw": "student chose one kind of candy. A bar graph of their preferences is shown. What percent of herclasschosecandyE? SWEET TOOTH --- --- --- --- ----------- --- --- --- 8 stneduts 7 6 5 fo 4 3 rebmuN 2 1 0 A B C D E --- ------------------------ ----- ----- -------- ----- --- --- Kinds of candy",
+    "options": {
+      "A": "5",
+      "B": "12",
+      "C": "15",
+      "D": "16",
+      "E": "20"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2002-08",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 8,
+    "question_text_raw": "Juan’sOldStampingGrounds Juan organizes the stamps in his collection by country and by the decade in which they were issued.Thepriceshepaidforthematastampshopwere:BrazilandFrance,6centseach,Peru 4centseach,andSpain5centseach.(BrazilandPeruareSouthAmericancountriesandFrance andSpainareinEurope.) Number of Stamps by Decade --- --- --- ------- ---------------- --------- --- --- Country 50s 60s 70s 80s Brazil 4 7 12 8 France 8 4 12 15 Peru 6 4 6 10 Spain 3 9 13 9 Juan’s Stamp Collection HowmanyofhisEuropeanstampswereissuedinthe’80s?",
+    "options": {
+      "A": "9",
+      "B": "15",
+      "C": "18",
+      "D": "24",
+      "E": "42 --- ------------------------ ----- ----- ----- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2002-09",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 9,
+    "question_text_raw": "Juan’sOldStampingGrounds Juan organizes the stamps in his collection by country and by the decade in which they were 2 ©2022AoPSIncorporated AoPS Community 2002 AMC 8 ---- --------- --- --- --- --- --- -------- --- issued.Thepriceshepaidforthematastampshopwere:BrazilandFrance,6centseach,Peru 4centseach,andSpain5centseach.(BrazilandPeruareSouthAmericancountriesandFrance andSpainareinEurope.) Number of Stamps by Decade --- --- --- ------- --------- ---------- --- --- --- Country 50s 60s 70s 80s Brazil 4 7 12 8 France 8 4 12 15 Peru 6 4 6 10 Spain 3 9 13 9 Juan’s Stamp Collection In dollars and cents, how much did his South American stampes issued before the ’70s cost him?",
+    "options": {
+      "A": "$0.40",
+      "B": "$1.06",
+      "C": "$1.80",
+      "D": "$2.38",
+      "E": "$2.64 --- ------------------------ -------- -------- -------- -------- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2002-10",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 10,
+    "question_text_raw": "Juan’sOldStampingGrounds Juan organizes the stamps in his collection by country and by the decade in which they were issued.Thepriceshepaidforthematastampshopwere:BrazilandFrance,6centseach,Peru 4centseach,andSpain5centseach.(BrazilandPeruareSouthAmericancountriesandFrance andSpainareinEurope.) Number of Stamps by Decade --- --- --- ------- --------- --------- --- --- --- Country 50s 60s 70s 80s 4 7 12 8 Brazil France 8 4 12 15 --- --- --- ------ ----- ---------- --- --- --- Peru 6 4 6 10 Spain 3 9 13 9 Juan’s Stamp Collection Theaveragepriceofhis’70sstampsisclosestto",
+    "options": {
+      "A": "3.5cents",
+      "B": "4cents",
+      "C": "4.5cents",
+      "D": "5cents",
+      "E": "5.5cents --- ----------- --------- ----------- --- --------- ----------- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2002-11",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 11,
+    "question_text_raw": "A sequence of squares is made of identical square tiles. The edge of each square is one tile length longer than the edge of the previous square. The first three squares are shown. How manymoretilesdoestheseventhsquarerequirethanthesixth? 3 ©2022AoPSIncorporated AoPS Community 2002 AMC 8 ---- --------- ----- --- ----- ----- --- ----- --- --- -------- ---",
+    "options": {
+      "A": "11",
+      "B": "12",
+      "C": "13",
+      "D": "14",
+      "E": "15"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2002-12",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 12,
+    "question_text_raw": "A board game spinner is divided into three regions labeled A, B and C. The probability of the arrowstoppingonregionAis 1 andonregionB is 1.Theprobabilityofthearrowstoppingon 3 2 --- ------- --- --- ----- --- --- ----- --- --- --- --- regionC is:",
+    "options": {
+      "A": "1",
+      "B": "1",
+      "C": "1",
+      "D": "1",
+      "E": "2 12 6 5 3 5"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2002-13",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 13,
+    "question_text_raw": "Forhisbirthday,Bertgetsaboxthatholds125jellybeanswhenfilledtocapacity.Afewweeks later,Carriegetsalargerboxfullofjellybeans.Herboxistwiceashigh,twiceaswideandtwice aslongasBert’s.Approximately,howmanyjellybeansdidCarrieget?",
+    "options": {
+      "A": "250",
+      "B": "500",
+      "C": "625",
+      "D": "750",
+      "E": "1000 --- ------ ------ --- ------ --- ------ --- ------- --- --- --- A merchant offers a large group of items at off. Later, the merchant takes off these"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2002-14",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 14,
+    "question_text_raw": "30% 20% --- --- --- --- --- --- --- --- --- --- --- --- salepricesandclaimsthatthefinalpriceoftheseitemsis50%offtheoriginalprice.Thetotal discountis",
+    "options": {
+      "A": "35%",
+      "B": "44%",
+      "C": "50%",
+      "D": "56%",
+      "E": "60% --- ------ ------ --- ------ --- ------ --- ------ --- --- --- Whichofthefollowingpolygonshasthelargestarea?"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2002-15",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 15,
+    "question_text_raw": "A B C D E --- ---- ---- ---- --- ---- ---- --- --- --- --- ---",
+    "options": {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D",
+      "E": "E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2002-16",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 16,
+    "question_text_raw": "6 Right isosceles triangles are constructed on the sides of a 3-4-5 right triangle, as shown. A capitalletterrepresentstheareaofeachtriangle.Whichoneofthefollowingistrue? 4 ©2022AoPSIncorporated AoPS Community 2002 AMC 8 ---- --------- --- --- --- --- --- --- --- --- --- ---- --- --- Z X 5 3 W 4 Y X + Z = W + Y W + X = Z 3X + 4Y = 5Z X + W = 1(Y + --- --- ----- ----- --- --- ----- --- --- ------------ --- ----- ----- --- (A) (B) (C) (D) 2 Z) (E)X +Y = Z --- --- ------- --- --- --- --- --- --- --- --- --- --- --- Inamathematicscontestwithtenproblems,astudentgains5pointsforacorrectanswerand 17 loses2pointsforanincorrectanswer.IfOliviaansweredeveryproblemandherscorewas29, howmanycorrectanswersdidshehave? (A) 5 (B) 6 (C) 7 (D) 8 (E) 9 --- ---- ---- ---- --- ---- ---- --- --- --- --- --- --- ---",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2002-17",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 17,
+    "question_text_raw": "loses2pointsforanincorrectanswer.IfOliviaansweredeveryproblemandherscorewas29, howmanycorrectanswersdidshehave?",
+    "options": {
+      "A": "5",
+      "B": "6",
+      "C": "7",
+      "D": "8",
+      "E": "9 --- ---- ---- ---- --- ---- ---- --- --- --- --- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2002-18",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 18,
+    "question_text_raw": "Gage skated 1 hr 15 min each day for 5 days and 1 hr 30 min each day for 3 days. How long wouldhehavetoskatetheninthdayinordertoaverage85minutesofskatingeachdayforthe entiretime?",
+    "options": {
+      "A": "1hr",
+      "B": "1hr10min",
+      "C": "1hr20min",
+      "D": "1hr40min",
+      "E": "2hr --- ----------------------------------------------------- ----------- ------ --- ----------- --- ------ ----------- --- ------ --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2002-19",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 19,
+    "question_text_raw": "Howmanywholenumbersbetween99and999containexactlyone0?",
+    "options": {
+      "A": "72",
+      "B": "90",
+      "C": "144",
+      "D": "162",
+      "E": "180"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2002-20",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 20,
+    "question_text_raw": "TheareaoftriangleXYZ is8squareinches.PointsAandB aremidpointsofcongruentseg- mentsXY andXZ.AltitudeXC bisectsYZ.Whatisthearea(insquareinches)oftheshaded region? X A B --- --- --- --- --- --- --- --- --- --- --- --- --- --- Y Z C",
+    "options": {
+      "A": "11 (C) 21 (E) 31 --- ----- ---- ----- --- ---- --- ----- --- --- --- --- --- ---",
+      "B": "2 (D) 3 2 2 2 21 Haroldtossesanickelfourtimes.Theprobabilitythathegetsatleastasmanyheadsastailsis 5 ©2022AoPSIncorporated AoPS Community 2002 AMC 8 ---- --------- ----- ----- ----- ------ -------- --- (A) 5 (B) 3",
+      "C": "1",
+      "D": "5",
+      "E": "11 16 8 2 8 16"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2002-21",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 21,
+    "question_text_raw": "1 Haroldtossesanickelfourtimes.Theprobabilitythathegetsatleastasmanyheadsastailsis 5 ©2022AoPSIncorporated AoPS Community 2002 AMC 8 ---- --------- ----- ----- ----- ------ -------- --- (A) 5 (B) 3 (C) 1 (D) 5 (E) 11 16 8 2 8 16",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2002-22",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 22,
+    "question_text_raw": "Sixcubes,eachaninchonanedge,arefastenedtogether,asshown.Findthetotalsurfacearea insquareinches.Includethetop,bottomandsides.",
+    "options": {
+      "A": "18",
+      "B": "24",
+      "C": "26",
+      "D": "30",
+      "E": "36 --- ----- ----- ----- ----- ----- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2002-23",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 23,
+    "question_text_raw": "3 Aportionofacornerofatiledfloorisshown.Iftheentireflooristiledinthiswayandeachof thefourcornerslookslikethisone,thenwhatfractionofthetiledfloorismadeofdarkertiles? 1 4 1 5 5 --- --- --- --- --- --- --- --- (A) (B) (C) (D) (E) 3 9 2 9 8",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2002-24",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 24,
+    "question_text_raw": "Miki has a dozen oranges of the same size and a dozen pears of the same size. Miki uses her juicer to extract 8 ounces of pear juice from 3 pears and 8 ounces of orange juice from 2 oranges. She makes a pear-orange juice blend from an equal number of pears and oranges. 6 ©2022AoPSIncorporated AoPS Community 2002 AMC 8 ---- --------- --- --- --- -------- --- Whatpercentoftheblendispearjuice?",
+    "options": {
+      "A": "30",
+      "B": "40",
+      "C": "50",
+      "D": "60",
+      "E": "70 --- ----- ----- ----------- ----- --- --- Loki, Moe, Nick and Ott are good friends. Ott had no money, but the others did. Moe gave Ott"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2002-25",
+    "contest": "AMC8",
+    "year": 2002,
+    "problem_number": 25,
+    "question_text_raw": "one-fifthofhismoney,LokigaveOttone-fourthofhismoneyandNickgaveOttone-thirdofhis money. Each gave Ott the same amount of money. What fractional part of the group’s money doesOttnowhave?",
+    "options": {
+      "A": "1",
+      "B": "1",
+      "C": "1",
+      "D": "2",
+      "E": "1 --- -------------------------------------------------------- ----- ----------- -------------- --------- --- 10 4 3 5 2 These problems are copy- – right©MathematicalAssociationofAmerica("
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2002.md",
+    "parse_status": "parsed"
+  }
+]
