@@ -1,0 +1,484 @@
+[
+  {
+    "problem_id": "amc8-2010-01",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 1,
+    "question_text_raw": "Thereare11studentsinMrs.Germain’sclass,8inMr.Newton,and9inMrs.Young’sclassare takingtheAMC8thisyear.HowmanymathematicsstudentsatEuclidHighSchoolaretaking thecontest?",
+    "options": {
+      "A": "26",
+      "B": "27",
+      "C": "28",
+      "D": "29",
+      "E": "30 --- ----- ------------------------------------------ ----- ----- ----- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2010-02",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 2,
+    "question_text_raw": "17 The diagram shows an octagon consisting of 10 unit squares. The portion below PQ is a unit squareandatrianglewithbase5.IfPQbisectstheareaoftheoctagon,whatistheratio XQ? QY X Q Y P",
+    "options": {
+      "A": "2",
+      "B": "1",
+      "C": "3",
+      "D": "2",
+      "E": "3 --- ----- ----- ----- ----- ----- --- --- 5 2 5 3 4"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2010-03",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 3,
+    "question_text_raw": "Thegraphshowsthepriceoffivegallonsofgasolineduringthefirsttenmonthsoftheyear.By whatpercentisthehighestpricemorethanthelowestprice? $ 20 $ 15 Price $ 10 $ 5 0 1 2 3 4 5 6 7 8 9 10 --- --- --- --- --- ----- --- ---- --- Month",
+    "options": {
+      "A": "50",
+      "B": "62",
+      "C": "70",
+      "D": "89",
+      "E": "100 --- ----- ----- ----- ----- ------ --- --- --- Whatisthesumofthemean,median,andmodeofthenumbers,2,3,0,3,1,4,0,3?"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2010-04",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 4,
+    "question_text_raw": "**C**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2010-05",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 5,
+    "question_text_raw": "Aliceneedstoreplacealightbulblocated10centimetersbelowtheceilingofherkitchen.The ceilingis2.4metersabovethefloor.Aliceis1.5meterstallandcanreach46centimetersabove herhead.Standingonastool,shecanjustreachthelightbulb.Whatistheheightofthestool, incentimeters? 1 ©2022AoPSIncorporated --- ## 📷 Pages (6 pages)![[AMC8_2010_p1.png page 1]]![[AMC8_2010_p2.png page 2]]![[AMC8_2010_p3.png page 3]]![[AMC8_2010_p4.png page 4]]![[AMC8_2010_p5.png page 5]]![[AMC8_2010_p6.png page 6]] --- AoPS Community 2010 AMC 8 ---- --------- ----- ----- ----- ----- --- -------- ---",
+    "options": {
+      "A": "32",
+      "B": "34",
+      "C": "36",
+      "D": "38",
+      "E": "40 Whichofthefollowinghasthegreatestnumberoflineofsymmetry?"
+    },
+    "image_refs": [
+      "content/amc8/markdown/images/AMC8_2010_p1.png",
+      "content/amc8/markdown/images/AMC8_2010_p2.png",
+      "content/amc8/markdown/images/AMC8_2010_p3.png",
+      "content/amc8/markdown/images/AMC8_2010_p4.png",
+      "content/amc8/markdown/images/AMC8_2010_p5.png",
+      "content/amc8/markdown/images/AMC8_2010_p6.png"
+    ],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2010-06",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 6,
+    "question_text_raw": "EquilateralTriangle(B)Non-squarerhombus(C)Non-squarerectangle(D)IsoscelesTriangle",
+    "options": {
+      "A": "(E)Square Usingonlypennies,nickels,dimes,andquarters,whatisthesmallestnumberofcoinsFreddie 7 wouldneedsohecouldpayanyamountofmoneylessthanonedollar? (A) 6",
+      "B": "10",
+      "C": "15",
+      "D": "25",
+      "E": "99 --- ---- ----- ----- ----- ----- --- --- --- As Emily is riding her bike on a long straight road, she spots Ermenson skating in the same"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2010-07",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 7,
+    "question_text_raw": "**B**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2010-08",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 8,
+    "question_text_raw": "direction1/2mileinfrontofher.Aftershepasseshim,shecanseehiminherrearmirroruntil heis1/2milebehindher.Emilyridesataconstantrateof12milesperhour.Ermensonskates ataconstantrateof8milesperhour.ForhowmanyminutescanEmilyseeErmenson?",
+    "options": {
+      "A": "6",
+      "B": "8",
+      "C": "12",
+      "D": "15",
+      "E": "16 --- ---- ---- ----- ----- ----- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2010-09",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 9,
+    "question_text_raw": "Ryan got of the problems on a 25-problem test, on a 40-problem test, and on a 80% 90% 70% --- --- --- --- --- --- --- --- --- 10-problemtest.WhatpercentofallproblemsdidRyananswercorrectly?",
+    "options": {
+      "A": "64",
+      "B": "75",
+      "C": "80",
+      "D": "84",
+      "E": "86 --- ----- ----- ----- ----- ----- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2010-10",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 10,
+    "question_text_raw": "6pepperonicircleswillexactlyfitacrossthediameterofa12-inchpizzawhenplaced.Ifatotal of24circlesofpepperoniareplacedonthispizzawithoutoverlap,whatfractionofthepizzais coveredwithpepperoni?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "5",
+      "E": "7 --- ----- ----- ----- ----- ----- --- --- --- 2 3 4 6 8 Thetopofonetreeis16feethigherthanthetopofanothertree.Theheightofthe2treesareat"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2010-11",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 11,
+    "question_text_raw": "aratioof3: 4.Infeet,howtallisthetallertree? --- --------- ---------------------------------- ----- ----- ------ --- --- ---",
+    "options": {
+      "A": "48",
+      "B": "64",
+      "C": "80",
+      "D": "96",
+      "E": "112 Ofthe500ballsinalargebag,80%areredandtherestareblue.Howmanyoftheredballsmust"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2010-12",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 12,
+    "question_text_raw": "beremovedsothat75%oftheremainingballsarered?",
+    "options": {
+      "A": "25",
+      "B": "50",
+      "C": "75",
+      "D": "100",
+      "E": "150 --- ----- ----- ----- ------ ------ --- --- --- Thelengthsofthesidesofatriangleininchesarethreeconsecutiveintegers.Thelengthofthe"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2010-13",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 13,
+    "question_text_raw": "shortersideis30%oftheperimeter.Whatisthelengthofthelongestside?",
+    "options": {
+      "A": "7",
+      "B": "8",
+      "C": "9",
+      "D": "10",
+      "E": "11 --- ---- ---- ---- ----- ----- --- --- --- Whatisthesumoftheprimefactorsof2010?"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2010-14",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 14,
+    "question_text_raw": "2 ©2022AoPSIncorporated AoPS Community 2010 AMC 8 ---- --------- ----- ----- ------ ------ -------- ---",
+    "options": {
+      "A": "67",
+      "B": "75",
+      "C": "77",
+      "D": "201",
+      "E": "210 Ajarcontains5differentcolorsofgumdrops.30%areblue,20%arebrown,15%red,10%yellow,"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2010-15",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 15,
+    "question_text_raw": "and the other gumdrops are green. If half of the blue gumdrops are replaced with brown 30 gumdrops,howmanygumdropswillbebrown?",
+    "options": {
+      "A": "35",
+      "B": "36",
+      "C": "42",
+      "D": "48",
+      "E": "64 --- ----- ----- ----- ----- ----- --- --- Asquareandacirclehavethesamearea.Whatistheratioofthesidelengthofthesquareto"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2010-16",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 16,
+    "question_text_raw": "theradiusofthecircle? √",
+    "options": {
+      "A": "π",
+      "B": "√π",
+      "C": "π",
+      "D": "2π",
+      "E": "π2 --- ----- ----- ---- ----- ----- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2010-17",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 17,
+    "question_text_raw": "7 The diagram shows an octagon consisting of 10 unit squares. The portion below PQ is a unit squareandatrianglewithbase5.IfPQbisectstheareaoftheoctagon,whatistheratio XQ? QY X Q Y P (A) 2 (B) 1 (C) 3 (D) 2 (E) 3 --- ----- ----- ----- ----- ----- --- --- 5 2 5 3 4",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2010-18",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 18,
+    "question_text_raw": "Adecorativewindowismadeupofarectanglewithsemicirclesateitherend.TheratioofADto is3 2.AndAB is30inches.Whatistheratiooftheareaoftherectangletothecombined AB: areaofthesemicircle. 3 ©2022AoPSIncorporated AoPS Community 2010 AMC 8 ---- --------- --- --- --- --- -------- --- D C A B",
+    "options": {
+      "A": "2: 3",
+      "B": "3: 2",
+      "C": "6: π",
+      "D": "9: π",
+      "E": "30: π --- -------- -------- ------ -------- ----------- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2010-19",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 19,
+    "question_text_raw": "ThetwocirclespicturedhavethesamecenterC.ChordAD istangenttotheinnercircleatB, AC is10,andchordADhaslength16.Whatistheareabetweenthetwocircles? C A D B",
+    "options": {
+      "A": "36π",
+      "B": "49π",
+      "C": "64π",
+      "D": "81π",
+      "E": "100π --- ------ ------ ------ ------ ------- --- --- Inaroom,2/5ofthepeoplearewearinggloves,and3/4ofthepeoplearewearinghats.What"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2010-20",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 20,
+    "question_text_raw": "istheminimumnumberofpeopleintheroomwearingbothahatandaglove?",
+    "options": {
+      "A": "3",
+      "B": "5",
+      "C": "8",
+      "D": "15",
+      "E": "20 --- ---- --------- ----- ----- --- --- --- Hui is an avid reader. She bought a copy of the best seller Beautiful. On the first day,"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2010-21",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 21,
+    "question_text_raw": "Math is 4 ©2022AoPSIncorporated AoPS Community 2010 AMC 8 ---- --------- --- --- --- --- --- --- ---- --- --- she read of the pages plus more, and on the second day she read of the remaining 1/5 12 1/4 --- --- --- --- --- --- --- --- --- --- --- pages plus 15 more. On the third day she read 1/3 of the remaining pages plus 18 more. She thenrealizesshehas62pagesleft,whichshefinishesthenextday.Howmanypagesareinthis book?",
+    "options": {
+      "A": "120",
+      "B": "180",
+      "C": "240",
+      "D": "300",
+      "E": "360 --- ------ ------ --- ------ ------ ------ --- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2010-22",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 22,
+    "question_text_raw": "Thehundredsdigitofathree-digitnumberis2morethantheunitsdigit.Thedigitsofthethree- digitnumberarereversed,andtheresultissubtractedfromtheoriginalthree-digitnumber.What istheunitsdigitoftheresult?",
+    "options": {
+      "A": "0",
+      "B": "2",
+      "C": "4",
+      "D": "6",
+      "E": "8 --- ---- ---- ---- ---- ---- --- --- --- --- --- Semicircles and pass through the center of circle O. What is the ratio of the com-"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2010-23",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 23,
+    "question_text_raw": "3 POQ ROS --- --- --- --- --- --- --- --- --- --- --- binedareasofthetwosemicirclestotheareaofcircleO? P( 1,1) Q(1,1) --- --- --- --- --- ---- ------ --- --- --- --- − O R( 1, 1) S(1, 1) --- --- --- --- --- ----- ---- --- --- --- --- − − − √ √ 2 1 2 2 2 (A) (B) (C) (D) (E) 4 2 π 3 2 Whatisthecorrectorderingofthethreenumbers,108,512,and224? 24 (A) 224 108 512 (B) 224 512 108 (C) 512 224 108 (D) 108 512 224 (E) 108 224 < < < < < < < < < < --- --- --- --- --- --- --- --- --- --- --- 512",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2010-24",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 24,
+    "question_text_raw": "4 **A**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2010-25",
+    "contest": "AMC8",
+    "year": 2010,
+    "problem_number": 25,
+    "question_text_raw": "Everydayatschool,Joclimbsaflightof6stairs.Joecantakethestairs1,2,or3atatime.For example,Jocouldclimb3,then1,then2.InhowmanywayscanJoclimbthestairs? 5 ©2022AoPSIncorporated AoPS Community 2010 AMC 8 ---- -------------------------------------------------------- ----- ----- ----- -------------- --------- ---",
+    "options": {
+      "A": "13",
+      "B": "18",
+      "C": "20",
+      "D": "22",
+      "E": "24 These problems are copy- – right©MathematicalAssociationofAmerica("
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2010.md",
+    "parse_status": "parsed"
+  }
+]

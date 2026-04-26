@@ -1,0 +1,484 @@
+[
+  {
+    "problem_id": "amc8-2015-01",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 1,
+    "question_text_raw": "12 --- --- --- --- --- --- --- --- --- and9feetwide?(Thereare3feetinayard.)",
+    "options": {
+      "A": "12",
+      "B": "36",
+      "C": "108",
+      "D": "324",
+      "E": "972 --- ----- ----- ------ ------ ------ --- --- --- Point is the center of the regular octagon ABCDEFGH, and is the midpoint of the side"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2015-02",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 2,
+    "question_text_raw": "©2022AoPSIncorporated AoPS Community 2015 AMC 8 ---- --------- --- --- --- --- -------- --- 13 How many subsets of two elements can be removed from the set {1,2,3,4,5,6,7,8,9,10,11} sothatthemean(average)oftheremainingnumbersis6?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "5",
+      "E": "6 --- ---- ---- ---- --------- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2015-03",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 3,
+    "question_text_raw": "simultaneously.Jillridesherbicycletothepoolataconstantspeedof10milesperhour.Jack walkstothepoolataconstantspeedof4milesperhour.HowmanyminutesbeforeJackdoes Jillarrive?",
+    "options": {
+      "A": "5",
+      "B": "6",
+      "C": "8",
+      "D": "9",
+      "E": "10 --- ---- ---- ---- ---------- --- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2015-04",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 4,
+    "question_text_raw": "©2022AoPSIncorporated AoPS Community 2015 AMC 8 I J 18 K A B F C G 32 E D H 22 OnJune1,agroupofstudentsisstandinginrows,with15studentsineachrow.OnJune2,the samegroupisstandingwithallofthestudentsinonelongrow.OnJune3,thesamegroupis standing with just one student in each row. On June 4, the same group is standing with 6 stu- dentsineachrow.ThisprocesscontinuesthroughJune12withadifferentnumberofstudents perroweachday.However,onJune13,theycannotfindanewwayoforganizingthestudents. Whatisthesmallestpossiblenumberofstudentsinthegroup?",
+    "options": {
+      "A": "21",
+      "B": "30",
+      "C": "60",
+      "D": "90",
+      "E": "1080"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2015-05",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 5,
+    "question_text_raw": "1 ©2022AoPSIncorporated --- ## 📷 Pages (6 pages)![[AMC8_2015_p1.png page 1]]![[AMC8_2015_p2.png page 2]]![[AMC8_2015_p3.png page 3]]![[AMC8_2015_p4.png page 4]]![[AMC8_2015_p5.png page 5]]![[AMC8_2015_p6.png page 6]] --- AoPS Community 2015 AMC 8 ---- --------- --- --- --- --- --- --- --- --- -------- --- season: 42,47,53,53,58,58,58,61,64,65,73 Ifhisteamscores40inthe12thgame,whichofthefollowingstatisticswillshowanincrease?",
+    "options": {
+      "A": "range",
+      "B": "median",
+      "C": "mean",
+      "D": "mode",
+      "E": "mid-range --- --------- ------ --------- -------- ------- ------ ----------------------- ------- ------------ --- --- In△ABC,AB 29,andAC 42.Whatistheareaof△ABC?"
+    },
+    "image_refs": [
+      "content/amc8/markdown/images/AMC8_2015_p1.png",
+      "content/amc8/markdown/images/AMC8_2015_p2.png",
+      "content/amc8/markdown/images/AMC8_2015_p3.png",
+      "content/amc8/markdown/images/AMC8_2015_p4.png",
+      "content/amc8/markdown/images/AMC8_2015_p5.png",
+      "content/amc8/markdown/images/AMC8_2015_p6.png"
+    ],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2015-06",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 6,
+    "question_text_raw": "= BC = =",
+    "options": {
+      "A": "100",
+      "B": "420",
+      "C": "500",
+      "D": "609",
+      "E": "701"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2015-07",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 7,
+    "question_text_raw": "Eachoftwoboxescontainsthreechipsnumbered1,2,3.Achipisdrawnrandomlyfromeach boxandthenumbersonthetwochipsaremultiplied.Whatistheprobabilitythattheirproduct iseven?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "4",
+      "D": "1",
+      "E": "5 --- ----- --- --- ----- --- --- ----- --- --- --- --- 9 9 9 2 9"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2015-08",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 8,
+    "question_text_raw": "Whatisthesmallestwholenumberlargerthantheperimeterofanytrianglewithasideoflength 5andasideoflength19?",
+    "options": {
+      "A": "24",
+      "B": "29",
+      "C": "43",
+      "D": "48",
+      "E": "57 --- ----- ----- --- ----- --- ----- ----- --- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2015-09",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 9,
+    "question_text_raw": "On her first day of work, Janabel sold one widget. On day two, she sold three widgets. On day three,shesoldfivewidgets,andoneachsucceedingday,shesoldtwomorewidgetsthanshe had sold on the previous day. How many widgets in total had Janabel sold after working 20 days?",
+    "options": {
+      "A": "39",
+      "B": "40",
+      "C": "210",
+      "D": "400",
+      "E": "401 --- ----- ----- --- ------ --- ------ --- ------ --- --- --- Howmanyintegersbetween1000and9999havefourdistinctdigits?"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2015-10",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 10,
+    "question_text_raw": "0 **B**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2015-11",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 11,
+    "question_text_raw": "mustbeavowel(A,E,I,O,orU),thesecondandthirdmustbetwodifferentlettersamongthe 21non-vowels,andthefourthmustbeadigit(0through9).Ifthesymbolsarechosenatrandom subjecttotheseconditions,whatistheprobabilitythattheplatewillread”AMC8”?",
+    "options": {
+      "A": "1",
+      "B": "1",
+      "C": "1",
+      "D": "1",
+      "E": "1 --- ------ --- ------ --- --- ------ --- ----- ----- --- --- 22,050 21,000 10,500 2,100 1,050"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2015-12",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 12,
+    "question_text_raw": "Howmanypairsofparalleledges,suchasAB andGH orEH andFG,doesacubehave?",
+    "options": {
+      "A": "6",
+      "B": "12",
+      "C": "18",
+      "D": "24",
+      "E": "36 --- ---- ----- --- ----- ----- --- ----- --- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2015-13",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 13,
+    "question_text_raw": "3 How many subsets of two elements can be removed from the set {1,2,3,4,5,6,7,8,9,10,11} sothatthemean(average)oftheremainingnumbersis6? (A) 1 (B) 2 (C) 3 (D) 5 (E) 6 --- ---- ---- ---- --------- --- --- ---",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2015-14",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 14,
+    "question_text_raw": "Whichofthefollowingintegerscannotbewrittenasthesumoffourconsecutiveoddintegers?",
+    "options": {
+      "A": "16",
+      "B": "40",
+      "C": "72",
+      "D": "100",
+      "E": "200 --- ----- ----- ----- ------ ------ --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2015-15",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 15,
+    "question_text_raw": "At Euler Middle School, 198 students voted on two issues in a school referendum with the fol- lowing results: 149 voted in favor of the first issue and 119 voted in favor of the second issue. If there were exactly students who voted against both issues, how many students voted in 29 favorofbothissues?",
+    "options": {
+      "A": "49",
+      "B": "70",
+      "C": "79",
+      "D": "99",
+      "E": "149 --- ----- ----- ----- ----- ------ --- --- In a middle-school mentoring program, a number of the sixth graders are paired with a ninth-"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2015-16",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 16,
+    "question_text_raw": "gradestudentasabuddy.Noninthgraderisassignedmorethanonesixth-gradebuddy.If 1 of 3 alltheninthgradersarepairedwith 2 ofallthesixthgraders,whatfractionofthetotalnumber 5 ofsixthandninthgradershaveabuddy?",
+    "options": {
+      "A": "2",
+      "B": "4",
+      "C": "11",
+      "D": "3",
+      "E": "11 --- ----- --- -------- ----- ------ --- --- 15 11 30 8 15 Jeremy’sfatherdriveshimtoschoolinrushhourtrafficin20minutes.Onedaythereisnotraffic,"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2015-17",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 17,
+    "question_text_raw": "sohisfathercandrivehim18milesperhourfasterandgetshimtoschoolin12minutes.How farinmilesisittoschool?",
+    "options": {
+      "A": "4",
+      "B": "6",
+      "C": "8",
+      "D": "9",
+      "E": "12 --- ---- ---- ---- ---------- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2015-18",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 18,
+    "question_text_raw": "An arithmetic sequence isa sequence in which each term after thefirst is obtained by adding a constant to the previous term. For example, 2,5,8,11,14 is an arithmetic sequence with five 3 ©2022AoPSIncorporated AoPS Community 2015 AMC 8 ---- --------- --- --- --- --- -------- --- terms,inwhichthefirsttermis2andtheconstantaddedis3.Eachrowandeachcolumninthis 5×5arrayisanarithmeticsequencewithfiveterms.WhatisthevalueofX?",
+    "options": {
+      "A": "21",
+      "B": "31",
+      "C": "36",
+      "D": "40",
+      "E": "42 --- ----- ----- ----- ----- ----- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2015-19",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 19,
+    "question_text_raw": "9 AtrianglewithverticesasA = (1,3),B = (5,1),andC = (4,4)isplottedona6×5grid.What fractionofthegridiscoveredbythetriangle? 1 1 1 1 1 --- --- --- --- --- --- --- --- (A) (B) (C) (D) (E) 6 5 4 3 2 y C A B x Ralph went to the store and bought 12 pairs of socks for a total of $24. Some of the socks he 20 bought cost $1 a pair, some of the socks he bought cost $3 a pair, and some of the socks he bought cost $4 a pair. If he bought at least one pair of each type, how many pairs of $1 socks didRalphbuy? (A) 4 (B) 5 (C) 6 (D) 7 (E) 8 --- ---- ---- ---- --------- --- --- ---",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2015-20",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 20,
+    "question_text_raw": "bought cost $1 a pair, some of the socks he bought cost $3 a pair, and some of the socks he bought cost $4 a pair. If he bought at least one pair of each type, how many pairs of $1 socks didRalphbuy?",
+    "options": {
+      "A": "4",
+      "B": "5",
+      "C": "6",
+      "D": "7",
+      "E": "8 --- ---- ---- ---- --------- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2015-21",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 21,
+    "question_text_raw": "InthegivenfigurehexagonABCDEF isequiangular,ABJI andFEHGaresquareswithareas 18and32respectively,△JBK isequilateralandFE = BC.Whatistheareaof△KBC? √ √ --- ---- ------ ----- ---- ------- --- ---",
+    "options": {
+      "A": "6 2",
+      "B": "9",
+      "C": "12",
+      "D": "9 2",
+      "E": "32"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2015-22",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 22,
+    "question_text_raw": "2 OnJune1,agroupofstudentsisstandinginrows,with15studentsineachrow.OnJune2,the samegroupisstandingwithallofthestudentsinonelongrow.OnJune3,thesamegroupis standing with just one student in each row. On June 4, the same group is standing with 6 stu- dentsineachrow.ThisprocesscontinuesthroughJune12withadifferentnumberofstudents perroweachday.However,onJune13,theycannotfindanewwayoforganizingthestudents. Whatisthesmallestpossiblenumberofstudentsinthegroup? (A) 21 (B) 30 (C) 60 (D) 90 (E) 1080",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2015-23",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 23,
+    "question_text_raw": "Tom has twelve slips of paper which he wants to put into five cups labeled A, B, C, D, E. He wantsthesumofthenumbersontheslipsineachcuptobeaninteger.Furthermore,hewants thefiveintegerstobeconsecutiveandincreasingfromAtoE.Thenumbersonthepapersare 2, 2, 2, 2.5, 2.5, 3, 3, 3, 3, 3.5, 4, and 4.5. If a slip with 2 goes into cup E and a slip with 3 goes intocupB,thentheslipwith3.5mustgointowhatcup?",
+    "options": {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D",
+      "E": "E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2015-24",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 24,
+    "question_text_raw": "Abaseballleagueconsistsoftwofour-teamdivisions.Eachteamplayseveryotherteaminits division N games. Each team plays every team in the other division M games with N > 2M and M > 4. Each team plays a 76 game schedule. How many games does a team play within itsowndivision?",
+    "options": {
+      "A": "36",
+      "B": "48",
+      "C": "54",
+      "D": "60",
+      "E": "72"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2015-25",
+    "contest": "AMC8",
+    "year": 2015,
+    "problem_number": 25,
+    "question_text_raw": "One-inch squares are cut from the corners of this 5 inch square. What is the area in square inchesofthelargestsquarethatcanbefittedintotheremainingspace?",
+    "options": {
+      "A": "9",
+      "B": "121",
+      "C": "15",
+      "D": "151",
+      "E": "17"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2015.md",
+    "parse_status": "parsed"
+  }
+]

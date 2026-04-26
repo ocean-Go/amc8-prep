@@ -1,0 +1,483 @@
+[
+  {
+    "problem_id": "amc8-2017-01",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 1,
+    "question_text_raw": "©2022AoPSIncorporated --- ## 📷 Pages (5 pages)![[AMC8_2017_p1.png page 1]]![[AMC8_2017_p2.png page 2]]![[AMC8_2017_p3.png page 3]]![[AMC8_2017_p4.png page 4]]![[AMC8_2017_p5.png page 5]] --- AoPS Community 2017 AMC 8 7 LetZ bea6-digitpositiveinteger,suchas247247,whosefirstthreedigitsarethesameasits lastthreedigitstakeninthesameorder.Whichofthefollowingnumbersmustalsobeafactor ofZ?",
+    "options": {
+      "A": "11",
+      "B": "19",
+      "C": "101",
+      "D": "111",
+      "E": "1111"
+    },
+    "image_refs": [
+      "content/amc8/markdown/images/AMC8_2017_p1.png",
+      "content/amc8/markdown/images/AMC8_2017_p2.png",
+      "content/amc8/markdown/images/AMC8_2017_p3.png",
+      "content/amc8/markdown/images/AMC8_2017_p4.png",
+      "content/amc8/markdown/images/AMC8_2017_p5.png"
+    ],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2017-02",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 2,
+    "question_text_raw": "Alicia, Brenda, and Colby were the candidates in a recent election for student president. The pie chart below shows how the votes were distributed among the three candidates. If Brenda received36votes,thenhowmanyvoteswerecastalltogether? Colby 25% Alicia 45% Brenda 30%",
+    "options": {
+      "A": "70",
+      "B": "84",
+      "C": "100",
+      "D": "106",
+      "E": "120 --- ----- ----- --- ------ ------ --------- ------ --- --- --- --- (cid:113) √ (cid:112)"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2017-03",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 3,
+    "question_text_raw": "Whatisthevalueoftheexpression 16 8 4? --- ----------------------------- ---- --- ---- ---- --- ----- --- --- --- --- √ √",
+    "options": {
+      "A": "4",
+      "B": "4 2",
+      "C": "8",
+      "D": "8 2",
+      "E": "16 When 0.000315 is multiplied by 7,928,564 the product is closest to which of the following?"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2017-04",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 4,
+    "question_text_raw": "©2022AoPSIncorporated AoPS Community 2017 AMC 8 ---- --------- --- --- --- --- --- --- -------- --- Mrs.Sandershasthreegrandchildren,whocallherregularly.Onecallshereverythreedays,one 24 callshereveryfourdays,andonecallshereveryfivedays.AllthreecalledheronDecember31, 2016.Onhowmanydaysduringthenextyeardidshenotreceiveaphonecallfromanyofher grandchildren?",
+    "options": {
+      "A": "78",
+      "B": "80",
+      "C": "144",
+      "D": "146",
+      "E": "152 --- --- --- ----- ------ ------ ------ --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2017-05",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 5,
+    "question_text_raw": "Whatisthevalueoftheexpression 1·2·3·4·5·6·7·8? 1+2+3+4+5+6+7+8",
+    "options": {
+      "A": "1020",
+      "B": "1120",
+      "C": "1220",
+      "D": "2240",
+      "E": "3360 --- ------- --- ------- ------- --- ------- --- ------- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2017-06",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 6,
+    "question_text_raw": "If the degree measures of the angles of a triangle are in the ratio 3: 3: 4, what is the degree measureofthelargestangleofthetriangle?",
+    "options": {
+      "A": "18",
+      "B": "36",
+      "C": "60",
+      "D": "72",
+      "E": "90"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2017-07",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 7,
+    "question_text_raw": "LetZ bea6-digitpositiveinteger,suchas247247,whosefirstthreedigitsarethesameasits lastthreedigitstakeninthesameorder.Whichofthefollowingnumbersmustalsobeafactor ofZ?(A) 11 (B) 19 (C) 101 (D) 111 (E) 1111",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2017-08",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 8,
+    "question_text_raw": "Malcolm wants to visit Isabella after school today and knows the street where she lives but doesn’t know her house number. She tells him, ”My house number has two digits, and exactly threeofthefollowingfourstatementsaboutitaretrue.” (1)Itisprime. (2)Itiseven. (3)Itisdivisibleby7. (4)Oneofitsdigitsis9. ThisinformationallowsMalcolmtodetermineIsabella’shousenumber.Whatisitsunitsdigit?",
+    "options": {
+      "A": "4",
+      "B": "6",
+      "C": "7",
+      "D": "8",
+      "E": "9"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2017-09",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 9,
+    "question_text_raw": "AllofMarcy’smarblesareblue,red,green,oryellow.Onethirdofhermarblesareblue,onefourth ofthemarered,andsixofthemaregreen.Whatisthesmallestnumberofyellowmarblesthat Marcycouldhave?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4",
+      "E": "5"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2017-10",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 10,
+    "question_text_raw": "5 10 5 2 11 Asquare-shapedflooriscoveredwithcongruentsquaretiles.Ifthetotalnumberoftilesthatlie onthetwodiagonalsis37,howmanytilescoverthefloor?",
+    "options": {
+      "A": "148",
+      "B": "324",
+      "C": "361",
+      "D": "1296",
+      "E": "1369"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2017-11",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 11,
+    "question_text_raw": "1 Asquare-shapedflooriscoveredwithcongruentsquaretiles.Ifthetotalnumberoftilesthatlie onthetwodiagonalsis37,howmanytilescoverthefloor?(A) 148 (B) 324 (C) 361 (D) 1296 (E) 1369",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2017-12",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 12,
+    "question_text_raw": "Thesmallestpositiveintegergreaterthan1thatleavesaremainderof1whendividedby4,5,and 6liesbetweenwhichofthefollowingpairsofnumbers?",
+    "options": {
+      "A": "2and19",
+      "B": "20and39",
+      "C": "40and59",
+      "D": "60and79",
+      "E": "80and124"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2017-13",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 13,
+    "question_text_raw": "Peter, Emma, and Kyler played chess with each other. Peter won 4 games and lost 2 games. Emma won 3 games and lost 3 games. If Kyler lost 3 games, how many games did he win?",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "2",
+      "D": "3",
+      "E": "4"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2017-14",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 14,
+    "question_text_raw": "ChloeandZoearebothstudentsinMs.Demeanor’smathclass.Lastnighttheyeachsolvedhalf of the problems in their homework assignment alone and then solved the other half together. Chloehadcorrectanswerstoonly80%oftheproblemsshesolvedalone,butoverall88%ofher answerswerecorrect.Zoehadcorrectanswersto90%oftheproblemsshesolvedalone.What wasZoe’soverallpercentageofcorrectanswers?",
+    "options": {
+      "A": "89",
+      "B": "92",
+      "C": "93",
+      "D": "96",
+      "E": "98"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2017-15",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 15,
+    "question_text_raw": "In the arrangement of letters and numerals below, by how many different paths can one spell AMC8?BeginningattheAinthemiddle,apathallowsonlymovesfromonelettertoanadjacent ©2022AoPSIncorporated 2 AoPS Community 2017 AMC 8 ---- --------- --- --- --- --- -------- --- (above,below,left,orright,butnotdiagonal)letter.Oneexampleofsuchapathistracedinthe picture. 8 C 8 --- ---- ---------- ----- ----- --- --- --- 8 C M C 8 C M A M C 8 C M C 8 8 C 8",
+    "options": {
+      "A": "8",
+      "B": "9",
+      "C": "12",
+      "D": "24",
+      "E": "36 Inthefigurebelow,choosepointD onBC sothat△ACD and△ABD haveequalperimeters."
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2017-16",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 16,
+    "question_text_raw": "Whatistheareaof△ABD? C 5 3 B A 4 --- ----- ---------- ------ ----- --- --- ---",
+    "options": {
+      "A": "3",
+      "B": "3",
+      "C": "2",
+      "D": "12",
+      "E": "5 4 2 5 2 Starting with some gold coins and some empty treasure chests, I tried to put 9 gold coins in"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2017-17",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 17,
+    "question_text_raw": "each treasure chest, but that left 2 treasure chests empty. So instead I put 6 gold coins in each treasure chest, but then I had 3 gold coins left over. How many gold coins did I have?",
+    "options": {
+      "A": "9",
+      "B": "27",
+      "C": "45",
+      "D": "63",
+      "E": "81 --- ---- ----------- ----- ----- --- --- --- Inthenon-convexquadrilateralABCDshownbelow,∠BCDisarightangle,AB 12,BC 4,"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2017-18",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 18,
+    "question_text_raw": "= = --- ------- --- --- --- --- --- --- 3,andAD 13. CD = = 3 ©2022AoPSIncorporated AoPS Community 2017 AMC 8 ---- --------- --- --- --- --- --- --- --- --- --- ---- ----- D C B A --- --- --- --- --- --- --- --- --- --- --- --- --- WhatistheareaofquadrilateralABCD?",
+    "options": {
+      "A": "12",
+      "B": "24",
+      "C": "26",
+      "D": "30",
+      "E": "36 For any positive integer M, the notation denotes the product of the integers through M."
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2017-19",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 19,
+    "question_text_raw": "M! 1 --- --- --- --- --- --- --- --- --- --- --- --- --- Whatisthelargestintegernforwhich5nisafactorofthesum98!+99!+100!?",
+    "options": {
+      "A": "23",
+      "B": "24",
+      "C": "25",
+      "D": "26",
+      "E": "27 Anintegerbetween1000and9999,inclusive,ischosenatrandom.Whatistheprobabilitythatit"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2017-20",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 20,
+    "question_text_raw": "0 **B**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2017-21",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 21,
+    "question_text_raw": "Supposea,b,andcarenonzerorealnumbers,anda+b+c = 0.Whatarethepossiblevalue(s) for a b c abc? --- ------- ------- ----- ------- --- --- ------- ------ ------- --- --- --- + + + a b c abc",
+    "options": {
+      "A": "0",
+      "B": "1and −1",
+      "C": "2and −2",
+      "D": "0,2, and −2",
+      "E": "0,1, and −1 In the right triangle ABC, 12, 5, and angle is a right angle. A semicircle is"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2017-22",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 22,
+    "question_text_raw": "AC = BC = C --- --- --- --- --- --- ---- --- --- --- --- --- --- inscribedinthetriangleasshown.Whatistheradiusofthesemicircle? B 5 A C --- --- --- --- --- --- --- --- --- --- --- --- --- 12",
+    "options": {
+      "A": "7",
+      "B": "13",
+      "C": "59",
+      "D": "10",
+      "E": "60 --- ----- ------ --- --- ------ ------ --- --- --- --- --- --- 6 5 18 3 13"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2017-23",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 23,
+    "question_text_raw": "Eachdayforfourdays,Lindatraveledforonehourataspeedthatresultedinhertravelingone mileinanintegernumberofminutes.Eachdayafterthefirst,herspeeddecreasedsothatthe number of minutes to travel one mile increased by 5 minutes over the preceding day. Each of the four days, her distance traveled was also an integer number of miles. What was the total numberofmilesforthefourtrips?",
+    "options": {
+      "A": "10",
+      "B": "15",
+      "C": "25",
+      "D": "50",
+      "E": "82 --- --- --- --- --- --- --- ----- ----- ----- ----- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2017-24",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 24,
+    "question_text_raw": "4 **D**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2017-25",
+    "contest": "AMC8",
+    "year": 2017,
+    "problem_number": 25,
+    "question_text_raw": "In the figure shown, US and UT are line segments each of length 2, and m∠TUS = 60◦. Arcs ⌢ ⌢ TRandSRareeachone-sixthofacirclewithradius2.Whatistheareaoftheregionshown? U S T --- --- --- --- --- --- --- --- --- --- R √ √ √ √ --- -------- ---- --- ------ ---- -------- --- --- --- 4π 2π 4π",
+    "options": {
+      "A": "3 3−π",
+      "B": "4 3−",
+      "C": "2 3",
+      "D": "4 3−",
+      "E": "4+ 3 3 3 – These problems are copy- right©MathematicalAssociationofAmerica("
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2017.md",
+    "parse_status": "parsed"
+  }
+]

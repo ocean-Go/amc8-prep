@@ -18,6 +18,8 @@ export default function PracticePage() {
   const [submitting, setSubmitting] = useState(false);
   const [hasSubmittedCurrent, setHasSubmittedCurrent] = useState(false);
   const [submitResult, setSubmitResult] = useState<CreateAttemptResponse | null>(null);
+  const [problemSource, setProblemSource] = useState<string | null>(null);
+  const [sourceWarning, setSourceWarning] = useState<string | null>(null);
 
   useEffect(() => {
     async function loadProblems() {
@@ -32,10 +34,16 @@ export default function PracticePage() {
           throw new Error("Failed to fetch problems");
         }
 
-        const payload = (await response.json()) as { problems?: PracticeProblem[] };
+        const payload = (await response.json()) as {
+          problems?: PracticeProblem[];
+          source?: string;
+          warning?: string;
+        };
         const nextProblems = Array.isArray(payload.problems) ? payload.problems : [];
 
         setProblems(nextProblems);
+        setProblemSource(payload.source ?? null);
+        setSourceWarning(payload.warning ?? null);
         setCurrentIndex(0);
         setSelectedOption(null);
         setSubmitResult(null);
@@ -43,6 +51,8 @@ export default function PracticePage() {
         setQuestionStartMs(Date.now());
       } catch (fetchError) {
         setProblems([]);
+        setProblemSource(null);
+        setSourceWarning(null);
         setError(fetchError instanceof Error ? fetchError.message : "Unknown error");
       } finally {
         setLoading(false);
@@ -148,6 +158,13 @@ export default function PracticePage() {
         {loading && <div className="card text-gray-700">Loading real AMC8 problems...</div>}
 
         {!loading && error && <div className="card text-red-600">{error}</div>}
+
+        {!loading && problemSource && (
+          <div className="mb-3 rounded-md border border-indigo-200 bg-indigo-50 px-3 py-2 text-sm text-indigo-700">
+            Source: <span className="font-semibold">{problemSource}</span>
+            {sourceWarning ? ` • ${sourceWarning}` : ""}
+          </div>
+        )}
 
         {!loading && !error && problems.length === 0 && (
           <div className="card text-gray-700">No problems found for the selected topic.</div>

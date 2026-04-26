@@ -1,0 +1,477 @@
+[
+  {
+    "problem_id": "amc8-2025-01",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 1,
+    "question_text_raw": "The eight-pointed star, shown in the ﬁgure below, is a popular quilting pattern. What percent of the entire -by- grid is covered by the star? 4 4",
+    "options": {
+      "A": "40",
+      "B": "50",
+      "C": "60",
+      "D": "75",
+      "E": "80"
+    },
+    "image_refs": [],
+    "answer": "B",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2025-02",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 2,
+    "question_text_raw": "The table below shows the ancient Egyptian heiroglyphs that were used to represent diﬀerent numbers. 𓆐 𓂭 𓆼 100,000 10,000 1,000 𓍢 100 𓎆 10 𓏺 1 For example, the number 32 was represented by: What number was represented by the following combination of heiroglyphs? 𓏺𓎆𓎆 𓏺 𓎆 𓂭𓍢 𓍢𓍢𓍢 𓎆 𓏺𓏺 𓎆 𓏺",
+    "options": {
+      "A": "1, 423",
+      "B": "10, 423",
+      "C": "14, 023",
+      "D": "14, 203",
+      "E": "14, 230"
+    },
+    "image_refs": [],
+    "answer": "B",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2025-03",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 3,
+    "question_text_raw": "Buﬀalo Shuﬄe-o is a card game in which all the cards are distributed evenly among all players at the start of the game. When Annika and of her friends play 3 Buﬀalo Shuﬄe-o, each player is dealt 2 next game. How many cards will be dealt to each player? 15 cards. Suppose more friends join the",
+    "options": {
+      "A": "8",
+      "B": "9",
+      "C": "10",
+      "D": "11",
+      "E": "12"
+    },
+    "image_refs": [],
+    "answer": "C",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2025-04",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 4,
+    "question_text_raw": "Lucius is counting backward by s. His ﬁrst three numbers are 7 100, 93, and 86. What is his 10 th number?",
+    "options": {
+      "A": "30",
+      "B": "37",
+      "C": "42",
+      "D": "44",
+      "E": "47"
+    },
+    "image_refs": [],
+    "answer": "B",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2025-05",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 5,
+    "question_text_raw": "Betty drives a truck to deliver packages in a neighborhood whose street map is shown below. Betty starts at the factory (labeled ) and drives to location F. A, What is the shortest distance, in blocks, before returning to then C, B, F then she can drive to complete the route?",
+    "options": {
+      "A": "20",
+      "B": "22",
+      "C": "24",
+      "D": "26",
+      "E": "28"
+    },
+    "image_refs": [],
+    "answer": "C",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2025-06",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 6,
+    "question_text_raw": "Sekou writes the numbers 15, 16, 17, 18, 19. After he erases one of the numbers, the sum of the remaining four numbers is a multiple of erase? 4. Which number did he",
+    "options": {
+      "A": "15",
+      "B": "16",
+      "C": "17",
+      "D": "18",
+      "E": "19"
+    },
+    "image_refs": [],
+    "answer": "C",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2025-07",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 7,
+    "question_text_raw": "On the most recent exam in Prof. Xochi's class, • students earned a score of at least 5 95%, • 13 • 27 • 50 students earned a score of at least 90%, students earned a score of at least 85%, and students earned a score of at least 80%. How many students earned a score of at least and less than 80% 90%?",
+    "options": {
+      "A": "8",
+      "B": "14",
+      "C": "22",
+      "D": "37",
+      "E": "45"
+    },
+    "image_refs": [],
+    "answer": "D",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2025-08",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 8,
+    "question_text_raw": "Isaiah cuts open a cardboard cube along some of its edges to form the ﬂat shape shown, which has an area of cube in cubic centimeters? 18 square centimeters. What was the volume of the",
+    "options": {
+      "A": "3",
+      "B": "6",
+      "C": "9",
+      "D": "6",
+      "E": "9"
+    },
+    "image_refs": [],
+    "answer": "A",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2025-09",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 9,
+    "question_text_raw": "Ningli looks at the pairs of numbers directly across from each other on a clock. 6 She takes the average of each pair of numbers. What is the average of the resulting numbers? 6",
+    "options": {
+      "A": "5",
+      "B": "6.5",
+      "C": "8",
+      "D": "9.5",
+      "E": "12"
+    },
+    "image_refs": [],
+    "answer": "B",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2025-10",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 10,
+    "question_text_raw": "In the ﬁgure below, ABCD inches. Rectangle DC inches and 90∘ clockwise around the midpoint to give a second rectangle. What is the total area, in square inches, is a rectangle with sides of length ABCD is rotated AB = 5 AD = 3 of side covered by the two overlapping rectangles?",
+    "options": {
+      "A": "21",
+      "B": "22.25",
+      "C": "23",
+      "D": "23.75",
+      "E": "25"
+    },
+    "image_refs": [],
+    "answer": "D",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2025-11",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 11,
+    "question_text_raw": "A tetromino consists of four squares connected along their edges. There are ﬁve possible tetromino shapes, I, O, L, T, and S, shown below, which can be rotated or rectangle. ﬂipped over. Three tetrominoes are used to completely cover a 3 × 4 At least one of the tiles is an S tile. What are the other two tiles?",
+    "options": {
+      "A": "I and L",
+      "B": "I and T",
+      "C": "L and L",
+      "D": "L and S",
+      "E": "O and T"
+    },
+    "image_refs": [],
+    "answer": "C",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2025-12",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 12,
+    "question_text_raw": "The region shown below consists of 24 squares, each with side length 1 centimeter. What is the area, in square centimeters, of the largest circle that can ﬁt inside the region, possibly touching the boundaries?",
+    "options": {
+      "A": "3π",
+      "B": "4π",
+      "C": "5π",
+      "D": "6π",
+      "E": "8π"
+    },
+    "image_refs": [],
+    "answer": "C",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2025-13",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 13,
+    "question_text_raw": "Each of the even numbers 2, 4, 6, …, 50 is divided by The remainders are 7. recorded. Which histogram displays the number of times each remainder occurs?",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": "A",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2025-14",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 14,
+    "question_text_raw": "A number N as the median. What is is inserted into the list N? 2, 6, 7, 7, 28. The mean is now twice as great",
+    "options": {
+      "A": "7",
+      "B": "14",
+      "C": "20",
+      "D": "28",
+      "E": "34"
+    },
+    "image_refs": [],
+    "answer": "E",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2025-15",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 15,
+    "question_text_raw": "Kei draws a -by- grid. He colors 13 squares gold. Kei then folds the grid in half vertically, forming pairs of and overlapping unit squares. Let equal the least and greatest possible of the unit squares silver and the remaining 6 6 m M number of gold-on-gold pairs, respectively. What is the value of m + M?",
+    "options": {
+      "A": "12",
+      "B": "14",
+      "C": "16",
+      "D": "18",
+      "E": "20"
+    },
+    "image_refs": [],
+    "answer": "C",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2025-16",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 16,
+    "question_text_raw": "Five distinct integers from to 1 are chosen. No two numbers diﬀer by exactly 10 are chosen, and ﬁve distinct integers from 11 10. What is the sum of the ten 20 to chosen numbers?",
+    "options": {
+      "A": "95",
+      "B": "100",
+      "C": "105",
+      "D": "110",
+      "E": "115"
+    },
+    "image_refs": [],
+    "answer": "C",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2025-17",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 17,
+    "question_text_raw": "In the land of Markovia, there are three cities: A, B, who live in and C. C. There are people Everyone works in one of 100 B, and A, 120 who live in who live in 160 the three cities, and a person may work in the same city where they live. In the ﬁgure below, an arrow pointing from one city to another is labeled with the fraction of people living in the ﬁrst city who work in the second city. (For example, ) How many people work in of the people who live in work in A B. A? 1 4",
+    "options": {
+      "A": "55",
+      "B": "60",
+      "C": "85",
+      "D": "115",
+      "E": "160"
+    },
+    "image_refs": [],
+    "answer": "D",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2025-18",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 18,
+    "question_text_raw": "The circle shown below on the left has a radius of unit. The region between the circle and the inscribed square is shaded. In the circle shown on the right, one quarter of the region between the circle and the inscribed square is shaded. The shaded regions in the two circles have the same area. What is the radius in 1 R, units, of the circle on the right?",
+    "options": {
+      "A": "2",
+      "B": "2",
+      "C": "2",
+      "D": "2",
+      "E": "2"
+    },
+    "image_refs": [],
+    "answer": "B",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2025-19",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 19,
+    "question_text_raw": "Two towns, A B, to town A from town and are connected by a straight road, B, the speed limit changes every miles: from B, and one at town 15 5 A to 40 to 25 start miles long. Traveling miles per hour (mph). Two cars, one at town 20 moving toward each other at the same time. They drive at exactly the speed limit in each portion of the road. How far from town meet? in miles, will the two cars A,",
+    "options": {
+      "A": "7.75",
+      "B": "8",
+      "C": "8.25",
+      "D": "8.5",
+      "E": "8.75"
+    },
+    "image_refs": [],
+    "answer": "D",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2025-20",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 20,
+    "question_text_raw": "Sarika, Dev, and Rajiv are sharing a large block of cheese. They take turns cutting oﬀ half of what remains and eating it: ﬁrst Sarika eats half of the cheese, then Dev eats half of the remaining half, then Rajiv eats half of what remains, then back to Sarika, and so on. They stop when the cheese is too small to see. About what fraction of the original block of cheese does Sarika eat in total?",
+    "options": {
+      "A": "4",
+      "B": "7",
+      "C": "3",
+      "D": "5",
+      "E": "2"
+    },
+    "image_refs": [],
+    "answer": "A",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2025-21",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 21,
+    "question_text_raw": "The Konigsberg School has assigned grades through to pods G, one grade per pod. Some of the pods are connected by walkways, as shown in through A 7 1 the ﬁgure below. The school noticed that each pair of connected pods has been assigned grades diﬀering by or more grade levels. (For example, grades and 2 1 will not be in pods directly connected by a walkway.) What is the sum of the and grade levels assigned to pods 2 C, E, F?",
+    "options": {
+      "A": "12",
+      "B": "13",
+      "C": "14",
+      "D": "15",
+      "E": "16"
+    },
+    "image_refs": [],
+    "answer": "A",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2025-22",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 22,
+    "question_text_raw": "A classroom has a row of 35 coat hooks. Paulina likes coats to be equally spaced, so that there is the same number of empty hooks before the ﬁrst coat, after the last coat, and between every coat and the next one. Suppose there is at least 1 coat and at least empty hook. How many diﬀerent numbers of coats can satisfy 1 Paulina's pattern?",
+    "options": {
+      "A": "2",
+      "B": "4",
+      "C": "5",
+      "D": "7",
+      "E": "9"
+    },
+    "image_refs": [],
+    "answer": "D",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2025-23",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 23,
+    "question_text_raw": "How many four-digit numbers have all three of the following properties? (I) The tens digit and ones digit are both 9. (II) The number is less than a perfect square. 1 (III) The number is the product of exactly two prime numbers.",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "2",
+      "D": "3",
+      "E": "4"
+    },
+    "image_refs": [],
+    "answer": "B",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2025-24",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 24,
+    "question_text_raw": "In trapezoid ABCD, angles B and C measure 60∘ and lengths are all positive integers and the perimeter of AB = DC. ABCD 30 is The side units. How many non-congruent trapezoids satisfy all of these conditions?",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "2",
+      "D": "3",
+      "E": "4"
+    },
+    "image_refs": [],
+    "answer": "E",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2025-25",
+    "contest": "AMC8",
+    "year": 2025,
+    "problem_number": 25,
+    "question_text_raw": "Makayla ﬁnds all the possible ways to draw a path in a 5 × 5 diamond-shaped grid. Each path starts at the bottom of the grid and ends at the top, always moving one unit northeast or northwest. She computes the area of the region between each path and the right side of the grid. Two examples are shown in the ﬁgures below. What is the sum of the areas determined by all possible paths?",
+    "options": {
+      "A": "2520",
+      "B": "3150",
+      "C": "3840",
+      "D": "4730",
+      "E": "5050"
+    },
+    "image_refs": [],
+    "answer": "B",
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2025.md",
+    "parse_status": "parsed"
+  }
+]

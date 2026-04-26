@@ -1,0 +1,483 @@
+[
+  {
+    "problem_id": "amc8-2016-01",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 1,
+    "question_text_raw": "©2022AoPSIncorporated --- ## 📷 Pages (5 pages)![[AMC8_2016_p1.png page 1]]![[AMC8_2016_p2.png page 2]]![[AMC8_2016_p3.png page 3]]![[AMC8_2016_p4.png page 4]]![[AMC8_2016_p5.png page 5]] --- AoPS Community 2016 AMC 8 ---- --------- --- --- --- --- --- --- --- -------- --- frequency 7 6 5 4 3 2 1 0 3 4 5 6 7 --- ---------------------------------------------- -------- --- -------- -------- -------- --- --- --- --- name length 7 Whichofthefollowingnumbersisnotaperfectsquare?",
+    "options": {
+      "A": "12016",
+      "B": "22017",
+      "C": "32018",
+      "D": "42019",
+      "E": "52020 Findthevalueoftheexpression"
+    },
+    "image_refs": [
+      "content/amc8/markdown/images/AMC8_2016_p1.png",
+      "content/amc8/markdown/images/AMC8_2016_p2.png",
+      "content/amc8/markdown/images/AMC8_2016_p3.png",
+      "content/amc8/markdown/images/AMC8_2016_p4.png",
+      "content/amc8/markdown/images/AMC8_2016_p5.png"
+    ],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2016-02",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 2,
+    "question_text_raw": "©2022AoPSIncorporated AoPS Community 2016 AMC 8 ---- --------- --- --- --- --- --- --- -------- --- JeffersonMiddleSchoolhasthesamenumberofboysandgirls.Three-fourthsofthegirlsand 12 two-thirdsoftheboyswentonafieldtrip.Whatfractionofthestudentsweregirls?",
+    "options": {
+      "A": "1",
+      "B": "9",
+      "C": "7",
+      "D": "2",
+      "E": "14 --- ----- ----- --- --- ----- --- --- --- --- 2 17 13 3 15 Two different numbers are randomly selected from the set and multiplied to-"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2016-03",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 3,
+    "question_text_raw": "©2022AoPSIncorporated AoPS Community 2016 AMC 8 ---- --------- --- --- --- --- -------- --- Theleastcommonmultipleofaandbis12,andtheleastcommonmultipleofbandcis15.What 20 istheleastpossiblevalueoftheleastcommonmultipleofaandc?",
+    "options": {
+      "A": "20",
+      "B": "30",
+      "C": "60",
+      "D": "120",
+      "E": "180 --- ----- ----- ----- ------ ------ --- --- Aboxcontains3redchipsand2greenchips.Chipsaredrawnrandomly,oneatatimewithout"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2016-04",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 4,
+    "question_text_raw": "WhenCheenuwasaboyhecouldrun15milesin3hoursand30minutes.Asanoldmanhecan nowwalk10milesin4hours.Howmanyminuteslongerdoesittakeforhimtowalkamilenow comparedtowhenhewasaboy?",
+    "options": {
+      "A": "6",
+      "B": "10",
+      "C": "15",
+      "D": "18",
+      "E": "30 --- ---------- ----- ------------------- ----- ----- --- --- --- ThenumberN isatwo-digitnumber."
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2016-05",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 5,
+    "question_text_raw": "-WhenN isdividedby9,theremainderis1. --- ----------------------- ------------------------------ ---- -------------- ---- --- --- --- -WhenN isdividedby10,theremainderis3. WhatistheremainderwhenN isdividedby11?",
+    "options": {
+      "A": "0",
+      "B": "2",
+      "C": "4",
+      "D": "5",
+      "E": "7"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2016-06",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 6,
+    "question_text_raw": "Thefollowingbargraphrepresentsthelength(inletters)ofthenamesof19people.Whatisthe medianlengthofthesenames?",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6",
+      "E": "7 --- --- --- --- --- ---- -------------- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2016-07",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 7,
+    "question_text_raw": "Whichofthefollowingnumbersisnotaperfectsquare? (A) 12016 (B) 22017 (C) 32018 (D) 42019 (E) 52020 Findthevalueoftheexpression 8 100−98+96−94+92−90+···+8−6+4−2. (A) 20 (B) 40 (C) 50 (D) 80 (E) 100 --- ----- ----- ----- ----- ------ --- --- --- --- --- Whatisthesumofthedistinctprimeintegerdivisorsof2016? 9 (A) 9 (B) 12 (C) 16 (D) 49 (E) 63 --- ------------------------------------------- ----- ----- -------- ------- ---- --- --- --- ---",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2016-08",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 8,
+    "question_text_raw": "100−98+96−94+92−90+···+8−6+4−2.",
+    "options": {
+      "A": "20",
+      "B": "40",
+      "C": "50",
+      "D": "80",
+      "E": "100 --- ----- ----- ----- ----- ------ --- --- --- --- --- Whatisthesumofthedistinctprimeintegerdivisorsof2016?"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2016-09",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 9,
+    "question_text_raw": "**B**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2016-10",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 10,
+    "question_text_raw": "Supposethata∗bmeans3a−b.Whatisthevalueofxif 2∗(5∗x) = 1?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "10",
+      "D": "10",
+      "E": "14 10 3 Determine how many two-digit numbers satisfy the following property: when the number is"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2016-11",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 11,
+    "question_text_raw": "addedtothenumberobtainedbyreversingitsdigits,thesumis132.",
+    "options": {
+      "A": "5",
+      "B": "7",
+      "C": "9",
+      "D": "11",
+      "E": "12 --- ---- ---- ---- ----- ----- --- --- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2016-12",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 12,
+    "question_text_raw": "2 **B**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2016-13",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 13,
+    "question_text_raw": "3 −2,−1,0,3,4,5 gether.Whatistheprobabilitythattheproductis0? 1 1 1 1 1 --- --- --- --- --- --- --- --- --- --- (A) (B) (C) (D) (E) 6 5 4 3 2 Karl’scarusesagallonofgasevery35miles,andhisgastankholds14gallonswhenitisfull.One 14 day,Karlstartedwithafulltankofgas,drove350miles,bought8gallonsofgas,andcontinued drivingtohisdestination.Whenhearrived,hisgastankwashalffull.HowmanymilesdidKarl drivethatday? (A) 525 (B) 560 (C) 595 (D) 665 (E) 735 --- ------------------------------------------------ ------ ----- ------ ------ ------ ------ --- ---",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2016-14",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 14,
+    "question_text_raw": "day,Karlstartedwithafulltankofgas,drove350miles,bought8gallonsofgas,andcontinued drivingtohisdestination.Whenhearrived,hisgastankwashalffull.HowmanymilesdidKarl drivethatday?",
+    "options": {
+      "A": "525",
+      "B": "560",
+      "C": "595",
+      "D": "665",
+      "E": "735 --- ------------------------------------------------ ------ ----- ------ ------ ------ ------ --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2016-15",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 15,
+    "question_text_raw": "Whatisthelargestpowerof2thatisadivisorof134−114?",
+    "options": {
+      "A": "8",
+      "B": "16",
+      "C": "32",
+      "D": "64",
+      "E": "128 Annie and Bonnie are running laps around a 400-meter oval track. They started together, but"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2016-16",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 16,
+    "question_text_raw": "Anniehaspulledaheadbecausesheis25%fasterthanBonnie.HowmanylapswillAnniehave runwhenshefirstpassesBonnie?",
+    "options": {
+      "A": "11",
+      "B": "31",
+      "C": "4",
+      "D": "5",
+      "E": "25 --- ----- ----- ---- --- ---- ----- --- --- --- 4 3 An ATM password at Fred’s Bank is composed of four digits from to 9, with repeated digits"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2016-17",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 17,
+    "question_text_raw": "0 allowable. If no password may begin with the sequence 9,1,1, then how many passwords are possible?",
+    "options": {
+      "A": "30",
+      "B": "7290",
+      "C": "9000",
+      "D": "9990",
+      "E": "9999 --- ----- ------- --- ------- --- ------- ------- --- --- In an All-Area track meet, sprinters enter a 100−meter dash competition. The track has"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2016-18",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 18,
+    "question_text_raw": "216 6 --- --- --- --- --- --- --- --- --- --- lanes,soonly6sprinterscancompeteatatime.Attheendofeachrace,thefivenon-winners areeliminated,andthewinnerwillcompeteagaininalaterrace.Howmanyracesareneeded todeterminethechampionsprinter?",
+    "options": {
+      "A": "36",
+      "B": "42",
+      "C": "43",
+      "D": "60",
+      "E": "72 --- ----- ----- ----- --- ----- ----- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2016-19",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 19,
+    "question_text_raw": "Thesumof25consecutiveevenintegersis10,000.Whatisthelargestofthese25consecutive integers?",
+    "options": {
+      "A": "360",
+      "B": "388",
+      "C": "412",
+      "D": "416",
+      "E": "424 --- ------ ------ --- ------ ------ --- ------ --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2016-20",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 20,
+    "question_text_raw": "0 **A**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2016-21",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 21,
+    "question_text_raw": "replacement, until all 3 of the reds are drawn or until both green chips are drawn. What is the probabilitythatthe3redsaredrawn?",
+    "options": {
+      "A": "3",
+      "B": "2",
+      "C": "1",
+      "D": "3",
+      "E": "7 --- ----- ----- ----- ----- ----- --- --- 10 5 2 5 10 RectangleDEFAbelowisa3×4rectanglewithDC BA.Theareaofthe”batwings”"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2016-22",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 22,
+    "question_text_raw": "= CB = is D C B A --- --- --- --- --- ----- --- --- E F (B) 21 (D) 31 --- ---- ----- ---- ----- ---- --- ---",
+    "options": {
+      "A": "2 (C) 3 (E) 5 2 2 23 TwocongruentcirclescenteredatpointsAandB eachpassthroughtheothercircle’scenter. The line containing both A and B is extended to intersect the circles at points C and D. The circlesintersectattwopoints,oneofwhichisE.Whatisthedegreemeasureof∠CED? (A) 90",
+      "B": "105",
+      "C": "120",
+      "D": "135",
+      "E": "150 --- ----- ------ ------ ------ ------ --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2016-23",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 23,
+    "question_text_raw": "3 TwocongruentcirclescenteredatpointsAandB eachpassthroughtheothercircle’scenter. The line containing both A and B is extended to intersect the circles at points C and D. The circlesintersectattwopoints,oneofwhichisE.Whatisthedegreemeasureof∠CED? (A) 90 (B) 105 (C) 120 (D) 135 (E) 150 --- ----- ------ ------ ------ ------ --- ---",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2016-24",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 24,
+    "question_text_raw": "Thedigits1,2,3,4,and5areeachusedoncetowriteafive-digitnumberPQRST.Thethree-digit number is divisible by 4, the three-digit number is divisible by 5, and the three-digit PQR QRS numberRST isdivisibleby3.WhatisP? --- --------- ----------------------- ---- ---- ---- --- ---",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4",
+      "E": "5"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2016-25",
+    "contest": "AMC8",
+    "year": 2016,
+    "problem_number": 25,
+    "question_text_raw": "5 **B**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2016.md",
+    "parse_status": "placeholder"
+  }
+]

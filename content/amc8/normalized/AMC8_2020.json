@@ -1,0 +1,486 @@
+[
+  {
+    "problem_id": "amc8-2020-01",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 1,
+    "question_text_raw": "©2022AoPSIncorporated --- ## 📷 Pages (8 pages)![[AMC8_2020_p1.png page 1]]![[AMC8_2020_p2.png page 2]]![[AMC8_2020_p3.png page 3]]![[AMC8_2020_p4.png page 4]]![[AMC8_2020_p5.png page 5]]![[AMC8_2020_p6.png page 6]]![[AMC8_2020_p7.png page 7]]![[AMC8_2020_p8.png page 8]] --- AoPS Community 2020 AMC 8 - ---- --------- --- --- --- --- --- --- --- -------- --- Aaron, Darren, Karen, Maren, and Sharon rode on a small train that has five cars that seat one 6 person each. Maren sat in the last car. Aaron sat directly behind Sharon. Darren sat in one of the cars in front of Aaron. At least one person sat between Karen and Darren. Who sat in the middlecar?",
+    "options": {
+      "A": "Aaron",
+      "B": "Darren",
+      "C": "Karen",
+      "D": "Maren",
+      "E": "Sharon --- ------------------ --- --- --------- --- -------- -------- --------- --- ---"
+    },
+    "image_refs": [
+      "content/amc8/markdown/images/AMC8_2020_p1.png",
+      "content/amc8/markdown/images/AMC8_2020_p2.png",
+      "content/amc8/markdown/images/AMC8_2020_p3.png",
+      "content/amc8/markdown/images/AMC8_2020_p4.png",
+      "content/amc8/markdown/images/AMC8_2020_p5.png",
+      "content/amc8/markdown/images/AMC8_2020_p6.png",
+      "content/amc8/markdown/images/AMC8_2020_p7.png",
+      "content/amc8/markdown/images/AMC8_2020_p8.png"
+    ],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2020-02",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 2,
+    "question_text_raw": "©2022AoPSIncorporated AoPS Community 2020 AMC 8 - 11 Afterschool,MayaandNaomiheadedtothebeach,6milesaway.Mayadecidedtobikewhile Naomitookabus.Thegraphbelowshowstheirjourneys,indicatingthetimeanddistancetrav- eled.Whatwasthedifference,inmilesperhour,betweenNaomi’sandMaya’saveragespeeds? 6 5 4 3 2 1 5 10 15 20 25 30 )selim( ecnatsiD Naomi Maya Time (minutes)",
+    "options": {
+      "A": "6",
+      "B": "12",
+      "C": "18",
+      "D": "20",
+      "E": "24"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2020-03",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 3,
+    "question_text_raw": "EachofthepointsA,B,C,D,E,andF inthefigurebelowrepresentadifferentdigitfrom1to 16 6.Eachofthefivelinesshownpassesthroughsomeofthesepoints.Thedigitsalongtheline each are added to produce 5 sums, one for each line. The total of the sums is 47. What is the digitrepresentedbyB? A F B E D C",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4",
+      "E": "5 --- ---- --------- ---- ---- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2020-04",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 4,
+    "question_text_raw": "©2022AoPSIncorporated AoPS Community 2020 AMC 8 - ---- --------- --- --- --- --- --- -------- --- Howmanyfactorsof2020havemorethan3factors?(Asanexample,12has6factors,namely 17 1,2,3,4,6,and12.)",
+    "options": {
+      "A": "6",
+      "B": "7",
+      "C": "8",
+      "D": "9",
+      "E": "10 --- ---- --------- ---- ----- --- --- --- --- Rectangle is inscribed in a semicircle with diameter as shown in the figure. Let"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2020-05",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 5,
+    "question_text_raw": "©2022AoPSIncorporated AoPS Community 2020 AMC 8 - 21 Agameboardconsistsof64squaresthatalternateincolorbetweenblackandwhite.Thefigure below shows square P in the bottom and square Q in the top row. A marker is placed at P. A stepconsistsofmovingthemarkerontooneoftheadjoiningwhitesquaresintherowabove. Howmany7-steppathsaretherefromP toQ?(Thefigureshowsasamplepath.) Q P",
+    "options": {
+      "A": "28",
+      "B": "30",
+      "C": "32",
+      "D": "33",
+      "E": "35"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2020-06",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 6,
+    "question_text_raw": "Eachofthefivelinesshownpassesthroughsomeofthesepoints.Thedigitsalongtheline each are added to produce 5 sums, one for each line. The total of the sums is 47. What is the digitrepresentedbyB? A F B E D C (A) 1 (B) 2 (C) 3 (D) 4 (E) 5 --- ---- --------- ---- ---- --- --- --- 4 ©2022AoPSIncorporated AoPS Community 2020 AMC 8 - ---- --------- --- --- --- --- --- -------- --- Howmanyfactorsof2020havemorethan3factors?(Asanexample,12has6factors,namely 17 1,2,3,4,6,and12.) (A) 6 (B) 7 (C) 8 (D) 9 (E) 10 --- ---- --------- ---- ----- --- --- --- --- Rectangle is inscribed in a semicircle with diameter as shown in the figure. Let",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2020-07",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 7,
+    "question_text_raw": "How many integers between 2020 and 2400 have four distinct digits arranged in increasing or- der?(Forexample,2357isonesuchinteger.)",
+    "options": {
+      "A": "9",
+      "B": "10",
+      "C": "15",
+      "D": "21",
+      "E": "28 --- ---- ----- ----- ----- --- ----- --- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2020-08",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 8,
+    "question_text_raw": "Ricardo has 2020 coins, some of which are pennies (1-cent coins) and the rest of which are nickels(5-centcoins).Hehasatleastonepennyandatleastonenickel.Whatisthedifference incentsbetweenthegreatestpossibleandleastpossibleamountsofmoneythatRicardocan have?",
+    "options": {
+      "A": "8062",
+      "B": "8068",
+      "C": "8072",
+      "D": "8076",
+      "E": "8082 --- ------- ------- --- ------- --- ------- ------- --- --- --- Akash’sbirthdaycakeisintheformofa4×4×4inchcube.Thecakehasicingonthetopand"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2020-09",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 9,
+    "question_text_raw": "thefoursidefaces,andnoicingonthebottom.Supposethecakeiscutinto64smallercubes, eachmeasuring1×1×1inch,asshownbelow.Howmanyofthesmallpieceswillhaveicing onexactlytwosides?",
+    "options": {
+      "A": "12",
+      "B": "16",
+      "C": "18",
+      "D": "20",
+      "E": "24 --- ----- ----- --- ----- ----- ----- --- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2020-10",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 10,
+    "question_text_raw": "Zarahasacollectionof4marbles:anAggie,aBumblebee,aSteelie,andaTiger.Shewantsto displaytheminarowonashelf,butdoesnotwanttoputtheSteelieandtheTigernexttoone another.Inhowmanywayscanshedothis?",
+    "options": {
+      "A": "6",
+      "B": "8",
+      "C": "12",
+      "D": "18",
+      "E": "24 --- ---- ---- ----- ----- --- ----- --- --- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2020-11",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 11,
+    "question_text_raw": "1 Afterschool,MayaandNaomiheadedtothebeach,6milesaway.Mayadecidedtobikewhile Naomitookabus.Thegraphbelowshowstheirjourneys,indicatingthetimeanddistancetrav- eled.Whatwasthedifference,inmilesperhour,betweenNaomi’sandMaya’saveragespeeds? 6 5 4 3 2 1",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2020-12",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 12,
+    "question_text_raw": "Forapositiveintegern,thefactorialnotationn!representstheproductoftheintegersfromn to1.(Forexample,6! = 6·5·4·3·2·1.)WhatvalueofN satisfiesthefollowingequation? 5!·9! = 12·N!",
+    "options": {
+      "A": "10",
+      "B": "11",
+      "C": "12",
+      "D": "13",
+      "E": "14"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2020-13",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 13,
+    "question_text_raw": "Jamalhasadrawercontaining6greensocks,18purplesocks,and12orangesocks.Afteradding morepurplesocks,Jamalnoticedthatthereisnowa60%chancethatasockrandomlyselected fromthedrawerispurple.HowmanypurplesocksdidJamaladd?",
+    "options": {
+      "A": "6",
+      "B": "9",
+      "C": "12",
+      "D": "18",
+      "E": "24"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2020-14",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 14,
+    "question_text_raw": "Thereare20citiesintheCountyofNewton.Theirpopulationsareshowninthebarchartbelow. Theaveragepopulationofallthecitiesisindicatedbythehorizontaldashedline.Whichofthe followingisclosesttothetotalpopulationofall20cities? ©2022AoPSIncorporated 3 AoPS Community 2020 AMC 8 - ---- --------- --- --- --- --- -------- --- 8000 6000 noitalupoP 4000 2000 Cities",
+    "options": {
+      "A": "65,000",
+      "B": "75,000",
+      "C": "85,000",
+      "D": "95,000",
+      "E": "105,000 --- ----------------------------------------------- --------- --------- --------- ---------- --- ---"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2020-15",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 15,
+    "question_text_raw": "Suppose15%ofxequals20%ofy.Whatpercentageofxisy?",
+    "options": {
+      "A": "5",
+      "B": "35",
+      "C": "75",
+      "D": "1331",
+      "E": "300"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2020-16",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 16,
+    "question_text_raw": "6 **E**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2020-17",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 17,
+    "question_text_raw": "7 **B**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2020-18",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 18,
+    "question_text_raw": "ABCD FE, --- ------ ----------- ------ ---------------------- ------ --- --- --- 16,andletFD 9.WhatistheareaofABCD? DA = = AE = C B 9 16 9 F D A E",
+    "options": {
+      "A": "240",
+      "B": "248",
+      "C": "256",
+      "D": "264",
+      "E": "272 Anumberiscalledflippyifitsdigitsalternatebetweentwodistinctdigits.Forexample,2020and"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2020-19",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 19,
+    "question_text_raw": "37373 are flippy, but 3883 and 123123 are not. How many five-digit flippy numbers are divisible by15?",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6",
+      "E": "8 --- ---- --------- ---- ---- --- --- --- --- A scientist walking through a forest recorded as integers the heights of trees standing in a"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2020-20",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 20,
+    "question_text_raw": "5 --- --- --- --- --- --- --- --- --- row. She observed that each tree was either twice as tall or half as tall as the one to its right. Unfortunately some of her data was lost when rain fell on her notebook. Her notes are shown below, with blanks indicating the missing numbers. Based on her observations, the scientist wasabletoreconstructthelostdata.Whatwastheaverageheightofthetrees,inmeters? Tree1 meters --- ------- ------- ------- ------------- -------- --- --- --- Tree2 11meters Tree3 meters Tree4 meters Tree5 meters Averageheight.2meters",
+    "options": {
+      "A": "22.2",
+      "B": "24.2",
+      "C": "33.2",
+      "D": "35.2",
+      "E": "37.2"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2020-21",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 21,
+    "question_text_raw": "1 Agameboardconsistsof64squaresthatalternateincolorbetweenblackandwhite.Thefigure below shows square P in the bottom and square Q in the top row. A marker is placed at P. A stepconsistsofmovingthemarkerontooneoftheadjoiningwhitesquaresintherowabove. Howmany7-steppathsaretherefromP toQ?(Thefigureshowsasamplepath.) Q P (A) 28 (B) 30 (C) 32 (D) 33 (E) 35",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2020-22",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 22,
+    "question_text_raw": "WhenapositiveintegerN isfedintoamachine,theoutputisanumbercalculatedaccordingto theruleshownbelow. if N is even N 2 N if N is odd 3N +1 Forexample,startingwithaninputofN = 7,themachinewilloutput3·7+1 = 22.Thenifthe outputisrepeatedlyinsertedintothemachinefivemoretimes,thefinaloutputis26. 7 → 22 → 11 → 34 → 17 → 52 → 26 ©2022AoPSIncorporated 6 AoPS Community 2020 AMC 8 - ---- --------- --- --- --- --- --- --- -------- --- Whenthesame6-stepprocessisappliedtoadifferentstartingvalueofN,thefinaloutputis1. WhatisthesumofallsuchintegersN? N → → → → → → 1 --- ----- ----- ----- ----- --- ----- --- --- ---",
+    "options": {
+      "A": "73",
+      "B": "74",
+      "C": "75",
+      "D": "82",
+      "E": "83"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2020-23",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 23,
+    "question_text_raw": "Five different awards are to be given to three students. Each student will receive at least one award.Inhowmanywayscantheawardsbedistributed?",
+    "options": {
+      "A": "120",
+      "B": "150",
+      "C": "180",
+      "D": "210",
+      "E": "240 --- ------ ------ ------ --- ------ ------ --- --- --- Alargesquareregionispavedwithn2 graysquaretiles,eachmeasuringsinchesonaside.A"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "parsed"
+  },
+  {
+    "problem_id": "amc8-2020-24",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 24,
+    "question_text_raw": "4 **A**",
+    "options": {
+      "A": "Option A",
+      "B": "Option B",
+      "C": "Option C",
+      "D": "Option D",
+      "E": "Option E"
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": "Auto-filled placeholder; OCR cleanup needed.",
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "placeholder"
+  },
+  {
+    "problem_id": "amc8-2020-25",
+    "contest": "AMC8",
+    "year": 2020,
+    "problem_number": 25,
+    "question_text_raw": "RectanglesR andR,andsquaresS, S, andS,shownbelow,combinetoformarectangle 1 2 1 2 3 --- --- --- --- --- --- --- --- --- --- thatis3322unitswideand2020unitshigh.WhatisthesidelengthofS inunits? 2 R 2 S 1 S 2 S 3 R 1 7 ©2022AoPSIncorporated AoPS Community 2020 AMC 8 - ---- -------------------------------------------------------- ------ ------ ------ ------ ------------ -----",
+    "options": {
+      "A": "651",
+      "B": "655",
+      "C": "656",
+      "D": "662",
+      "E": "666 These problems are copy- – right©MathematicalAssociationofAmerica("
+    },
+    "image_refs": [],
+    "answer": null,
+    "explanation": null,
+    "source_markdown": "content/amc8/markdown/AMC8_2020.md",
+    "parse_status": "parsed"
+  }
+]
