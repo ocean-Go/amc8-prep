@@ -25,7 +25,14 @@ export interface CreateAttemptResponse {
 
 export interface WrongBookSyncDebugInfo {
   attempted: boolean;
-  action: "created" | "updated" | "create_failed" | "update_failed" | "lookup_failed";
+  action:
+    | "created"
+    | "updated"
+    | "create_failed"
+    | "update_failed"
+    | "lookup_failed"
+    | "removed"
+    | "remove_failed";
   user_id: string;
   problem_id: string;
   row_id?: string;
