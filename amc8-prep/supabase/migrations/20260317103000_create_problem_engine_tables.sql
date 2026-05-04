@@ -1,5 +1,5 @@
 create table if not exists public.profiles (
-  id uuid primary key references auth.users (id) on delete cascade,
+  id uuid primary key,
   username text unique,
   full_name text,
   avatar_url text,

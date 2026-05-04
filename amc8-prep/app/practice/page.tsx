@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 
 import type { CreateAttemptResponse, PracticeProblem } from "@/lib/types/practice";
+import { getCurrentAppUserId } from "@/lib/users";
 
 const ANSWER_CHOICES = ["A", "B", "C", "D", "E"];
 
@@ -101,6 +102,7 @@ export default function PracticePage() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          user_id: getCurrentAppUserId(),
           problem_id: currentProblem.id,
           selected_answer: selectedOption,
           time_spent_sec: timeSpentSec,

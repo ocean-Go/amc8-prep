@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
+import { getLocalDashboardMetrics } from "@/lib/server/local-progress-store";
+import { DEFAULT_APP_USER, resolveAppUserId } from "@/lib/users";
 import type {
   DashboardActivity,
   DashboardApiResponse,
@@ -14,7 +16,7 @@ const anonKey =
   process.env.SUPABASE_ANON_KEY ??
   process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ??
   "";
-const DEFAULT_TEST_USER_ID = "00000000-0000-0000-0000-000000000001";
+const DEFAULT_TEST_USER_ID = DEFAULT_APP_USER.id;
 
 type AttemptRow = {
   id: string;
@@ -28,14 +30,7 @@ type LatestMockRow = {
 };
 
 function normalizeDashboardUserId(candidate: string | null) {
-  const normalized = candidate?.trim();
-  if (normalized && normalized !== DEFAULT_TEST_USER_ID) {
-    console.warn("[dashboard] Received non-default user_id; forcing default test user.", {
-      providedUserId: normalized,
-      forcedUserId: DEFAULT_TEST_USER_ID,
-    });
-  }
-  return DEFAULT_TEST_USER_ID;
+  return resolveAppUserId(candidate);
 }
 
 function isLikelyRealSupabaseKey(key: string): boolean {
@@ -64,13 +59,14 @@ function resolveSupabaseKey() {
 
 export async function GET(request: Request) {
   const supabaseKey = resolveSupabaseKey();
-  if (!supabaseUrl || !supabaseKey) {
-    return NextResponse.json({ error: "Supabase credentials are not configured." }, { status: 500 });
-  }
-
   const { searchParams } = new URL(request.url);
   const userId = normalizeDashboardUserId(searchParams.get("user_id"));
-  console.info("[dashboard] Using user_id for dashboard metrics.", { userId });
+
+  if (!supabaseUrl || !supabaseKey) {
+    const metrics = await getLocalDashboardMetrics(userId);
+    return NextResponse.json({ user_id: userId, metrics } satisfies DashboardApiResponse);
+  }
+
   const supabase = createClient(supabaseUrl, supabaseKey);
 
   const [
@@ -116,13 +112,8 @@ export async function GET(request: Request) {
       failingStep: requiredFailure.step,
       error: requiredFailure.result.error.message,
     });
-    return NextResponse.json(
-      {
-        error: requiredFailure.result.error.message ?? "Failed to fetch dashboard metrics.",
-        failing_step: requiredFailure.step,
-      },
-      { status: 500 }
-    );
+    const metrics = await getLocalDashboardMetrics(userId);
+    return NextResponse.json({ user_id: userId, metrics } satisfies DashboardApiResponse);
   }
 
   const attemptsCount = attemptsCountResponse.count ?? 0;
