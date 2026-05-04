@@ -3,9 +3,9 @@
 import { useEffect, useMemo, useState } from "react";
 
 import type { CreateAttemptResponse, WrongBookListResponse, WrongBookReviewItem } from "@/lib/types/practice";
+import { getCurrentAppUserId } from "@/lib/users";
 
 const ANSWER_CHOICES = ["A", "B", "C", "D", "E"];
-const DEFAULT_TEST_USER_ID = "00000000-0000-0000-0000-000000000001";
 
 function formatDate(value: string): string {
   const date = new Date(value);
@@ -42,7 +42,8 @@ export default function WrongBookReviewPanel() {
     setError(null);
 
     try {
-      const response = await fetch(`/api/wrong-book?user_id=${DEFAULT_TEST_USER_ID}`, { cache: "no-store" });
+      const userId = getCurrentAppUserId();
+      const response = await fetch(`/api/wrong-book?user_id=${encodeURIComponent(userId)}`, { cache: "no-store" });
       if (!response.ok) {
         const payload = (await response.json()) as { error?: string };
         throw new Error(payload.error ?? "Failed to load wrong-book problems.");
@@ -90,7 +91,7 @@ export default function WrongBookReviewPanel() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          user_id: DEFAULT_TEST_USER_ID,
+          user_id: getCurrentAppUserId(),
           problem_id: entry.problem_id,
           selected_answer: selectedAnswer,
           time_spent_sec: 1,

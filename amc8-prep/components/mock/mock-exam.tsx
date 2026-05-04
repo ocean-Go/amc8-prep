@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 
 import type { MockProblem, MockProblemListResponse, SubmitMockResponse } from "@/lib/types/mock";
+import { getCurrentAppUserId } from "@/lib/users";
 
 const ANSWER_CHOICES = ["A", "B", "C", "D", "E"];
 const DEFAULT_DURATION_SEC = 40 * 60;
@@ -82,6 +83,7 @@ export function MockExam() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          user_id: getCurrentAppUserId(),
           time_used_sec: durationSec - timeLeftSec,
           answers,
         }),

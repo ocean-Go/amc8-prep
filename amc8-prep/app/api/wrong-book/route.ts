@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
+import { listLocalWrongBook } from "@/lib/server/local-progress-store";
+import { DEFAULT_APP_USER, resolveAppUserId } from "@/lib/users";
 import type { Database } from "@/lib/types/problem-engine";
 import type { WrongBookListResponse, WrongBookReviewItem } from "@/lib/types/practice";
 
@@ -30,21 +32,14 @@ const anonKey =
   process.env.SUPABASE_ANON_KEY ??
   process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ??
   "";
-const DEFAULT_TEST_USER_ID = "00000000-0000-0000-0000-000000000001";
+const DEFAULT_TEST_USER_ID = DEFAULT_APP_USER.id;
 
 function createSupabaseClient(key: string) {
   return createClient<Database, "public">(supabaseUrl, key);
 }
 
 function normalizeUserId(candidate: string | null) {
-  const normalized = candidate?.trim();
-  if (normalized && normalized !== DEFAULT_TEST_USER_ID) {
-    console.warn("[wrong_book] Received non-default user_id; forcing default test user.", {
-      providedUserId: normalized,
-      forcedUserId: DEFAULT_TEST_USER_ID,
-    });
-  }
-  return DEFAULT_TEST_USER_ID;
+  return resolveAppUserId(candidate);
 }
 
 function isLikelyRealSupabaseKey(key: string): boolean {
@@ -63,12 +58,7 @@ function isLikelyRealSupabaseKey(key: string): boolean {
 
 function resolveSupabaseKey() {
   const preferredKey = isLikelyRealSupabaseKey(serviceRoleKey) ? serviceRoleKey : anonKey;
-
-  if (!isLikelyRealSupabaseKey(preferredKey)) {
-    return null;
-  }
-
-  return preferredKey;
+  return isLikelyRealSupabaseKey(preferredKey) ? preferredKey : null;
 }
 
 function normalizeOptions(options: unknown): string[] {
@@ -91,6 +81,7 @@ async function fetchWrongBookRows(supabase: ReturnType<typeof createSupabaseClie
       "id, user_id, problem_id, wrong_count, last_error_type, status, mastery_level, next_review_date, updated_at"
     )
     .eq("user_id", userId)
+    .neq("status", "mastered")
     .order("next_review_date", { ascending: true, nullsFirst: false })
     .order("updated_at", { ascending: false, nullsFirst: false });
 
@@ -174,123 +165,93 @@ async function fetchLatestIncorrectAttemptMap(
   return { latestIncorrectAttemptMap };
 }
 
-export async function GET(request: Request) {
-  if (!supabaseUrl) {
-    return NextResponse.json({ error: "Supabase credentials are not configured." }, { status: 500 });
-  }
-
-  const supabaseKey = resolveSupabaseKey();
-  if (!supabaseKey) {
-    return NextResponse.json({ error: "Supabase credentials are not configured." }, { status: 500 });
-  }
-
-  const { searchParams } = new URL(request.url);
-  const userId = normalizeUserId(searchParams.get("user_id"));
-  const diagnostics: string[] = [];
-  console.info("[wrong_book] Using user_id for wrong-book query.", { userId });
-
-  const supabase = createSupabaseClient(supabaseKey);
-  const result = await fetchWrongBookRows(supabase, userId);
-  if (result.error) {
-    console.error("[wrong_book] Failed to load wrong-book rows.", {
-      userId,
-      error: result.error,
-    });
-    return NextResponse.json(
-      {
-        error: result.error ?? "Failed to fetch wrong-book entries.",
-        failing_step: "fetch_wrong_book_rows",
-      },
-      { status: 500 }
-    );
-  }
-
-  const wrongBookRows = result.rows ?? [];
-  console.info("[wrong_book] Loaded wrong-book rows.", {
-    userId,
-    rowCount: wrongBookRows.length,
-  });
-
-  if (wrongBookRows.length === 0) {
-    console.info("[wrong_book] No wrong-book rows found for user.", { userId });
-    const empty: WrongBookListResponse = { entries: [], raw_row_count: 0, enriched_row_count: 0 };
-    return NextResponse.json(empty, { status: 200 });
-  }
-
-  const problemIds = Array.from(new Set(wrongBookRows.map((entry) => entry.problem_id)));
-  const problemResult = await fetchProblemMap(supabase, problemIds);
-
-  if (problemResult.error) {
-    diagnostics.push(`fetch_problems_failed: ${problemResult.error}`);
-    console.error("[wrong_book] Failed to fetch problem details for wrong-book rows.", {
-      userId,
-      problemIds,
-      error: problemResult.error,
-    });
-  }
-
-  const latestAttemptResult = await fetchLatestIncorrectAttemptMap(supabase, userId, problemIds);
-
-  if (latestAttemptResult.error) {
-    diagnostics.push(`fetch_latest_incorrect_attempts_failed: ${latestAttemptResult.error}`);
-    console.error("[wrong_book] Failed to fetch latest incorrect attempts for wrong-book rows.", {
-      userId,
-      problemIds,
-      error: latestAttemptResult.error,
-    });
-  }
-
-  const problemMap = problemResult.problemMap ?? new Map<string, ProblemRow>();
-  const latestIncorrectAttemptMap =
-    latestAttemptResult.latestIncorrectAttemptMap ?? new Map<string, string | null>();
-  const failedProblemIds = problemIds.filter((problemId) => !problemMap.has(problemId));
-
-  if (failedProblemIds.length > 0) {
-    diagnostics.push(`missing_problem_matches: ${failedProblemIds.join(",")}`);
-  }
-
-  console.info("[wrong_book] Enrichment diagnostics.", {
-    userId,
-    rawRowCount: wrongBookRows.length,
-    problemMatchCount: problemMap.size,
-    failedProblemIds,
-  });
-
-  const entries: WrongBookReviewItem[] = wrongBookRows.map((entry) => {
-    const problem = problemMap.get(entry.problem_id);
-
-    return {
-      id: entry.id,
-      user_id: entry.user_id,
-      problem_id: entry.problem_id,
-      wrong_count: entry.wrong_count,
-      last_error_type: entry.last_error_type,
-      status: entry.status,
-      mastery_level: entry.mastery_level,
-      next_review_date: entry.next_review_date,
-      updated_at: entry.updated_at,
-      selected_wrong_answer: latestIncorrectAttemptMap.get(entry.problem_id) ?? null,
-      problem: {
-        id: problem?.id ?? entry.problem_id,
-        question_text: String(problem?.question ?? "题目暂时不可用，请先根据题号复盘。"),
-        options: normalizeOptions(problem?.options),
-        correct_answer: String(problem?.answer ?? "-").trim().toUpperCase() || "-",
-      },
-    };
-  });
-
+async function localResponse(userId: string): Promise<NextResponse> {
+  const entries = await listLocalWrongBook(userId);
   const response: WrongBookListResponse = {
     entries,
-    raw_row_count: wrongBookRows.length,
+    raw_row_count: entries.length,
     enriched_row_count: entries.length,
-    failed_problem_ids: failedProblemIds.length > 0 ? failedProblemIds : undefined,
-    diagnostics: diagnostics.length > 0 ? diagnostics : undefined,
   };
-  console.info("[wrong_book] Returning wrong-book response.", {
-    userId,
-    rawRowCount: wrongBookRows.length,
-    enrichedRowCount: entries.length,
-    failedProblemIds,
-  });
   return NextResponse.json(response, { status: 200 });
+}
+
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const userId = normalizeUserId(searchParams.get("user_id"));
+  const supabaseKey = resolveSupabaseKey();
+
+  if (!supabaseUrl || !supabaseKey) {
+    return localResponse(userId);
+  }
+
+  try {
+    const supabase = createSupabaseClient(supabaseKey);
+    const result = await fetchWrongBookRows(supabase, userId);
+    if (result.error) {
+      return localResponse(userId);
+    }
+
+    const wrongBookRows = result.rows ?? [];
+    if (wrongBookRows.length === 0) {
+      const empty: WrongBookListResponse = { entries: [], raw_row_count: 0, enriched_row_count: 0 };
+      return NextResponse.json(empty, { status: 200 });
+    }
+
+    const diagnostics: string[] = [];
+    const problemIds = Array.from(new Set(wrongBookRows.map((entry) => entry.problem_id)));
+    const problemResult = await fetchProblemMap(supabase, problemIds);
+
+    if (problemResult.error) {
+      diagnostics.push(`fetch_problems_failed: ${problemResult.error}`);
+    }
+
+    const latestAttemptResult = await fetchLatestIncorrectAttemptMap(supabase, userId, problemIds);
+
+    if (latestAttemptResult.error) {
+      diagnostics.push(`fetch_latest_incorrect_attempts_failed: ${latestAttemptResult.error}`);
+    }
+
+    const problemMap = problemResult.problemMap ?? new Map<string, ProblemRow>();
+    const latestIncorrectAttemptMap =
+      latestAttemptResult.latestIncorrectAttemptMap ?? new Map<string, string | null>();
+    const failedProblemIds = problemIds.filter((problemId) => !problemMap.has(problemId));
+
+    if (failedProblemIds.length > 0) {
+      diagnostics.push(`missing_problem_matches: ${failedProblemIds.join(",")}`);
+    }
+
+    const entries: WrongBookReviewItem[] = wrongBookRows.map((entry) => {
+      const problem = problemMap.get(entry.problem_id);
+
+      return {
+        id: entry.id,
+        user_id: entry.user_id,
+        problem_id: entry.problem_id,
+        wrong_count: entry.wrong_count,
+        last_error_type: entry.last_error_type,
+        status: entry.status,
+        mastery_level: entry.mastery_level,
+        next_review_date: entry.next_review_date,
+        updated_at: entry.updated_at,
+        selected_wrong_answer: latestIncorrectAttemptMap.get(entry.problem_id) ?? null,
+        problem: {
+          id: problem?.id ?? entry.problem_id,
+          question_text: String(problem?.question ?? "题目暂时不可用，请先根据题号复盘。"),
+          options: normalizeOptions(problem?.options),
+          correct_answer: String(problem?.answer ?? "-").trim().toUpperCase() || "-",
+        },
+      };
+    });
+
+    const response: WrongBookListResponse = {
+      entries,
+      raw_row_count: wrongBookRows.length,
+      enriched_row_count: entries.length,
+      failed_problem_ids: failedProblemIds.length > 0 ? failedProblemIds : undefined,
+      diagnostics: diagnostics.length > 0 ? diagnostics : undefined,
+    };
+    return NextResponse.json(response, { status: 200 });
+  } catch {
+    return localResponse(userId);
+  }
 }
