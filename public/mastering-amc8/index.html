@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mastering AMC 8 — Interactive Knowledge Hub</title>
+  <meta name="description" content="An interactive AMC 8 learning hub distilled from Mastering AMC 8: chapters, topics, formulas, progress tracking, and formula quizzes." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">AMC 8 · Study System</p>
+        <h1>Mastering AMC 8<br/>Interactive Knowledge Hub</h1>
+        <p class="hero-subtitle">
+          A structured map of the book’s domains, chapters, key learning points, and formula bank —
+          built for fast review, long-term tracking, and exam-oriented practice.
+        </p>
+        <div class="hero-actions">
+          <button id="jumpToMap" class="primary-btn">Explore the Knowledge Map</button>
+          <button id="jumpToQuiz" class="ghost-btn">Start Formula Sprint</button>
+        </div>
+      </div>
+      <div class="hero-panel" aria-label="Study summary">
+        <div class="metric-grid">
+          <div class="metric">
+            <span id="statDomains" class="metric-value">0</span>
+            <span class="metric-label">Domains</span>
+          </div>
+          <div class="metric">
+            <span id="statChapters" class="metric-value">0</span>
+            <span class="metric-label">Chapters</span>
+          </div>
+          <div class="metric">
+            <span id="statSections" class="metric-value">0</span>
+            <span class="metric-label">Key Sections</span>
+          </div>
+          <div class="metric">
+            <span id="statFormulas" class="metric-value">0</span>
+            <span class="metric-label">Formula Cards</span>
+          </div>
+        </div>
+        <div class="progress-card">
+          <div class="progress-head">
+            <strong>Study Progress</strong>
+            <span id="progressText">0 / 30 chapters completed</span>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <div id="progressBar" class="progress-fill"></div>
+          </div>
+          <p class="small-note">Progress is saved locally in your browser.</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="mapSection" class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">1. Book Map</p>
+            <h2>Domains → Chapters → Learning Points</h2>
+          </div>
+          <div class="toolbar">
+            <input id="chapterSearch" type="search" placeholder="Search chapters or topics..." aria-label="Search chapters or topics" />
+          </div>
+        </div>
+        <div id="domainTabs" class="tab-row" role="tablist" aria-label="Book domains"></div>
+        <div id="chapterGrid" class="chapter-grid"></div>
+      </section>
+
+      <section id="formulaSection" class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">2. Formula Bank</p>
+            <h2>Searchable Formula Cards</h2>
+          </div>
+          <div class="toolbar formula-toolbar">
+            <select id="formulaDomainFilter" aria-label="Filter formulas by domain">
+              <option value="all">All Domains</option>
+            </select>
+            <input id="formulaSearch" type="search" placeholder="Search formula, chapter, or note..." aria-label="Search formulas" />
+          </div>
+        </div>
+        <div id="formulaGrid" class="formula-grid"></div>
+      </section>
+
+      <section id="sprintSection" class="panel split-panel">
+        <div class="sprint-card">
+          <p class="eyebrow">3. Formula Sprint</p>
+          <h2>Recall Before You Reveal</h2>
+          <p class="section-copy">
+            Train formula memory like a quick-fire flashcard drill. Read the prompt, try to recall the formula,
+            then reveal the answer.
+          </p>
+          <button id="newSprintCard" class="primary-btn">New Sprint Card</button>
+          <article id="sprintCard" class="flashcard" aria-live="polite"></article>
+        </div>
+
+        <div class="quiz-card">
+          <p class="eyebrow">4. Mini Quiz</p>
+          <h2>Match the Concept to the Formula</h2>
+          <p class="section-copy">
+            Pick the formula that best matches the prompt. This is lightweight retrieval practice, not a full exam.
+          </p>
+          <div id="quizBox" class="quiz-box" aria-live="polite"></div>
+          <div class="quiz-actions">
+            <button id="nextQuiz" class="ghost-btn">Next Question</button>
+            <span id="quizScore" class="score-pill">Score: 0 / 0</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel strategy-panel">
+        <div>
+          <p class="eyebrow">5. Study Strategy</p>
+          <h2>Turn the Book into a Weekly Plan</h2>
+        </div>
+        <div class="strategy-grid">
+          <article class="strategy-card">
+            <h3>Foundation</h3>
+            <p>Start with permutations, combinations, ratios, equations, divisibility, and basic geometry.</p>
+          </article>
+          <article class="strategy-card">
+            <h3>Scoring Power</h3>
+            <p>Prioritize probability, PIE, stars and bars, modular arithmetic, triangle formulas, and circles.</p>
+          </article>
+          <article class="strategy-card">
+            <h3>Contest Edge</h3>
+            <p>Add recursion, telescoping, Diophantine equations, complex shapes, and test-day strategy.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Built as an interactive study layer for AMC 8 preparation.</p>
+      <p class="small-note">Content is summarized and reorganized for learning; not a reproduction of the source book.</p>
+    </footer>
+  </div>
+
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
