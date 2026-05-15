@@ -140,6 +140,11 @@
   </div>
 
   <script src="./data.js"></script>
+  <script>
+    if (window.MAMC8_DATA && Array.isArray(window.MAMC8_DATA.formulas)) {
+      window.MAMC8_DATA.meta.formulas = window.MAMC8_DATA.formulas.length;
+    }
+  </script>
   <script src="./app.js"></script>
 </body>
 </html>
