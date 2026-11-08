@@ -4,6 +4,8 @@ import { createClient } from "@supabase/supabase-js";
 import { findLocalProblem } from "@/lib/server/problem-source";
 import { recordLocalAttempt } from "@/lib/server/local-progress-store";
 import { DEFAULT_APP_USER, resolveAppUserId } from "@/lib/users";
+import { todayInMadrid, updateReview } from "@/lib/review/scheduler";
+import type { AttemptMode, ReviewRecord } from "@/lib/review/scheduler";
 import type { Database } from "@/lib/types/problem-engine";
 import type {
   CreateAttemptRequest,
@@ -50,28 +52,18 @@ function resolveSupabaseKey() {
   return isLikelyRealSupabaseKey(preferredKey) ? preferredKey : null;
 }
 
-function buildWrongBookTimestamps() {
-  const updatedAt = new Date().toISOString();
-  const tomorrow = new Date();
-  tomorrow.setUTCDate(tomorrow.getUTCDate() + 1);
-
-  return {
-    updatedAt,
-    nextReviewDate: tomorrow.toISOString().slice(0, 10),
-  };
-}
-
-async function syncWrongBookForIncorrectAttempt(
+async function syncScheduledReview(
   supabase: ReturnType<typeof createSupabaseClient>,
   userId: string,
   problemId: string,
-  attemptId: string
+  attemptId: string,
+  isCorrect: boolean,
+  mode: AttemptMode,
+  hintUsed: boolean
 ): Promise<{ error?: string; debug?: WrongBookSyncDebugInfo }> {
-  const { updatedAt, nextReviewDate } = buildWrongBookTimestamps();
-
   const { data: existingRow, error: lookupError } = await supabase
     .from("wrong_book")
-    .select("id, wrong_count")
+    .select("id, wrong_count, mastery_level, status, next_review_date")
     .eq("user_id", userId)
     .eq("problem_id", problemId)
     .maybeSingle();
@@ -79,142 +71,88 @@ async function syncWrongBookForIncorrectAttempt(
   if (lookupError) {
     return {
       error: lookupError.message ?? "Failed to query wrong_book.",
-      debug: {
-        attempted: true,
-        action: "lookup_failed",
-        user_id: userId,
-        problem_id: problemId,
-        attempt_id: attemptId,
-        next_review_date: nextReviewDate,
-      },
+      debug: { attempted: true, action: "lookup_failed", user_id: userId, problem_id: problemId, attempt_id: attemptId },
     };
   }
 
+  const previous: ReviewRecord | null = existingRow
+    ? {
+        wrong_count: Math.max(0, Number(existingRow.wrong_count ?? 0)),
+        mastery_level: Math.max(0, Number(existingRow.mastery_level ?? 0)),
+        status: existingRow.status === "mastered" ? "mastered" : "review_pending",
+        next_review_date: String(existingRow.next_review_date ?? ""),
+      }
+    : null;
+  const updated = updateReview(previous, {
+    correct: isCorrect,
+    mode,
+    hintUsed,
+    date: todayInMadrid(),
+  });
+
+  // No entry for an always-correct question. An early/ordinary correct answer
+  // does not clear a previous mistake or advance review streaks.
+  if (!updated || (previous && JSON.stringify(updated) === JSON.stringify(previous))) return {};
+
+  const updatedAt = new Date().toISOString();
+  const fields = {
+    wrong_count: updated.wrong_count,
+    mastery_level: updated.mastery_level,
+    status: updated.status,
+    next_review_date: updated.next_review_date,
+    updated_at: updatedAt,
+  };
+
   if (existingRow) {
-    const previousWrongCount = Math.max(0, Number(existingRow.wrong_count ?? 0));
-    const wrongCount = previousWrongCount + 1;
-
-    const { error: updateError } = await supabase
-      .from("wrong_book")
-      .update({
-        wrong_count: wrongCount,
-        status: "review_pending",
-        mastery_level: 0,
-        next_review_date: nextReviewDate,
-        updated_at: updatedAt,
-      })
-      .eq("user_id", userId)
-      .eq("problem_id", problemId);
-
-    if (updateError) {
+    const { error } = await supabase.from("wrong_book").update(fields).eq("id", existingRow.id).eq("user_id", userId);
+    if (error) {
       return {
-        error: updateError.message ?? "Failed to update wrong_book.",
-        debug: {
-          attempted: true,
-          action: "update_failed",
-          user_id: userId,
-          problem_id: problemId,
-          row_id: existingRow.id,
-          attempt_id: attemptId,
-          previous_wrong_count: previousWrongCount,
-          wrong_count: wrongCount,
-          next_review_date: nextReviewDate,
-        },
+        error: error.message ?? "Failed to update wrong_book.",
+        debug: { attempted: true, action: "update_failed", user_id: userId, problem_id: problemId, attempt_id: attemptId },
       };
     }
-
     return {
       debug: {
         attempted: true,
-        action: "updated",
+        action: updated.status === "mastered" ? "mastered" : "updated",
         user_id: userId,
         problem_id: problemId,
         row_id: existingRow.id,
         attempt_id: attemptId,
-        previous_wrong_count: previousWrongCount,
-        wrong_count: wrongCount,
-        next_review_date: nextReviewDate,
+        wrong_count: updated.wrong_count,
+        next_review_date: updated.next_review_date,
       },
     };
   }
 
-  const { data: insertedRow, error: insertError } = await supabase
+  const { data: created, error } = await supabase
     .from("wrong_book")
     .insert({
       user_id: userId,
       problem_id: problemId,
-      wrong_count: 1,
       last_error_type: null,
-      status: "review_pending",
-      mastery_level: 0,
-      next_review_date: nextReviewDate,
-      updated_at: updatedAt,
+      ...fields,
     })
-    .select("id, wrong_count")
+    .select("id")
     .single();
 
-  if (insertError || !insertedRow) {
+  if (error || !created) {
     return {
-      error: insertError?.message ?? "Failed to insert wrong_book.",
-      debug: {
-        attempted: true,
-        action: "create_failed",
-        user_id: userId,
-        problem_id: problemId,
-        attempt_id: attemptId,
-        wrong_count: 1,
-        next_review_date: nextReviewDate,
-      },
+      error: error?.message ?? "Failed to create wrong-book row.",
+      debug: { attempted: true, action: "create_failed", user_id: userId, problem_id: problemId, attempt_id: attemptId },
     };
   }
-
   return {
     debug: {
       attempted: true,
       action: "created",
       user_id: userId,
       problem_id: problemId,
-      row_id: insertedRow.id,
+      row_id: created.id,
       attempt_id: attemptId,
-      wrong_count: Number(insertedRow.wrong_count ?? 1),
-      next_review_date: nextReviewDate,
+      wrong_count: updated.wrong_count,
+      next_review_date: updated.next_review_date,
     },
-  };
-}
-
-async function markWrongBookMastered(
-  supabase: ReturnType<typeof createSupabaseClient>,
-  userId: string,
-  problemId: string,
-  attemptId: string
-): Promise<WrongBookSyncDebugInfo | undefined> {
-  const { data: existingRow } = await supabase
-    .from("wrong_book")
-    .select("id, wrong_count, mastery_level")
-    .eq("user_id", userId)
-    .eq("problem_id", problemId)
-    .maybeSingle();
-
-  if (!existingRow) {
-    return undefined;
-  }
-
-  const { updatedAt } = buildWrongBookTimestamps();
-  const masteryLevel = Math.max(1, Number(existingRow.mastery_level ?? 0) + 1);
-  await supabase
-    .from("wrong_book")
-    .update({ status: "mastered", mastery_level: masteryLevel, updated_at: updatedAt })
-    .eq("user_id", userId)
-    .eq("problem_id", problemId);
-
-  return {
-    attempted: true,
-    action: "mastered",
-    user_id: userId,
-    problem_id: problemId,
-    row_id: existingRow.id,
-    attempt_id: attemptId,
-    wrong_count: Number(existingRow.wrong_count ?? 0),
   };
 }
 
@@ -223,7 +161,9 @@ async function findProblemAndInsertAttempt(
   userId: string,
   problemId: string,
   selectedAnswer: string,
-  timeSpentSec: number
+  timeSpentSec: number,
+  mode: AttemptMode,
+  hintUsed: boolean
 ) {
   if (!UUID_PATTERN.test(problemId)) {
     return { problemError: "Problem not found." };
@@ -260,23 +200,13 @@ async function findProblemAndInsertAttempt(
     return { insertError: insertError?.message ?? "Failed to record attempt." };
   }
 
-  let wrongBookSync: WrongBookSyncDebugInfo | undefined;
-
-  if (!isCorrect) {
-    const wrongBookResult = await syncWrongBookForIncorrectAttempt(
-      supabase,
-      userId,
-      problemId,
-      insertedAttempt.id
-    );
-
-    wrongBookSync = wrongBookResult.debug;
-    if (wrongBookResult.error) {
-      return { insertError: `Attempt recorded but wrong-book sync failed: ${wrongBookResult.error}` };
-    }
-  } else {
-    wrongBookSync = await markWrongBookMastered(supabase, userId, problemId, insertedAttempt.id);
+  const scheduledReview = await syncScheduledReview(
+    supabase, userId, problemId, insertedAttempt.id, isCorrect, mode, hintUsed
+  );
+  if (scheduledReview.error) {
+    return { insertError: `Attempt recorded but wrong-book sync failed: ${scheduledReview.error}` };
   }
+  const wrongBookSync = scheduledReview.debug;
 
   const response: CreateAttemptResponse = {
     attempt_id: insertedAttempt.id,
@@ -295,6 +225,8 @@ export async function POST(request: Request) {
   const problemId = body.problem_id?.trim();
   const selectedAnswer = body.selected_answer?.trim().toUpperCase();
   const timeSpentSec = body.time_spent_sec;
+  const mode: AttemptMode = body.mode ?? "practice";
+  const hintUsed = body.hint_used ?? false;
 
   if (!problemId || !selectedAnswer || typeof timeSpentSec !== "number") {
     return NextResponse.json(
@@ -303,13 +235,17 @@ export async function POST(request: Request) {
     );
   }
 
+  if (!["practice", "review", "mock"].includes(mode) || typeof hintUsed !== "boolean") {
+    return NextResponse.json({ error: "Invalid attempt mode or hint_used flag." }, { status: 400 });
+  }
+
   if (!ANSWER_PATTERN.test(selectedAnswer)) {
     return NextResponse.json({ error: "selected_answer must be one of A, B, C, D, or E." }, { status: 400 });
   }
 
   const localProblem = await findLocalProblem(problemId);
   if (localProblem) {
-    const localResult = await recordLocalAttempt({ userId, problemId, selectedAnswer, timeSpentSec });
+    const localResult = await recordLocalAttempt({ userId, problemId, selectedAnswer, timeSpentSec, mode, hintUsed });
     if (localResult.response) {
       return NextResponse.json(localResult.response, { status: 201 });
     }
@@ -328,7 +264,9 @@ export async function POST(request: Request) {
       userId,
       problemId,
       selectedAnswer,
-      timeSpentSec
+      timeSpentSec,
+      mode,
+      hintUsed
     );
 
     if (result.response) {
