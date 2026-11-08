@@ -13,6 +13,8 @@ export interface CreateAttemptRequest {
   problem_id: string;
   selected_answer: string;
   time_spent_sec: number;
+  mode?: "practice" | "review" | "mock";
+  hint_used?: boolean;
 }
 
 export interface CreateAttemptResponse {
