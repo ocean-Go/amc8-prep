@@ -6,6 +6,8 @@ import type { CreateAttemptResponse, WrongBookReviewItem } from "@/lib/types/pra
 import type { DashboardActivity, DashboardMetrics } from "@/lib/types/dashboard";
 import { findLocalProblem } from "@/lib/server/problem-source";
 import { DEFAULT_APP_USER, resolveAppUserId } from "@/lib/users";
+import { todayInMadrid, updateReview } from "@/lib/review/scheduler";
+import type { AttemptMode, ReviewRecord } from "@/lib/review/scheduler";
 
 const STORE_PATH = path.resolve(process.cwd(), ".data/amc8-dev-store.json");
 const DEFAULT_TEST_USER_ID = DEFAULT_APP_USER.id;
@@ -52,12 +54,6 @@ function emptyStore(): LocalStore {
   return { attempts: [], wrong_book: [], mock_runs: [] };
 }
 
-function tomorrowDate(): string {
-  const tomorrow = new Date();
-  tomorrow.setUTCDate(tomorrow.getUTCDate() + 1);
-  return tomorrow.toISOString().slice(0, 10);
-}
-
 async function readStore(): Promise<LocalStore> {
   try {
     const raw = await readFile(STORE_PATH, "utf8");
@@ -82,6 +78,8 @@ export async function recordLocalAttempt(input: {
   problemId: string;
   selectedAnswer: string;
   timeSpentSec: number;
+  mode?: AttemptMode;
+  hintUsed?: boolean;
 }): Promise<{ response?: CreateAttemptResponse; problemError?: string }> {
   const problem = await findLocalProblem(input.problemId);
   if (!problem) {
@@ -113,62 +111,57 @@ export async function recordLocalAttempt(input: {
 
   let action: CreateAttemptResponse["wrong_book_sync"] | undefined;
 
-  if (!isCorrect) {
-    if (existing) {
-      existing.wrong_count += 1;
-      existing.status = "review_pending";
-      existing.mastery_level = 0;
-      existing.next_review_date = tomorrowDate();
-      existing.updated_at = now;
-      existing.selected_wrong_answer = selected;
-      action = {
-        attempted: true,
-        action: "updated",
-        user_id: userId,
-        problem_id: input.problemId,
-        row_id: existing.id,
-        attempt_id: attempt.id,
+  const previous: ReviewRecord | null = existing
+    ? {
         wrong_count: existing.wrong_count,
+        mastery_level: existing.mastery_level,
+        status: existing.status,
         next_review_date: existing.next_review_date,
-      };
+      }
+    : null;
+  const updated = updateReview(previous, {
+    correct: isCorrect,
+    mode: input.mode ?? "practice",
+    hintUsed: input.hintUsed ?? false,
+    date: todayInMadrid(new Date(now)),
+  });
+
+  // An ordinary correct practice answer or an early repeat is not a review success.
+  if (updated && (!previous || JSON.stringify(updated) !== JSON.stringify(previous))) {
+    let entry: LocalWrongBook;
+    if (existing) {
+      existing.wrong_count = updated.wrong_count;
+      existing.mastery_level = updated.mastery_level;
+      existing.status = updated.status;
+      existing.next_review_date = updated.next_review_date;
+      existing.updated_at = now;
+      if (!isCorrect) existing.selected_wrong_answer = selected;
+      entry = existing;
     } else {
-      const created: LocalWrongBook = {
+      entry = {
         id: randomUUID(),
         user_id: userId,
         problem_id: input.problemId,
-        wrong_count: 1,
+        wrong_count: updated.wrong_count,
         last_error_type: null,
-        status: "review_pending",
-        mastery_level: 0,
-        next_review_date: tomorrowDate(),
+        status: updated.status,
+        mastery_level: updated.mastery_level,
+        next_review_date: updated.next_review_date,
         updated_at: now,
-        selected_wrong_answer: selected,
+        selected_wrong_answer: isCorrect ? null : selected,
       };
-      store.wrong_book.unshift(created);
-      action = {
-        attempted: true,
-        action: "created",
-        user_id: userId,
-        problem_id: input.problemId,
-        row_id: created.id,
-        attempt_id: attempt.id,
-        wrong_count: 1,
-        next_review_date: created.next_review_date,
-      };
+      store.wrong_book.unshift(entry);
     }
-  } else if (existing) {
-    existing.status = "mastered";
-    existing.mastery_level = Math.max(1, existing.mastery_level + 1);
-    existing.updated_at = now;
+
     action = {
       attempted: true,
-      action: "mastered",
+      action: !existing ? "created" : updated.status === "mastered" ? "mastered" : "updated",
       user_id: userId,
       problem_id: input.problemId,
-      row_id: existing.id,
+      row_id: entry.id,
       attempt_id: attempt.id,
-      wrong_count: existing.wrong_count,
-      next_review_date: existing.next_review_date,
+      wrong_count: entry.wrong_count,
+      next_review_date: entry.next_review_date,
     };
   }
 

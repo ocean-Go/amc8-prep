@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 
 import type { CreateAttemptResponse, WrongBookListResponse, WrongBookReviewItem } from "@/lib/types/practice";
 import { getCurrentAppUserId } from "@/lib/users";
+import { todayInMadrid } from "@/lib/review/scheduler";
 
 const ANSWER_CHOICES = ["A", "B", "C", "D", "E"];
 
@@ -30,8 +31,10 @@ export default function WrongBookReviewPanel() {
   const [selectedAnswers, setSelectedAnswers] = useState<Record<string, string>>({});
   const [submittingId, setSubmittingId] = useState<string | null>(null);
   const [retryResult, setRetryResult] = useState<Record<string, CreateAttemptResponse>>({});
+  const [reviewStartMs, setReviewStartMs] = useState<Record<string, number>>({});
 
-  const reviewCount = useMemo(() => entries.length, [entries.length]);
+  const today = todayInMadrid();
+  const reviewCount = useMemo(() => entries.filter((entry) => entry.next_review_date <= today).length, [entries, today]);
 
   useEffect(() => {
     loadWrongBook();
@@ -67,6 +70,11 @@ export default function WrongBookReviewPanel() {
       });
 
       setEntries(fetchedEntries);
+      setReviewStartMs((previous) => {
+        const next = { ...previous };
+        for (const entry of fetchedEntries) if (!next[entry.id]) next[entry.id] = Date.now();
+        return next;
+      });
       setRawRowCount(fetchedRawRowCount);
       setEnrichedRowCount(fetchedEnrichedRowCount);
       setDiagnostics(fetchedDiagnostics);
@@ -94,7 +102,9 @@ export default function WrongBookReviewPanel() {
           user_id: getCurrentAppUserId(),
           problem_id: entry.problem_id,
           selected_answer: selectedAnswer,
-          time_spent_sec: 1,
+          time_spent_sec: Math.max(1, Math.round((Date.now() - (reviewStartMs[entry.id] ?? Date.now())) / 1000)),
+          mode: "review",
+          hint_used: false,
         }),
       });
 
@@ -105,6 +115,7 @@ export default function WrongBookReviewPanel() {
 
       const payload = (await response.json()) as CreateAttemptResponse;
       setRetryResult((prev) => ({ ...prev, [entry.id]: payload }));
+      setReviewStartMs((prev) => ({ ...prev, [entry.id]: Date.now() }));
       await loadWrongBook();
     } catch (submitError) {
       setError(submitError instanceof Error ? submitError.message : "Unknown retry error.");
@@ -151,11 +162,20 @@ export default function WrongBookReviewPanel() {
 
   return (
     <div className="space-y-4">
-      <p className="text-white">Ready to review: {reviewCount} problem(s)</p>
+      <p className="text-white">Ready today: {reviewCount} · Scheduled later: {entries.length - reviewCount}</p>
 
       {entries.map((entry, index) => {
         const selectedAnswer = selectedAnswers[entry.id] ?? "";
         const result = retryResult[entry.id];
+
+        if (entry.next_review_date > today) {
+          return (
+            <article key={entry.id} className="card">
+              <p className="text-gray-700 font-semibold">Next review: {formatDate(entry.next_review_date)}</p>
+              <p className="mt-1 text-sm text-gray-500">This question is scheduled for a future day. Keep its answer hidden until then.</p>
+            </article>
+          );
+        }
 
         return (
           <article key={entry.id} className="card">
@@ -191,13 +211,19 @@ export default function WrongBookReviewPanel() {
 
             <div className="mt-4 flex items-center justify-between gap-3">
               <div className="text-sm text-gray-600">
-                <p>Selected wrong answer: {entry.selected_wrong_answer ?? "-"}</p>
-                <p>Correct answer: {entry.problem.correct_answer}</p>
+                {result ? (
+                  <>
+                    <p>Selected wrong answer: {entry.selected_wrong_answer ?? "-"}</p>
+                    <p>Correct answer: {entry.problem.correct_answer}</p>
+                  </>
+                ) : (
+                  <p>Try independently first; the answer stays hidden until you submit.</p>
+                )}
               </div>
               <button
                 type="button"
                 onClick={() => submitRetry(entry)}
-                disabled={!selectedAnswer || submittingId === entry.id}
+                disabled={!selectedAnswer || submittingId === entry.id || Boolean(result)}
                 className="rounded-md bg-indigo-600 px-4 py-2 text-sm text-white disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {submittingId === entry.id ? "Submitting..." : "开始复盘"}
